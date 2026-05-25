@@ -34,10 +34,23 @@ The playlist refresh runs daily through GitHub Actions and can also be run
 manually with:
 
 ```sh
-python3 scripts/refresh_playlist.py --push
-python3 scripts/capture_channel_screenshots.py --playlist in.m3u --readme README.md
+python3 scripts/build_playlist.py --push
 ```
 
-The probe report is stored at `reports/in-report.json`. Playback screenshots
-are stored under `screenshots/latest`, with capture details at
+Add future playlist URLs or local files with repeated `--source` values or
+positional paths:
+
+```sh
+python3 scripts/build_playlist.py --source playlist.m3u --source https://example.com/playlist.m3u --push
+```
+
+For many future sources, put one URL or file path per line in a text file and
+run:
+
+```sh
+python3 scripts/build_playlist.py --source-list sources.txt --push
+```
+
+The probe report is stored at `reports/in-report.json`. Playback screenshots are
+stored under `screenshots/latest`, with capture details at
 `reports/screenshot-report.json`.

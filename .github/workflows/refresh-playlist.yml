@@ -25,18 +25,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg
 
-      - name: Refresh playlist
-        run: python3 scripts/refresh_playlist.py --workers 24 --timeout 10
-
-      - name: Capture playback screenshots
+      - name: Build playlist and screenshots
         run: >
-          python3 scripts/capture_channel_screenshots.py
-          --playlist in.m3u
-          --readme README.md
-          --output-dir screenshots/latest
-          --report reports/screenshot-report.json
-          --workers 8
-          --timeout 90
+          python3 scripts/build_playlist.py
+          --refresh-workers 24
+          --refresh-timeout 10
+          --capture-workers 8
+          --capture-timeout 90
           --capture-seconds 2
           --retry-capture-seconds 20
 
