@@ -18,8 +18,9 @@ Sources:
 Last generated result:
 
 - Checked HLS streams: 992
-- Working channels: 644
+- Working channels: 611
 - Duplicate stream URLs skipped: 48
+- Potential duplicate channels skipped: 33
 - Probe mode: HLS segment probe
 - Worker threads: 24
 

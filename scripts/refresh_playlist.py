@@ -50,6 +50,7 @@ class Channel:
     tags: tuple[str, ...]
     url: str
     name: str
+    tvg_id: str
     groups: tuple[str, ...]
     headers: dict[str, str]
 
@@ -179,6 +180,7 @@ def parse_m3u(text: str, source: str) -> tuple[str, list[Channel]]:
                 tags=tuple(pending_tags),
                 url=line,
                 name=extract_name(pending_tags),
+                tvg_id=extract_tvg_id(pending_tags),
                 groups=extract_groups(pending_tags),
                 headers=extract_headers(pending_tags),
             )
@@ -194,6 +196,16 @@ def extract_name(tags: Iterable[str]) -> str:
             _, _, name = tag.rpartition(",")
             return name.strip() or "Unnamed channel"
     return "Unnamed channel"
+
+
+def extract_tvg_id(tags: Iterable[str]) -> str:
+    for tag in tags:
+        if not tag.upper().startswith("#EXTINF"):
+            continue
+        match = re.search(r'tvg-id="([^"]*)"', tag, flags=re.IGNORECASE)
+        if match:
+            return match.group(1).strip()
+    return ""
 
 
 def extract_groups(tags: Iterable[str]) -> tuple[str, ...]:
@@ -388,8 +400,11 @@ def write_report(
     sources: list[str],
     workers: int,
     results: list[ProbeResult],
+    published_results: list[ProbeResult],
     skipped: int,
     duplicate_count: int,
+    potential_duplicate_count: int,
+    potential_duplicate_records: list[dict[str, str]],
     source_summaries: list[dict[str, int | str]],
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -399,10 +414,13 @@ def write_report(
         "probe_mode": "hls",
         "worker_threads": workers,
         "checked": len(results),
-        "working": sum(1 for result in results if result.ok),
+        "working_before_duplicate_filter": sum(1 for result in results if result.ok),
+        "working": len(published_results),
         "failed": sum(1 for result in results if not result.ok),
         "skipped_non_m3u8": skipped,
         "skipped_duplicate_urls": duplicate_count,
+        "skipped_potential_duplicate_channels": potential_duplicate_count,
+        "potential_duplicate_records": potential_duplicate_records,
         "source_summaries": source_summaries,
         "results": [
             {
@@ -410,8 +428,11 @@ def write_report(
                 "source": result.channel.source,
                 "source_index": result.channel.source_index,
                 "name": result.channel.name,
+                "tvg_id": result.channel.tvg_id,
+                "groups": list(result.channel.groups),
                 "url": result.channel.url,
                 "ok": result.ok,
+                "published": result in published_results,
                 "elapsed_ms": result.elapsed_ms,
                 "checked_url": result.checked_url,
                 "error": result.error,
@@ -429,6 +450,7 @@ def update_readme(
     checked: int,
     working: int,
     duplicate_count: int,
+    potential_duplicate_count: int,
 ) -> None:
     source_list = "\n".join(f"- `{source}`" for source in sources)
     content = f"""# freeiptv
@@ -452,6 +474,7 @@ Last generated result:
 - Checked HLS streams: {checked}
 - Working channels: {working}
 - Duplicate stream URLs skipped: {duplicate_count}
+- Potential duplicate channels skipped: {potential_duplicate_count}
 - Probe mode: HLS segment probe
 - Worker threads: {workers}
 
@@ -533,6 +556,53 @@ def dedupe_streams(streams: list[Channel]) -> tuple[list[Channel], int]:
     return unique, duplicate_count
 
 
+def dedupe_working_results(
+    results: list[ProbeResult],
+) -> tuple[list[ProbeResult], int, list[dict[str, str]]]:
+    seen: dict[tuple[str, str], ProbeResult] = {}
+    unique: list[ProbeResult] = []
+    duplicate_records: list[dict[str, str]] = []
+
+    for result in sorted(results, key=lambda item: item.channel.index):
+        if not result.ok:
+            continue
+        key = potential_duplicate_key(result.channel)
+        if key in seen:
+            kept = seen[key]
+            duplicate_records.append(
+                {
+                    "key_type": key[0],
+                    "key": key[1],
+                    "kept": kept.channel.name,
+                    "skipped": result.channel.name,
+                    "skipped_url": result.channel.url,
+                }
+            )
+            continue
+        seen[key] = result
+        unique.append(result)
+
+    return unique, len(duplicate_records), duplicate_records
+
+
+def potential_duplicate_key(channel: Channel) -> tuple[str, str]:
+    if channel.tvg_id:
+        return ("tvg_id", channel.tvg_id.casefold())
+    normalized_name = normalize_channel_name(channel.name)
+    if normalized_name:
+        return ("name", normalized_name)
+    return ("url", channel.url.strip().casefold())
+
+
+def normalize_channel_name(name: str) -> str:
+    normalized = re.sub(r"\[[^\]]*\]", " ", name)
+    normalized = re.sub(r"\([^)]*\)", " ", normalized)
+    normalized = re.sub(r"\b(4k|uhd|fhd|hd|sd)\b", " ", normalized, flags=re.IGNORECASE)
+    normalized = normalized.encode("ascii", errors="ignore").decode("ascii")
+    normalized = re.sub(r"[^a-z0-9]+", " ", normalized.casefold())
+    return " ".join(normalized.split())
+
+
 def refresh(args: argparse.Namespace) -> tuple[int, int, int]:
     sources = args.source or list(DEFAULT_SOURCES)
     loaded_streams, skipped, source_summaries = load_sources(sources, args.timeout)
@@ -576,22 +646,40 @@ def refresh(args: argparse.Namespace) -> tuple[int, int, int]:
                 print(f"Checked {completed}/{len(futures)}; working {working_so_far}.", flush=True)
 
     results.sort(key=lambda result: result.channel.index)
+    published_results, potential_duplicate_count, potential_duplicate_records = (
+        dedupe_working_results(results)
+    )
     checked = len(results)
-    working = sum(1 for result in results if result.ok)
+    working = len(published_results)
 
-    write_playlist(Path(args.output), "#EXTM3U", results)
+    write_playlist(Path(args.output), "#EXTM3U", published_results)
     write_report(
         Path(args.report),
         sources,
         workers,
         results,
+        published_results,
         skipped,
         duplicate_count,
+        potential_duplicate_count,
+        potential_duplicate_records,
         source_summaries,
     )
-    update_readme(Path(args.readme), sources, workers, checked, working, duplicate_count)
+    update_readme(
+        Path(args.readme),
+        sources,
+        workers,
+        checked,
+        working,
+        duplicate_count,
+        potential_duplicate_count,
+    )
 
-    print(f"Wrote {working} working channels to {args.output}.", flush=True)
+    print(
+        f"Wrote {working} working channels to {args.output}; "
+        f"skipped {potential_duplicate_count} potential duplicate channels.",
+        flush=True,
+    )
     return checked, working, workers
 
 
