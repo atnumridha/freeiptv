@@ -1,0 +1,37 @@
+name: Refresh playlist
+
+on:
+  schedule:
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Refresh playlist
+        run: python3 scripts/refresh_playlist.py --workers 24 --timeout 10
+
+      - name: Commit and push changes
+        run: |
+          git add README.md in.m3u reports/in-report.json
+          if git diff --cached --quiet; then
+            echo "No playlist changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Refresh India IPTV playlist"
+          git push
