@@ -1,8 +1,8 @@
 {
   "playlist": "south_asia_cricket.m3u",
   "checked_at": "2026-05-25T05:40:45.933330+00:00",
-  "checked": 490,
-  "captured": 484,
+  "checked": 488,
+  "captured": 482,
   "failed": 6,
   "results": [
     {
@@ -3006,18 +3006,6 @@
       "error": ""
     },
     {
-      "index": 250,
-      "name": "Arabica TV",
-      "url": "http://istream.binarywaves.com:8081/hls/arabica/playlist.m3u8",
-      "ok": true,
-      "screenshot": "screenshots/south-asia-cricket/0251-arabica-tv.jpg",
-      "elapsed_ms": 4080,
-      "capture_seconds": 2.0,
-      "attempts": 1,
-      "capture_mode": "video",
-      "error": ""
-    },
-    {
       "index": 251,
       "name": "Bangla Vision TV",
       "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1715/output/1715-audio_113452_eng=113200-video=1692000.m3u8",
@@ -3372,18 +3360,6 @@
       "ok": true,
       "screenshot": "screenshots/south-asia-cricket/0281-redbull-tv.jpg",
       "elapsed_ms": 1954,
-      "capture_seconds": 2.0,
-      "attempts": 1,
-      "capture_mode": "video",
-      "error": ""
-    },
-    {
-      "index": 281,
-      "name": "Saudia Arabia",
-      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-saudi-tv/2ad66056b51fd8c1b624854623112e43/index.m3u8",
-      "ok": true,
-      "screenshot": "screenshots/south-asia-cricket/0282-saudia-arabia.jpg",
-      "elapsed_ms": 23178,
       "capture_seconds": 2.0,
       "attempts": 1,
       "capture_mode": "video",

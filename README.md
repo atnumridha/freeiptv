@@ -18,7 +18,8 @@ https://raw.githubusercontent.com/atnumridha/freeiptv/main/in.m3u
 This generated playlist is separate from `in.m3u`. It is built by scraping
 public playlist indexes and web-searched public M3U sources, then keeping only
 India, Pakistan, Bangladesh, and cricket-broadcast candidates that pass both HLS
-probing and screenshot validation.
+probing and screenshot validation. Arabic and Arab-region channels are excluded
+from this generated playlist.
 Recognizable Indian TV brands are promoted to the top of this playlist before
 the remaining channels continue in the normal group order. The first priority
 brands are Aaj Tak, Zee, Sony, Colors, Star, TV9, Republic, and BBC. The script

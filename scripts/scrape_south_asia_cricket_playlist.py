@@ -88,6 +88,27 @@ CRICKET_KEYWORDS = (
     "supersport cricket",
     "dd sports",
 )
+ARABIC_CHANNEL_NAME_EXCLUSIONS = {
+    "arabica tv",
+    "saudia arabia",
+}
+ARABIC_CHANNEL_MARKERS = (
+    "arabic",
+    "arabia",
+    "saudi",
+    "uae",
+    "dubai",
+    "qatar",
+    "oman",
+    "kuwait",
+    "bahrain",
+    "egypt",
+    "iraq",
+    "jordan",
+    "lebanon",
+    "syria",
+    "middle east",
+)
 TOP_CHANNEL_BRAND_PRIORITY = (
     ("aaj tak",),
     ("zee",),
@@ -439,6 +460,8 @@ def select_channels(channels: list[Channel], reason: str) -> list[Channel]:
     for channel in channels:
         if not is_hls_url(channel.url):
             continue
+        if is_arabic_channel(channel):
+            continue
         if reason == "cricket-sports" and not is_cricket_candidate(channel):
             continue
         if reason != "cricket-sports" and not is_allowed_channel(channel):
@@ -449,6 +472,23 @@ def select_channels(channels: list[Channel], reason: str) -> list[Channel]:
 
 def is_allowed_channel(channel: Channel) -> bool:
     return is_south_asia_candidate(channel) or is_cricket_candidate(channel)
+
+
+def is_arabic_channel(channel: Channel) -> bool:
+    normalized_name = normalize_text(channel.name)
+    if normalized_name in ARABIC_CHANNEL_NAME_EXCLUSIONS:
+        return True
+
+    text = " ".join(
+        (
+            channel.name,
+            channel.tvg_id,
+            " ".join(channel.groups),
+            " ".join(channel.tags),
+        )
+    )
+    normalized = normalize_text(text)
+    return any(has_phrase(normalized, marker) for marker in ARABIC_CHANNEL_MARKERS)
 
 
 def is_south_asia_candidate(channel: Channel) -> bool:
