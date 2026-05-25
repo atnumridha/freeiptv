@@ -20,12 +20,29 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
       - name: Refresh playlist
         run: python3 scripts/refresh_playlist.py --workers 24 --timeout 10
 
+      - name: Capture playback screenshots
+        run: >
+          python3 scripts/capture_channel_screenshots.py
+          --playlist in.m3u
+          --readme README.md
+          --output-dir screenshots/latest
+          --report reports/screenshot-report.json
+          --workers 8
+          --timeout 90
+          --capture-seconds 2
+          --retry-capture-seconds 20
+
       - name: Commit and push changes
         run: |
-          git add README.md in.m3u reports/in-report.json
+          git add README.md in.m3u reports/in-report.json reports/screenshot-report.json screenshots/latest
           if git diff --cached --quiet; then
             echo "No playlist changes to commit."
             exit 0

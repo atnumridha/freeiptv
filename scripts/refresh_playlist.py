@@ -561,9 +561,12 @@ manually with:
 
 ```sh
 python3 scripts/refresh_playlist.py --push
+python3 scripts/capture_channel_screenshots.py --playlist in.m3u --readme README.md
 ```
 
-The probe report is stored at `reports/in-report.json`.
+The probe report is stored at `reports/in-report.json`. Playback screenshots
+are stored under `screenshots/latest`, with capture details at
+`reports/screenshot-report.json`.
 """
     path.write_text(content, encoding="utf-8")
 
