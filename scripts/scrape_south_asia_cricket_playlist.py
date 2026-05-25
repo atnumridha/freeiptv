@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import re
 import subprocess
@@ -19,9 +20,9 @@ from refresh_playlist import dedupe_streams
 from refresh_playlist import dedupe_working_results
 from refresh_playlist import is_hls_url
 from refresh_playlist import load_text
+from refresh_playlist import playlist_sort_key
 from refresh_playlist import probe_channel
 from refresh_playlist import resolve_worker_count
-from refresh_playlist import write_playlist
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -31,6 +32,10 @@ DEFAULT_REPORT = "reports/south-asia-cricket-report.json"
 DEFAULT_SCREENSHOT_REPORT = "reports/south-asia-cricket-screenshot-report.json"
 DEFAULT_SCREENSHOT_DIR = "screenshots/south-asia-cricket"
 DEFAULT_CHANNEL_LIST = "reports/south-asia-cricket-channels.md"
+DEFAULT_KNOWN_INDIAN_CHANNEL_SOURCE = (
+    "https://telelibrary.fandom.com/api.php?action=query&list=categorymembers"
+    "&cmtitle=Category:TV_Channels_in_India&cmlimit=500&format=json"
+)
 SOUTH_ASIA_COUNTRIES = ("in", "pk", "bd")
 WEB_SEARCHED_SOURCE_RECORDS = (
     {
@@ -82,6 +87,93 @@ CRICKET_KEYWORDS = (
     "fox cricket",
     "supersport cricket",
     "dd sports",
+)
+KNOWN_INDIAN_CHANNEL_PRIORITY = (
+    ("aaj tak",),
+    ("abp news",),
+    ("abp ananda",),
+    ("abp asmita",),
+    ("abp ganga",),
+    ("india today",),
+    ("india tv",),
+    ("cnn news 18", "cnn news18"),
+    ("news18 india", "news 18 india"),
+    ("ndtv india",),
+    ("ndtv profit",),
+    ("ndtv good times",),
+    ("republic tv",),
+    ("republic bharat",),
+    ("republic bangla",),
+    ("republic kannada",),
+    ("zee news",),
+    ("zee bharat",),
+    ("zee business",),
+    ("zee 24 taas",),
+    ("zee 24 ghanta",),
+    ("zee tamil news",),
+    ("zee telugu news",),
+    ("zee kannada news",),
+    ("cnbc tv18",),
+    ("cnbc awaaz",),
+    ("et now",),
+    ("mirror now",),
+    ("news nation",),
+    ("news 24",),
+    ("dd news",),
+    ("dd national",),
+    ("dd india",),
+    ("dd sports",),
+    ("dd kisan",),
+    ("tv9 bharatvarsh",),
+    ("tv9 bangla",),
+    ("tv9 marathi",),
+    ("tv9 telugu",),
+    ("tv9 gujarati",),
+    ("asianet news",),
+    ("asianet movies",),
+    ("asianet plus",),
+    ("asianet",),
+    ("manorama news",),
+    ("mazhavil manorama",),
+    ("puthiya thalaimurai",),
+    ("thanthi tv",),
+    ("tv5 news",),
+    ("tv5 kannada",),
+    ("v6 news",),
+    ("etv news",),
+    ("etv telugu",),
+    ("etv cinema",),
+    ("etv comedy",),
+    ("etv life",),
+    ("dangal tv",),
+    ("dangal 2",),
+    ("sab tv",),
+    ("sony sports ten",),
+    ("sony pix",),
+    ("sony wah",),
+    ("sony marathi",),
+    ("sony yay",),
+    ("star maa",),
+    ("star pravah",),
+    ("star suvarna",),
+    ("b4u movies",),
+    ("b4u kadak",),
+    ("b4u bhojpuri",),
+    ("goldmines",),
+    ("shemaroo", "sheemaroo"),
+    ("epic tv",),
+    ("ptc punjabi",),
+    ("ptc punjabi gold",),
+    ("9xm",),
+    ("zoom",),
+    ("yrf music",),
+    ("travelxp",),
+    ("sansad tv",),
+    ("aastha",),
+    ("sanskar",),
+    ("satsang",),
+    ("svbc",),
+    ("animax",),
 )
 
 
@@ -137,6 +229,14 @@ def parse_args() -> argparse.Namespace:
         "--channel-list",
         default=DEFAULT_CHANNEL_LIST,
         help="Markdown file containing the final working channel list.",
+    )
+    parser.add_argument(
+        "--known-indian-channel-source",
+        default=DEFAULT_KNOWN_INDIAN_CHANNEL_SOURCE,
+        help=(
+            "Fandom category page/API URL or local JSON/HTML file used to promote "
+            "known Indian TV channels to the top. Use an empty value to skip it."
+        ),
     )
     parser.add_argument(
         "--workers",
@@ -391,6 +491,132 @@ def append_channels(target: list[Channel], channels: list[Channel]) -> None:
         target.append(replace(channel, index=len(target)))
 
 
+def load_known_channel_aliases(source: str, timeout: float) -> tuple[tuple[str, ...], ...]:
+    loaded_aliases: list[tuple[str, ...]] = []
+    if source.strip():
+        try:
+            loaded_aliases = extract_known_channel_aliases(load_text(resolve_known_source(source), timeout))
+        except Exception as error:
+            print(f"Could not load known Indian channel source {source}: {error}", file=sys.stderr)
+
+    aliases: list[tuple[str, ...]] = []
+    seen: set[str] = set()
+    for alias_group in loaded_aliases + list(KNOWN_INDIAN_CHANNEL_PRIORITY):
+        normalized_key = "|".join(normalize_text(alias) for alias in alias_group)
+        if normalized_key in seen:
+            continue
+        seen.add(normalized_key)
+        aliases.append(alias_group)
+    return tuple(aliases)
+
+
+def resolve_known_source(source: str) -> str:
+    normalized = source.strip()
+    if "telelibrary.fandom.com/wiki/category" not in normalized.casefold():
+        return normalized
+    return DEFAULT_KNOWN_INDIAN_CHANNEL_SOURCE
+
+
+def extract_known_channel_aliases(text: str) -> list[tuple[str, ...]]:
+    try:
+        payload = json.loads(text)
+    except json.JSONDecodeError:
+        return extract_known_channel_aliases_from_html(text)
+
+    members = payload.get("query", {}).get("categorymembers", [])
+    aliases: list[tuple[str, ...]] = []
+    for member in members:
+        if not isinstance(member, dict):
+            continue
+        title = str(member.get("title", "")).strip()
+        if title:
+            aliases.append(channel_title_aliases(title))
+    return aliases
+
+
+def extract_known_channel_aliases_from_html(text: str) -> list[tuple[str, ...]]:
+    aliases: list[tuple[str, ...]] = []
+    for title in re.findall(r'class="category-page__member-link"[^>]*>(.*?)</a>', text):
+        cleaned = re.sub(r"<[^>]+>", "", html.unescape(title)).strip()
+        if cleaned:
+            aliases.append(channel_title_aliases(cleaned))
+    return aliases
+
+
+def channel_title_aliases(title: str) -> tuple[str, ...]:
+    without_parentheses = re.sub(r"\s*\([^)]*\)", "", title).strip()
+    aliases = [title]
+    if without_parentheses and without_parentheses != title:
+        aliases.append(without_parentheses)
+    return tuple(aliases)
+
+
+def write_priority_playlist(
+    path: Path,
+    header: str,
+    results: list[ProbeResult],
+    known_channel_aliases: tuple[tuple[str, ...], ...],
+) -> None:
+    sorted_results = sort_priority_results(results, known_channel_aliases)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="\n") as output:
+        output.write(header.rstrip() + "\n")
+        for result in sorted_results:
+            for tag in result.channel.tags:
+                output.write(tag.rstrip() + "\n")
+            output.write(result.channel.url.rstrip() + "\n")
+
+
+def sort_priority_results(
+    results: list[ProbeResult],
+    known_channel_aliases: tuple[tuple[str, ...], ...],
+) -> list[ProbeResult]:
+    return sorted(
+        (result for result in results if result.ok),
+        key=lambda result: priority_sort_key(result, known_channel_aliases),
+    )
+
+
+def priority_sort_key(
+    result: ProbeResult,
+    known_channel_aliases: tuple[tuple[str, ...], ...],
+) -> tuple[int, int, tuple[int, str, str, int]]:
+    priority = known_indian_channel_priority(result.channel, known_channel_aliases)
+    if priority >= 0:
+        return (0, priority, playlist_sort_key(result))
+    return (1, 0, playlist_sort_key(result))
+
+
+def known_indian_channel_priority(
+    channel: Channel,
+    known_channel_aliases: tuple[tuple[str, ...], ...],
+) -> int:
+    normalized = normalize_text(channel.name)
+    for index, aliases in enumerate(known_channel_aliases):
+        if any(has_channel_prefix(normalized, alias) for alias in aliases):
+            return index
+    return -1
+
+
+def has_channel_prefix(normalized: str, alias: str) -> bool:
+    normalized_alias = normalize_text(alias)
+    return normalized == normalized_alias or normalized.startswith(f"{normalized_alias} ")
+
+
+def rewrite_playlist_with_priority(
+    path: Path,
+    known_channel_aliases: tuple[tuple[str, ...], ...],
+) -> None:
+    from refresh_playlist import parse_m3u
+
+    header, channels = parse_m3u(path.read_text(encoding="utf-8"), str(path))
+    results = [
+        ProbeResult(channel=channel, ok=True, elapsed_ms=0, checked_url=channel.url)
+        for channel in channels
+    ]
+    write_priority_playlist(path, header, results, known_channel_aliases)
+
+
 def probe_candidates(
     streams: list[Channel],
     workers: int,
@@ -552,6 +778,7 @@ def main() -> int:
     for source_list in args.extra_source_list:
         extra_sources.extend(load_source_list(source_list))
 
+    known_channel_aliases = load_known_channel_aliases(args.known_indian_channel_source, args.timeout)
     source_records = scrape_playlist_sources(args.playlist_index, countries, args.timeout)
     if not args.no_web_searched_sources:
         source_records.extend(web_searched_sources())
@@ -573,7 +800,7 @@ def main() -> int:
     ) = dedupe_working_results(results)
 
     output = Path(args.output)
-    write_playlist(output, "#EXTM3U", published_results)
+    write_priority_playlist(output, "#EXTM3U", published_results, known_channel_aliases)
     write_probe_report(
         Path(args.report),
         args.playlist_index,
@@ -590,6 +817,7 @@ def main() -> int:
     capture_status = run_screenshot_filter(args, str(output))
     if capture_status != 0:
         return capture_status
+    rewrite_playlist_with_priority(output, known_channel_aliases)
 
     channel_names = write_channel_list(
         Path(args.channel_list),

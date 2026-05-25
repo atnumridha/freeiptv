@@ -19,6 +19,10 @@ This generated playlist is separate from `in.m3u`. It is built by scraping
 public playlist indexes and web-searched public M3U sources, then keeping only
 India, Pakistan, Bangladesh, and cricket-broadcast candidates that pass both HLS
 probing and screenshot validation.
+Recognizable Indian TV brands are promoted to the top of this playlist before
+the remaining channels continue in the normal group order. The script also
+loads the Telelibrary `TV_Channels_in_India` Fandom category through its public
+MediaWiki API as an additional priority source.
 
 ```text
 https://raw.githubusercontent.com/atnumridha/freeiptv/main/south_asia_cricket.m3u
