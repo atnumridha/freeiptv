@@ -20,11 +20,12 @@ Sources:
 Last generated result:
 
 - Checked HLS streams: 668
-- Working channels: 359
+- Working channels: 352
 - Duplicate stream URLs skipped: 64
-- Potential duplicate channels skipped: 34
+- Potential duplicate channels skipped: 33
 - Manual exclusions skipped: 0
-- Incompatible fMP4 HLS streams skipped: 18
+- Incompatible fMP4 HLS streams skipped: 6
+- IP-literal HLS streams skipped: 135
 - Probe mode: HLS segment probe
 - Worker threads: 24
 

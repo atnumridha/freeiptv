@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import http.client
+import ipaddress
 import json
 import os
 import re
@@ -302,6 +303,22 @@ def first_stream_uri(manifest: str, base_url: str) -> str:
     return ""
 
 
+def is_ip_literal_url(url: str) -> bool:
+    host = urlparse(url).hostname
+    if not host:
+        return False
+    try:
+        ipaddress.ip_address(host)
+        return True
+    except ValueError:
+        return False
+
+
+def reject_ip_literal_url(url: str, description: str) -> None:
+    if is_ip_literal_url(url):
+        raise ValueError(f"IP-literal HLS {description} rejected for IPTV compatibility")
+
+
 def first_media_uri(manifest: str, base_url: str) -> str:
     for line in manifest.splitlines():
         stripped = line.strip()
@@ -334,23 +351,29 @@ def probe_channel(channel: Channel, timeout: float) -> ProbeResult:
     checked_url = channel.url
     try:
         headers = request_headers(channel)
+        reject_ip_literal_url(channel.url, "origin")
         manifest, manifest_url = fetch_text(channel.url, headers, timeout)
+        reject_ip_literal_url(manifest_url, "origin")
         if "#EXTM3U" not in manifest[:4096].upper():
             raise ValueError("response is not an M3U/HLS playlist")
 
         for _ in range(3):
             stream_uri = first_stream_uri(manifest, manifest_url)
             if stream_uri:
+                reject_ip_literal_url(stream_uri, "variant")
                 checked_url = stream_uri
                 manifest, manifest_url = fetch_text(stream_uri, headers, timeout)
+                reject_ip_literal_url(manifest_url, "variant")
                 continue
 
             media_uri = first_media_uri(manifest, manifest_url)
             if not media_uri:
                 raise ValueError("playlist has no playable media URI")
             if is_hls_url(media_uri):
+                reject_ip_literal_url(media_uri, "media playlist")
                 checked_url = media_uri
                 manifest, manifest_url = fetch_text(media_uri, headers, timeout)
+                reject_ip_literal_url(manifest_url, "media playlist")
                 continue
 
             segment_uris = media_segment_uris(
@@ -362,6 +385,8 @@ def probe_channel(channel: Channel, timeout: float) -> ProbeResult:
                 raise ValueError("fragmented MP4 HLS rejected for IPTV compatibility")
             if len(segment_uris) < MIN_MEDIA_SEGMENTS_TO_VERIFY:
                 raise ValueError("playlist has too few media segments")
+            for segment_uri in segment_uris:
+                reject_ip_literal_url(segment_uri, "segment")
 
             checked_url = segment_uris[-1]
             for segment_uri in segment_uris:
@@ -447,6 +472,7 @@ def write_report(
     manual_excluded_count: int,
     manual_excluded_records: list[dict[str, str]],
     incompatible_hls_count: int,
+    ip_literal_hls_count: int,
     source_summaries: list[dict[str, int | str]],
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -464,6 +490,7 @@ def write_report(
         "skipped_potential_duplicate_channels": potential_duplicate_count,
         "skipped_manual_exclusions": manual_excluded_count,
         "skipped_incompatible_hls": incompatible_hls_count,
+        "skipped_ip_literal_hls": ip_literal_hls_count,
         "potential_duplicate_records": potential_duplicate_records,
         "manual_excluded_records": manual_excluded_records,
         "source_summaries": source_summaries,
@@ -498,6 +525,7 @@ def update_readme(
     potential_duplicate_count: int,
     manual_excluded_count: int,
     incompatible_hls_count: int,
+    ip_literal_hls_count: int,
 ) -> None:
     source_list = "\n".join(f"- `{source}`" for source in sources)
     content = f"""# freeiptv
@@ -524,6 +552,7 @@ Last generated result:
 - Potential duplicate channels skipped: {potential_duplicate_count}
 - Manual exclusions skipped: {manual_excluded_count}
 - Incompatible fMP4 HLS streams skipped: {incompatible_hls_count}
+- IP-literal HLS streams skipped: {ip_literal_hls_count}
 - Probe mode: HLS segment probe
 - Worker threads: {workers}
 
@@ -665,6 +694,14 @@ def incompatible_hls_result_count(results: list[ProbeResult]) -> int:
     )
 
 
+def ip_literal_hls_result_count(results: list[ProbeResult]) -> int:
+    return sum(
+        1
+        for result in results
+        if "IP-literal HLS" in result.error
+    )
+
+
 def potential_duplicate_key(channel: Channel) -> tuple[str, str]:
     if channel.tvg_id:
         return ("tvg_id", channel.tvg_id.casefold())
@@ -736,6 +773,7 @@ def refresh(args: argparse.Namespace) -> tuple[int, int, int]:
     checked = len(results)
     working = len(published_results)
     incompatible_hls_count = incompatible_hls_result_count(results)
+    ip_literal_hls_count = ip_literal_hls_result_count(results)
 
     write_playlist(Path(args.output), "#EXTM3U", published_results)
     write_report(
@@ -751,6 +789,7 @@ def refresh(args: argparse.Namespace) -> tuple[int, int, int]:
         manual_excluded_count,
         manual_excluded_records,
         incompatible_hls_count,
+        ip_literal_hls_count,
         source_summaries,
     )
     update_readme(
@@ -763,6 +802,7 @@ def refresh(args: argparse.Namespace) -> tuple[int, int, int]:
         potential_duplicate_count,
         manual_excluded_count,
         incompatible_hls_count,
+        ip_literal_hls_count,
     )
 
     print(
