@@ -543,6 +543,34 @@ Use this playlist URL in IPTV players:
 {RAW_PLAYLIST_URL}
 ```
 
+## South Asia and Cricket Playlist
+
+This generated playlist is separate from `in.m3u`. It is built by scraping
+public playlist indexes and web-searched public M3U sources, then keeping only
+India, Pakistan, Bangladesh, and cricket-broadcast candidates that pass both HLS
+probing and screenshot validation.
+
+```text
+https://raw.githubusercontent.com/atnumridha/freeiptv/main/south_asia_cricket.m3u
+```
+
+Run it with:
+
+```sh
+python3 scripts/scrape_south_asia_cricket_playlist.py
+```
+
+Generated files:
+
+- `south_asia_cricket.m3u`: final screenshot-verified playlist.
+- `reports/south-asia-cricket-report.json`: source, probe, duplicate, and
+  filtering report.
+- `reports/south-asia-cricket-screenshot-report.json`: screenshot validation
+  report.
+- `reports/south-asia-cricket-channels.md`: final working channel list.
+- `screenshots/south-asia-cricket/*.jpg`: screenshot evidence for each retained
+  channel.
+
 ## Current Sources
 
 {source_list}
