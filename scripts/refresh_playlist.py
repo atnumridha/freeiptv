@@ -32,6 +32,13 @@ DEFAULT_USER_AGENT = (
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36"
 )
 MAX_AUTO_WORKERS = 32
+GROUP_PRIORITY = {
+    "news": 0,
+    "movie": 1,
+    "movies": 1,
+    "entertainment": 2,
+}
+DEFAULT_GROUP_RANK = 3
 ssl_warning_printed = False
 
 
@@ -43,6 +50,7 @@ class Channel:
     tags: tuple[str, ...]
     url: str
     name: str
+    groups: tuple[str, ...]
     headers: dict[str, str]
 
 
@@ -171,6 +179,7 @@ def parse_m3u(text: str, source: str) -> tuple[str, list[Channel]]:
                 tags=tuple(pending_tags),
                 url=line,
                 name=extract_name(pending_tags),
+                groups=extract_groups(pending_tags),
                 headers=extract_headers(pending_tags),
             )
         )
@@ -185,6 +194,24 @@ def extract_name(tags: Iterable[str]) -> str:
             _, _, name = tag.rpartition(",")
             return name.strip() or "Unnamed channel"
     return "Unnamed channel"
+
+
+def extract_groups(tags: Iterable[str]) -> tuple[str, ...]:
+    for tag in tags:
+        if not tag.upper().startswith("#EXTINF"):
+            continue
+        match = re.search(r'group-title="([^"]*)"', tag, flags=re.IGNORECASE)
+        if not match:
+            match = re.search(r"group-title=([^,\s]+)", tag, flags=re.IGNORECASE)
+        if not match:
+            continue
+        groups = [
+            group.strip()
+            for group in match.group(1).split(";")
+            if group.strip()
+        ]
+        return tuple(groups)
+    return ()
 
 
 def extract_headers(tags: Iterable[str]) -> dict[str, str]:
@@ -321,15 +348,39 @@ def resolve_worker_count(requested: int, stream_count: int) -> int:
 
 
 def write_playlist(path: Path, header: str, results: list[ProbeResult]) -> None:
+    sorted_results = sorted(
+        (result for result in results if result.ok),
+        key=playlist_sort_key,
+    )
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="\n") as output:
         output.write(header.rstrip() + "\n")
-        for result in results:
-            if not result.ok:
-                continue
+        for result in sorted_results:
             for tag in result.channel.tags:
                 output.write(tag.rstrip() + "\n")
             output.write(result.channel.url.rstrip() + "\n")
+
+
+def playlist_sort_key(result: ProbeResult) -> tuple[int, str, str, int]:
+    channel = result.channel
+    return (
+        group_rank(channel.groups),
+        primary_group_name(channel.groups),
+        channel.name.casefold(),
+        channel.index,
+    )
+
+
+def group_rank(groups: tuple[str, ...]) -> int:
+    if not groups:
+        return DEFAULT_GROUP_RANK
+    return GROUP_PRIORITY.get(groups[0].casefold(), DEFAULT_GROUP_RANK)
+
+
+def primary_group_name(groups: tuple[str, ...]) -> str:
+    if not groups:
+        return "~"
+    return groups[0].casefold()
 
 
 def write_report(
