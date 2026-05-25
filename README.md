@@ -1,8 +1,8 @@
 # freeiptv
 
-Filtered public IPTV playlists for Bengali, Hindi, and Marathi channels.
+Filtered working channels from the PiratesTv combined playlist.
 
-## Bengali, Hindi, and Marathi Playlist
+## PiratesTv Working Playlist
 
 Playlist:
 
@@ -12,16 +12,14 @@ https://raw.githubusercontent.com/atnumridha/freeiptv/main/in.m3u
 
 Sources:
 
-- `https://iptv-org.github.io/iptv/languages/ben.m3u`
-- `https://iptv-org.github.io/iptv/languages/hin.m3u`
-- `https://iptv-org.github.io/iptv/languages/mar.m3u`
+- `https://raw.githubusercontent.com/FunctionError/PiratesTv/main/combined_playlist.m3u`
 
 Last generated result:
 
-- Checked HLS streams: 422
-- Working channels: 200
-- Duplicate stream URLs skipped: 14
-- Potential duplicate channels skipped: 0
+- Checked HLS streams: 257
+- Working channels: 192
+- Duplicate stream URLs skipped: 39
+- Potential duplicate channels skipped: 35
 - Probe mode: HLS segment probe
 - Worker threads: 24
 
