@@ -10,7 +10,7 @@ import re
 import subprocess
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from dataclasses import replace
+from dataclasses import dataclass, replace
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -36,7 +36,23 @@ DEFAULT_KNOWN_INDIAN_CHANNEL_SOURCE = (
     "https://telelibrary.fandom.com/api.php?action=query&list=categorymembers"
     "&cmtitle=Category:TV_Channels_in_India&cmlimit=500&format=json"
 )
+LANGUAGE_PLAYLIST_URL_TEMPLATE = "https://iptv-org.github.io/iptv/languages/{code}.m3u"
+DEFAULT_CHANNEL_METADATA_SOURCE = "https://iptv-org.github.io/api/channels.json"
 SOUTH_ASIA_COUNTRIES = ("in", "pk", "bd")
+ALLOWED_LANGUAGE_CODES = ("hin", "ben", "mar", "eng")
+DISALLOWED_LANGUAGE_CODES = (
+    "tel",
+    "tam",
+    "kan",
+    "mal",
+    "guj",
+    "pan",
+    "urd",
+    "ori",
+    "asm",
+    "bho",
+    "tgl",
+)
 WEB_SEARCHED_SOURCE_RECORDS = (
     {
         "url": "https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8",
@@ -108,6 +124,166 @@ ARABIC_CHANNEL_MARKERS = (
     "lebanon",
     "syria",
     "middle east",
+)
+ALLOWED_LANGUAGE_MARKERS = (
+    "hindi",
+    "bangla",
+    "bengali",
+    "marathi",
+    "english",
+)
+DISALLOWED_LANGUAGE_MARKERS = (
+    "telugu",
+    "tamil",
+    "kannada",
+    "malayalam",
+    "gujarati",
+    "punjabi",
+    "urdu",
+    "bhojpuri",
+    "odia",
+    "assam",
+    "assamese",
+    "tagalog",
+)
+KNOWN_ALLOWED_LANGUAGE_CHANNEL_PREFIXES = (
+    "aaj tak",
+    "abp news",
+    "abp ananda",
+    "abp ganga",
+    "akd calcutta news",
+    "amarujala",
+    "ananda barta",
+    "bansal news",
+    "bharat express",
+    "bharat samachar",
+    "cnn news 18",
+    "cnbc",
+    "colors",
+    "cricket gold",
+    "cvr english",
+    "dangal",
+    "dd india",
+    "dd kisan",
+    "dd national",
+    "dd news",
+    "dd sports",
+    "et now",
+    "good news today",
+    "goldmines",
+    "hindi khabar",
+    "india daily live",
+    "india today",
+    "india tv",
+    "janta tv",
+    "kolkata tv",
+    "mirror now",
+    "ndtv good times",
+    "ndtv india",
+    "ndtv madhya pradesh chhattisgarh",
+    "ndtv marathi",
+    "ndtv profit",
+    "news 1 india",
+    "news 24",
+    "news nation",
+    "news18 bangla",
+    "news18 bihar jharkhand",
+    "news18 delhi ncr jk",
+    "news18 india",
+    "news18 madhya pradesh",
+    "news18 marathi",
+    "news18 punjab haryana himachal",
+    "news18 rajasthan",
+    "news18 uttar pradesh",
+    "newstime bangla",
+    "republic bangla",
+    "republic bharat",
+    "republic tv",
+    "rt india",
+    "sadhna",
+    "sansad tv",
+    "sanskar",
+    "satsang",
+    "shemaroo",
+    "sheemaroo",
+    "sony pix",
+    "sony sports ten 1",
+    "sony sports ten 2",
+    "sony sports ten 3",
+    "sony wah",
+    "sony yay",
+    "star news",
+    "star pravah",
+    "svbc 4",
+    "swadesh news",
+    "the movie club",
+    "travelxp",
+    "tv brics english",
+    "tv9 bangla",
+    "tv9 bharatvarsh",
+    "tv9 marathi",
+    "weatherspy",
+    "yrf music",
+    "zee 24 ghanta",
+    "zee 24 taas",
+    "zee bharat",
+    "zee bihar jharkhand",
+    "zee business",
+    "zee cine classic",
+    "zee comedy nation",
+    "zee delhi ncr haryana",
+    "zee dil se",
+    "zee horror nights",
+    "zee madhya pradesh chhattisgarh",
+    "zee news",
+    "zee punjab haryana himachal",
+    "zee rajasthan",
+    "zee south flix",
+    "zee uttar pradesh uttarakhand",
+    "zoom",
+)
+KNOWN_DISALLOWED_LANGUAGE_CHANNEL_PREFIXES = (
+    "argus news",
+    "asianet",
+    "balle balle",
+    "cnbc bajar",
+    "dd manipur",
+    "dd meghalaya",
+    "dd mizoram",
+    "dheeran tv",
+    "etv andhra pradesh",
+    "etv cinema",
+    "etv comedy",
+    "etv josh",
+    "etv life",
+    "etv telangana",
+    "etv telugu",
+    "fateh tv",
+    "joo music",
+    "joomusic",
+    "kairali",
+    "kaumudy tv",
+    "manorama",
+    "mazhavil manorama",
+    "namdhari",
+    "ptc punjabi",
+    "salaam tv",
+    "sony sports ten 4",
+    "star maa",
+    "star suvarna",
+    "svbc 2",
+    "svbc 3",
+    "svbc sri",
+    "tehzeeb tv",
+    "tv5",
+    "v6 news",
+    "zainabia channel",
+)
+KNOWN_DISALLOWED_LANGUAGE_CHANNEL_NAMES = (
+    "225 tag tv 1",
+    "angel tv 720p",
+    "god stands tv",
+    "god stands tv tagalog",
 )
 TOP_CHANNEL_BRAND_PRIORITY = (
     ("aaj tak",),
@@ -208,6 +384,13 @@ KNOWN_INDIAN_CHANNEL_PRIORITY = (
 )
 
 
+@dataclass(frozen=True)
+class SelectionResult:
+    channels: list[Channel]
+    skipped_arabic_channels: int
+    skipped_language_channels: int
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
@@ -268,6 +451,16 @@ def parse_args() -> argparse.Namespace:
             "Fandom category page/API URL or local JSON/HTML file used to promote "
             "known Indian TV channels to the top. Use an empty value to skip it."
         ),
+    )
+    parser.add_argument(
+        "--channel-metadata-source",
+        default=DEFAULT_CHANNEL_METADATA_SOURCE,
+        help="iptv-org channels JSON URL or local file used for language hints.",
+    )
+    parser.add_argument(
+        "--no-language-filter",
+        action="store_true",
+        help="Disable Hindi/Bengali/Marathi/English-only filtering.",
     )
     parser.add_argument(
         "--workers",
@@ -386,6 +579,7 @@ def load_candidate_channels(
     source_records: list[dict[str, str]],
     extra_sources: list[str],
     timeout: float,
+    language_filter: dict[str, set[str] | dict[str, str]],
 ) -> tuple[list[Channel], list[dict[str, int | str]]]:
     channels: list[Channel] = []
     summaries: list[dict[str, int | str]] = []
@@ -406,15 +600,17 @@ def load_candidate_channels(
                 }
             )
             continue
-        selected = select_channels(parsed_channels, reason)
-        append_channels(channels, selected)
+        selection = select_channels(parsed_channels, reason, language_filter)
+        append_channels(channels, selection.channels)
         summaries.append(
             {
                 "source": source,
                 "reason": reason,
                 "note": record.get("note", ""),
                 "channels": len(parsed_channels),
-                "selected_hls_channels": len(selected),
+                "selected_hls_channels": len(selection.channels),
+                "skipped_arabic_channels": selection.skipped_arabic_channels,
+                "skipped_language_channels": selection.skipped_language_channels,
             }
         )
 
@@ -431,14 +627,16 @@ def load_candidate_channels(
                 }
             )
             continue
-        selected = select_channels(parsed_channels, "extra")
-        append_channels(channels, selected)
+        selection = select_channels(parsed_channels, "extra", language_filter)
+        append_channels(channels, selection.channels)
         summaries.append(
             {
                 "source": source,
                 "reason": "extra",
                 "channels": len(parsed_channels),
-                "selected_hls_channels": len(selected),
+                "selected_hls_channels": len(selection.channels),
+                "skipped_arabic_channels": selection.skipped_arabic_channels,
+                "skipped_language_channels": selection.skipped_language_channels,
             }
         )
 
@@ -455,19 +653,179 @@ def parse_source_channels(source: str, timeout: float) -> tuple[list[Channel], s
         return [], str(error)
 
 
-def select_channels(channels: list[Channel], reason: str) -> list[Channel]:
+def select_channels(
+    channels: list[Channel],
+    reason: str,
+    language_filter: dict[str, set[str] | dict[str, str]],
+) -> SelectionResult:
     selected: list[Channel] = []
+    skipped_arabic_channels = 0
+    skipped_language_channels = 0
     for channel in channels:
         if not is_hls_url(channel.url):
             continue
         if is_arabic_channel(channel):
+            skipped_arabic_channels += 1
+            continue
+        if language_filter and not is_allowed_language_channel(channel, language_filter):
+            skipped_language_channels += 1
             continue
         if reason == "cricket-sports" and not is_cricket_candidate(channel):
             continue
         if reason != "cricket-sports" and not is_allowed_channel(channel):
             continue
         selected.append(channel)
-    return selected
+    return SelectionResult(
+        channels=selected,
+        skipped_arabic_channels=skipped_arabic_channels,
+        skipped_language_channels=skipped_language_channels,
+    )
+
+
+def load_language_filter(
+    channel_metadata_source: str,
+    timeout: float,
+    enabled: bool,
+) -> dict[str, set[str] | dict[str, str]]:
+    if not enabled:
+        return {}
+
+    allowed_ids, allowed_urls = load_language_playlist_records(ALLOWED_LANGUAGE_CODES, timeout)
+    disallowed_ids, disallowed_urls = load_language_playlist_records(DISALLOWED_LANGUAGE_CODES, timeout)
+    metadata = load_channel_metadata(channel_metadata_source, timeout)
+    return {
+        "allowed_ids": allowed_ids,
+        "allowed_urls": allowed_urls,
+        "disallowed_ids": disallowed_ids,
+        "disallowed_urls": disallowed_urls,
+        "metadata": metadata,
+    }
+
+
+def load_language_playlist_records(codes: tuple[str, ...], timeout: float) -> tuple[set[str], set[str]]:
+    ids: set[str] = set()
+    urls: set[str] = set()
+    for code in codes:
+        source = LANGUAGE_PLAYLIST_URL_TEMPLATE.format(code=code)
+        channels, error = parse_source_channels(source, timeout)
+        if error:
+            print(f"Could not load language playlist {code}: {error}", file=sys.stderr)
+            continue
+        for channel in channels:
+            base_id = channel_id_base(channel)
+            if base_id:
+                ids.add(base_id)
+            urls.add(channel.url)
+    return ids, urls
+
+
+def load_channel_metadata(source: str, timeout: float) -> dict[str, str]:
+    if not source.strip():
+        return {}
+    try:
+        records = json.loads(load_text(source, timeout))
+    except Exception as error:
+        print(f"Could not load channel metadata source {source}: {error}", file=sys.stderr)
+        return {}
+
+    metadata: dict[str, str] = {}
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+        channel_id = str(record.get("id", "")).strip()
+        if not channel_id:
+            continue
+        metadata[channel_id.casefold()] = " ".join(
+            str(value)
+            for value in (
+                record.get("name", ""),
+                " ".join(record.get("alt_names", []) or []),
+                record.get("network", ""),
+                " ".join(record.get("owners", []) or []),
+                record.get("website", ""),
+            )
+            if value
+        )
+    return metadata
+
+
+def is_allowed_language_channel(
+    channel: Channel,
+    language_filter: dict[str, set[str] | dict[str, str]],
+) -> bool:
+    base_id = channel_id_base(channel)
+    metadata = language_filter.get("metadata", {})
+    metadata_text = metadata.get(base_id.casefold(), "") if isinstance(metadata, dict) else ""
+    combined = combined_language_text(channel, metadata_text)
+
+    if has_channel_name(channel, KNOWN_DISALLOWED_LANGUAGE_CHANNEL_NAMES):
+        return False
+    if has_any_channel_prefix(channel, KNOWN_DISALLOWED_LANGUAGE_CHANNEL_PREFIXES):
+        return False
+
+    if has_any_language_marker(combined, ALLOWED_LANGUAGE_MARKERS):
+        return True
+    if is_bangladeshi_channel(channel) or contains_bengali_script(channel.name):
+        return True
+    if has_any_channel_prefix(channel, KNOWN_ALLOWED_LANGUAGE_CHANNEL_PREFIXES):
+        return True
+
+    if has_any_language_marker(combined, DISALLOWED_LANGUAGE_MARKERS):
+        return False
+
+    allowed_ids = language_filter.get("allowed_ids", set())
+    allowed_urls = language_filter.get("allowed_urls", set())
+    if base_id in allowed_ids or channel.url in allowed_urls:
+        return True
+
+    disallowed_ids = language_filter.get("disallowed_ids", set())
+    disallowed_urls = language_filter.get("disallowed_urls", set())
+    if base_id in disallowed_ids or channel.url in disallowed_urls:
+        return False
+
+    return False
+
+
+def channel_id_base(channel: Channel) -> str:
+    return channel.tvg_id.casefold().split("@", 1)[0]
+
+
+def combined_language_text(channel: Channel, metadata_text: str) -> str:
+    return normalize_text(
+        " ".join(
+            (
+                channel.name,
+                channel.tvg_id,
+                " ".join(channel.groups),
+                metadata_text,
+            )
+        )
+    )
+
+
+def has_any_language_marker(normalized: str, markers: tuple[str, ...]) -> bool:
+    return any(has_phrase(normalized, marker) for marker in markers)
+
+
+def has_any_channel_prefix(channel: Channel, prefixes: tuple[str, ...]) -> bool:
+    normalized = normalize_text(channel.name)
+    return any(has_channel_prefix(normalized, prefix) for prefix in prefixes)
+
+
+def has_channel_name(channel: Channel, names: tuple[str, ...]) -> bool:
+    normalized = normalize_text(channel.name)
+    return any(normalized == normalize_text(name) for name in names)
+
+
+def is_bangladeshi_channel(channel: Channel) -> bool:
+    if channel_id_base(channel).endswith(".bd"):
+        return True
+    text = normalize_text(" ".join((channel.name, " ".join(channel.groups), " ".join(channel.tags))))
+    return has_phrase(text, "bangladeshi")
+
+
+def contains_bengali_script(value: str) -> bool:
+    return any("\u0980" <= character <= "\u09ff" for character in value)
 
 
 def is_allowed_channel(channel: Channel) -> bool:
@@ -731,6 +1089,12 @@ def write_probe_report(
         "working_before_duplicate_filter": sum(1 for result in results if result.ok),
         "working_after_probe": len(published_results),
         "skipped_duplicate_urls": duplicate_urls,
+        "skipped_arabic_channels": sum(
+            int(summary.get("skipped_arabic_channels", 0)) for summary in source_summaries
+        ),
+        "skipped_language_channels": sum(
+            int(summary.get("skipped_language_channels", 0)) for summary in source_summaries
+        ),
         "skipped_potential_duplicate_channels": potential_duplicates,
         "skipped_manual_exclusions": manual_exclusions,
         "source_summaries": source_summaries,
@@ -833,10 +1197,20 @@ def main() -> int:
         extra_sources.extend(load_source_list(source_list))
 
     known_channel_aliases = load_known_channel_aliases(args.known_indian_channel_source, args.timeout)
+    language_filter = load_language_filter(
+        args.channel_metadata_source,
+        args.timeout,
+        not args.no_language_filter,
+    )
     source_records = scrape_playlist_sources(args.playlist_index, countries, args.timeout)
     if not args.no_web_searched_sources:
         source_records.extend(web_searched_sources())
-    candidates, source_summaries = load_candidate_channels(source_records, extra_sources, args.timeout)
+    candidates, source_summaries = load_candidate_channels(
+        source_records,
+        extra_sources,
+        args.timeout,
+        language_filter,
+    )
     unique_candidates, duplicate_urls = dedupe_streams(candidates)
 
     results = probe_candidates(
