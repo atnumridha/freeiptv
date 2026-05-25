@@ -88,6 +88,16 @@ CRICKET_KEYWORDS = (
     "supersport cricket",
     "dd sports",
 )
+TOP_CHANNEL_BRAND_PRIORITY = (
+    ("aaj tak",),
+    ("zee",),
+    ("sony", "sonly"),
+    ("colors",),
+    ("star",),
+    ("tv9",),
+    ("republic",),
+    ("bbc",),
+)
 KNOWN_INDIAN_CHANNEL_PRIORITY = (
     ("aaj tak",),
     ("abp news",),
@@ -501,7 +511,11 @@ def load_known_channel_aliases(source: str, timeout: float) -> tuple[tuple[str, 
 
     aliases: list[tuple[str, ...]] = []
     seen: set[str] = set()
-    for alias_group in loaded_aliases + list(KNOWN_INDIAN_CHANNEL_PRIORITY):
+    for alias_group in (
+        list(TOP_CHANNEL_BRAND_PRIORITY)
+        + loaded_aliases
+        + list(KNOWN_INDIAN_CHANNEL_PRIORITY)
+    ):
         normalized_key = "|".join(normalize_text(alias) for alias in alias_group)
         if normalized_key in seen:
             continue
