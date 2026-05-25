@@ -20,7 +20,9 @@ public playlist indexes and web-searched public M3U sources, then keeping only
 India, Pakistan, Bangladesh, and cricket-broadcast candidates that pass both HLS
 probing and screenshot validation. Arabic and Arab-region channels are excluded,
 and the final list is restricted to Hindi, Bengali/Bangla, Marathi, and English
-channels.
+channels. Channels listed in the Free-TV India markdown list are used as a
+default skip list and are excluded by EPG id, stream URL, and normalized channel
+name.
 Recognizable Indian TV brands are promoted to the top of this playlist before
 the remaining channels continue in the normal group order. The first priority
 brands are Aaj Tak, Zee, Sony, Colors, Star, TV9, Republic, and BBC. The script

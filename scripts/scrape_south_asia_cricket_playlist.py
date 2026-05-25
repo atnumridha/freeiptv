@@ -36,6 +36,7 @@ DEFAULT_KNOWN_INDIAN_CHANNEL_SOURCE = (
     "https://telelibrary.fandom.com/api.php?action=query&list=categorymembers"
     "&cmtitle=Category:TV_Channels_in_India&cmlimit=500&format=json"
 )
+DEFAULT_SKIP_CHANNEL_SOURCE = "https://raw.githubusercontent.com/Free-TV/IPTV/master/lists/india.md"
 LANGUAGE_PLAYLIST_URL_TEMPLATE = "https://iptv-org.github.io/iptv/languages/{code}.m3u"
 DEFAULT_CHANNEL_METADATA_SOURCE = "https://iptv-org.github.io/api/channels.json"
 SOUTH_ASIA_COUNTRIES = ("in", "pk", "bd")
@@ -389,6 +390,14 @@ class SelectionResult:
     channels: list[Channel]
     skipped_arabic_channels: int
     skipped_language_channels: int
+    skipped_source_channels: int
+
+
+@dataclass(frozen=True)
+class SkipChannelFilter:
+    names: set[str]
+    tvg_ids: set[str]
+    urls: set[str]
 
 
 def parse_args() -> argparse.Namespace:
@@ -456,6 +465,20 @@ def parse_args() -> argparse.Namespace:
         "--channel-metadata-source",
         default=DEFAULT_CHANNEL_METADATA_SOURCE,
         help="iptv-org channels JSON URL or local file used for language hints.",
+    )
+    parser.add_argument(
+        "--skip-channel-source",
+        action="append",
+        default=[],
+        help=(
+            "Markdown/M3U URL or local file containing channels to exclude. "
+            "May be repeated."
+        ),
+    )
+    parser.add_argument(
+        "--no-default-skip-channel-source",
+        action="store_true",
+        help="Do not use the default Free-TV India markdown skip list.",
     )
     parser.add_argument(
         "--no-language-filter",
@@ -580,6 +603,7 @@ def load_candidate_channels(
     extra_sources: list[str],
     timeout: float,
     language_filter: dict[str, set[str] | dict[str, str]],
+    skip_filter: SkipChannelFilter,
 ) -> tuple[list[Channel], list[dict[str, int | str]]]:
     channels: list[Channel] = []
     summaries: list[dict[str, int | str]] = []
@@ -600,7 +624,7 @@ def load_candidate_channels(
                 }
             )
             continue
-        selection = select_channels(parsed_channels, reason, language_filter)
+        selection = select_channels(parsed_channels, reason, language_filter, skip_filter)
         append_channels(channels, selection.channels)
         summaries.append(
             {
@@ -611,6 +635,7 @@ def load_candidate_channels(
                 "selected_hls_channels": len(selection.channels),
                 "skipped_arabic_channels": selection.skipped_arabic_channels,
                 "skipped_language_channels": selection.skipped_language_channels,
+                "skipped_source_channels": selection.skipped_source_channels,
             }
         )
 
@@ -627,7 +652,7 @@ def load_candidate_channels(
                 }
             )
             continue
-        selection = select_channels(parsed_channels, "extra", language_filter)
+        selection = select_channels(parsed_channels, "extra", language_filter, skip_filter)
         append_channels(channels, selection.channels)
         summaries.append(
             {
@@ -637,6 +662,7 @@ def load_candidate_channels(
                 "selected_hls_channels": len(selection.channels),
                 "skipped_arabic_channels": selection.skipped_arabic_channels,
                 "skipped_language_channels": selection.skipped_language_channels,
+                "skipped_source_channels": selection.skipped_source_channels,
             }
         )
 
@@ -657,15 +683,20 @@ def select_channels(
     channels: list[Channel],
     reason: str,
     language_filter: dict[str, set[str] | dict[str, str]],
+    skip_filter: SkipChannelFilter,
 ) -> SelectionResult:
     selected: list[Channel] = []
     skipped_arabic_channels = 0
     skipped_language_channels = 0
+    skipped_source_channels = 0
     for channel in channels:
         if not is_hls_url(channel.url):
             continue
         if is_arabic_channel(channel):
             skipped_arabic_channels += 1
+            continue
+        if is_skipped_source_channel(channel, skip_filter):
+            skipped_source_channels += 1
             continue
         if language_filter and not is_allowed_language_channel(channel, language_filter):
             skipped_language_channels += 1
@@ -679,7 +710,153 @@ def select_channels(
         channels=selected,
         skipped_arabic_channels=skipped_arabic_channels,
         skipped_language_channels=skipped_language_channels,
+        skipped_source_channels=skipped_source_channels,
     )
+
+
+def load_skip_channel_filter(sources: list[str], timeout: float) -> SkipChannelFilter:
+    names: set[str] = set()
+    tvg_ids: set[str] = set()
+    urls: set[str] = set()
+
+    for source in sources:
+        if not source.strip():
+            continue
+        try:
+            text = load_text(resolve_github_blob_source(source), timeout)
+        except Exception as error:
+            print(f"Could not load skip channel source {source}: {error}", file=sys.stderr)
+            continue
+
+        if looks_like_m3u(text):
+            _, channels = parse_m3u_text(text, source)
+            for channel in channels:
+                add_skip_channel(channel.name, channel.tvg_id, channel.url, names, tvg_ids, urls)
+            continue
+
+        for name, tvg_id, url in extract_skip_channels_from_markdown(text):
+            add_skip_channel(name, tvg_id, url, names, tvg_ids, urls)
+
+    return SkipChannelFilter(names=names, tvg_ids=tvg_ids, urls=urls)
+
+
+def resolve_github_blob_source(source: str) -> str:
+    return re.sub(
+        r"^https://github\.com/([^/]+)/([^/]+)/blob/([^/]+)/(.*)$",
+        r"https://raw.githubusercontent.com/\1/\2/\3/\4",
+        source.strip(),
+    )
+
+
+def looks_like_m3u(text: str) -> bool:
+    return text.lstrip().upper().startswith("#EXTM3U")
+
+
+def parse_m3u_text(text: str, source: str) -> tuple[str, list[Channel]]:
+    from refresh_playlist import parse_m3u
+
+    return parse_m3u(text, source)
+
+
+def extract_skip_channels_from_markdown(text: str) -> list[tuple[str, str, str]]:
+    records: list[tuple[str, str, str]] = []
+    for line in text.splitlines():
+        stripped = line.strip()
+        if not stripped.startswith("|"):
+            continue
+        cells = [clean_markdown_cell(cell) for cell in stripped.strip("|").split("|")]
+        if len(cells) < 5 or not cells[0].isdigit():
+            continue
+        name = cells[1]
+        url = extract_markdown_link(stripped)
+        tvg_id = cells[4]
+        if name or tvg_id or url:
+            records.append((name, tvg_id, url))
+    return records
+
+
+def clean_markdown_cell(value: str) -> str:
+    cleaned = html.unescape(value)
+    cleaned = re.sub(r"<[^>]+>", "", cleaned)
+    cleaned = re.sub(r"\[[^\]]*]\(([^)]+)\)", r"\1", cleaned)
+    return cleaned.strip()
+
+
+def extract_markdown_link(value: str) -> str:
+    match = re.search(r"\[[^\]]*]\(([^)]+)\)", value)
+    return match.group(1).strip() if match else ""
+
+
+def add_skip_channel(
+    name: str,
+    tvg_id: str,
+    url: str,
+    names: set[str],
+    tvg_ids: set[str],
+    urls: set[str],
+) -> None:
+    normalized_name = canonical_skip_name(name)
+    if normalized_name:
+        names.add(normalized_name)
+    normalized_tvg_id = normalize_tvg_id(tvg_id)
+    if normalized_tvg_id:
+        tvg_ids.add(normalized_tvg_id)
+    if url.strip():
+        urls.add(url.strip())
+
+
+def is_skipped_source_channel(channel: Channel, skip_filter: SkipChannelFilter) -> bool:
+    if channel.url in skip_filter.urls:
+        return True
+    if channel_id_base(channel) in skip_filter.tvg_ids:
+        return True
+    return is_skipped_channel_name(channel.name, skip_filter.names)
+
+
+def is_skipped_channel_name(name: str, skip_names: set[str]) -> bool:
+    normalized = canonical_skip_name(name)
+    if normalized in skip_names:
+        return True
+    for skip_name in skip_names:
+        if normalized.startswith(f"{skip_name} ") and has_only_variant_suffix(
+            normalized.removeprefix(skip_name).strip()
+        ):
+            return True
+    return False
+
+
+def has_only_variant_suffix(value: str) -> bool:
+    if not value:
+        return True
+    variant_tokens = {
+        "4k",
+        "7",
+        "24",
+        "360p",
+        "480p",
+        "504p",
+        "576i",
+        "576p",
+        "720p",
+        "1080p",
+        "2160p",
+        "blocked",
+        "geo",
+        "hd",
+        "not",
+        "sd",
+        "uhd",
+    }
+    return all(token in variant_tokens for token in value.split())
+
+
+def canonical_skip_name(name: str) -> str:
+    name_without_qualifiers = re.sub(r"\([^)]*\)|\[[^]]*]", " ", name)
+    return normalize_text(name_without_qualifiers)
+
+
+def normalize_tvg_id(tvg_id: str) -> str:
+    return tvg_id.casefold().split("@", 1)[0].strip()
 
 
 def load_language_filter(
@@ -1095,6 +1272,9 @@ def write_probe_report(
         "skipped_language_channels": sum(
             int(summary.get("skipped_language_channels", 0)) for summary in source_summaries
         ),
+        "skipped_source_channels": sum(
+            int(summary.get("skipped_source_channels", 0)) for summary in source_summaries
+        ),
         "skipped_potential_duplicate_channels": potential_duplicates,
         "skipped_manual_exclusions": manual_exclusions,
         "source_summaries": source_summaries,
@@ -1202,6 +1382,9 @@ def main() -> int:
         args.timeout,
         not args.no_language_filter,
     )
+    skip_sources = [] if args.no_default_skip_channel_source else [DEFAULT_SKIP_CHANNEL_SOURCE]
+    skip_sources.extend(args.skip_channel_source)
+    skip_filter = load_skip_channel_filter(skip_sources, args.timeout)
     source_records = scrape_playlist_sources(args.playlist_index, countries, args.timeout)
     if not args.no_web_searched_sources:
         source_records.extend(web_searched_sources())
@@ -1210,6 +1393,7 @@ def main() -> int:
         extra_sources,
         args.timeout,
         language_filter,
+        skip_filter,
     )
     unique_candidates, duplicate_urls = dedupe_streams(candidates)
 
