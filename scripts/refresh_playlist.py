@@ -41,6 +41,13 @@ GROUP_PRIORITY = {
     "entertainment": 2,
 }
 DEFAULT_GROUP_RANK = 3
+MIN_MEDIA_SEGMENTS_TO_VERIFY = 2
+MANUAL_EXCLUDED_TVG_IDS = {
+    "bigmagic.in@sd",
+}
+MANUAL_EXCLUDED_NAMES = {
+    "big magic",
+}
 ssl_warning_printed = False
 
 
@@ -303,6 +310,25 @@ def first_media_uri(manifest: str, base_url: str) -> str:
     return ""
 
 
+def media_segment_uris(manifest: str, base_url: str, limit: int) -> list[str]:
+    segments: list[str] = []
+    for line in manifest.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+        segments.append(urljoin(base_url, stripped))
+        if len(segments) >= limit:
+            break
+    return segments
+
+
+def is_fragmented_mp4_playlist(manifest: str, segments: list[str]) -> bool:
+    upper = manifest.upper()
+    if "#EXT-X-MAP" in upper:
+        return True
+    return any(urlparse(segment).path.casefold().endswith(".m4s") for segment in segments)
+
+
 def probe_channel(channel: Channel, timeout: float) -> ProbeResult:
     started = time.monotonic()
     checked_url = channel.url
@@ -327,8 +353,19 @@ def probe_channel(channel: Channel, timeout: float) -> ProbeResult:
                 manifest, manifest_url = fetch_text(media_uri, headers, timeout)
                 continue
 
-            checked_url = media_uri
-            fetch_bytes(media_uri, headers, timeout)
+            segment_uris = media_segment_uris(
+                manifest,
+                manifest_url,
+                MIN_MEDIA_SEGMENTS_TO_VERIFY,
+            )
+            if is_fragmented_mp4_playlist(manifest, segment_uris):
+                raise ValueError("fragmented MP4 HLS rejected for IPTV compatibility")
+            if len(segment_uris) < MIN_MEDIA_SEGMENTS_TO_VERIFY:
+                raise ValueError("playlist has too few media segments")
+
+            checked_url = segment_uris[-1]
+            for segment_uri in segment_uris:
+                fetch_bytes(segment_uri, headers, timeout)
             return make_result(channel, True, started, checked_url)
 
         raise ValueError("nested playlist depth exceeded")
@@ -407,6 +444,9 @@ def write_report(
     duplicate_count: int,
     potential_duplicate_count: int,
     potential_duplicate_records: list[dict[str, str]],
+    manual_excluded_count: int,
+    manual_excluded_records: list[dict[str, str]],
+    incompatible_hls_count: int,
     source_summaries: list[dict[str, int | str]],
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -422,7 +462,10 @@ def write_report(
         "skipped_non_m3u8": skipped,
         "skipped_duplicate_urls": duplicate_count,
         "skipped_potential_duplicate_channels": potential_duplicate_count,
+        "skipped_manual_exclusions": manual_excluded_count,
+        "skipped_incompatible_hls": incompatible_hls_count,
         "potential_duplicate_records": potential_duplicate_records,
+        "manual_excluded_records": manual_excluded_records,
         "source_summaries": source_summaries,
         "results": [
             {
@@ -453,6 +496,8 @@ def update_readme(
     working: int,
     duplicate_count: int,
     potential_duplicate_count: int,
+    manual_excluded_count: int,
+    incompatible_hls_count: int,
 ) -> None:
     source_list = "\n".join(f"- `{source}`" for source in sources)
     content = f"""# freeiptv
@@ -477,6 +522,8 @@ Last generated result:
 - Working channels: {working}
 - Duplicate stream URLs skipped: {duplicate_count}
 - Potential duplicate channels skipped: {potential_duplicate_count}
+- Manual exclusions skipped: {manual_excluded_count}
+- Incompatible fMP4 HLS streams skipped: {incompatible_hls_count}
 - Probe mode: HLS segment probe
 - Worker threads: {workers}
 
@@ -560,13 +607,24 @@ def dedupe_streams(streams: list[Channel]) -> tuple[list[Channel], int]:
 
 def dedupe_working_results(
     results: list[ProbeResult],
-) -> tuple[list[ProbeResult], int, list[dict[str, str]]]:
+) -> tuple[list[ProbeResult], int, list[dict[str, str]], int, list[dict[str, str]]]:
     seen: dict[tuple[str, str], ProbeResult] = {}
     unique: list[ProbeResult] = []
     duplicate_records: list[dict[str, str]] = []
+    manual_excluded_records: list[dict[str, str]] = []
 
     for result in sorted(results, key=lambda item: item.channel.index):
         if not result.ok:
+            continue
+        if is_manually_excluded(result.channel):
+            manual_excluded_records.append(
+                {
+                    "name": result.channel.name,
+                    "tvg_id": result.channel.tvg_id,
+                    "url": result.channel.url,
+                    "source": result.channel.source,
+                }
+            )
             continue
         key = potential_duplicate_key(result.channel)
         if key in seen:
@@ -584,7 +642,27 @@ def dedupe_working_results(
         seen[key] = result
         unique.append(result)
 
-    return unique, len(duplicate_records), duplicate_records
+    return (
+        unique,
+        len(duplicate_records),
+        duplicate_records,
+        len(manual_excluded_records),
+        manual_excluded_records,
+    )
+
+
+def is_manually_excluded(channel: Channel) -> bool:
+    if channel.tvg_id.casefold() in MANUAL_EXCLUDED_TVG_IDS:
+        return True
+    return normalize_channel_name(channel.name) in MANUAL_EXCLUDED_NAMES
+
+
+def incompatible_hls_result_count(results: list[ProbeResult]) -> int:
+    return sum(
+        1
+        for result in results
+        if "fragmented MP4 HLS" in result.error
+    )
 
 
 def potential_duplicate_key(channel: Channel) -> tuple[str, str]:
@@ -648,11 +726,16 @@ def refresh(args: argparse.Namespace) -> tuple[int, int, int]:
                 print(f"Checked {completed}/{len(futures)}; working {working_so_far}.", flush=True)
 
     results.sort(key=lambda result: result.channel.index)
-    published_results, potential_duplicate_count, potential_duplicate_records = (
-        dedupe_working_results(results)
-    )
+    (
+        published_results,
+        potential_duplicate_count,
+        potential_duplicate_records,
+        manual_excluded_count,
+        manual_excluded_records,
+    ) = dedupe_working_results(results)
     checked = len(results)
     working = len(published_results)
+    incompatible_hls_count = incompatible_hls_result_count(results)
 
     write_playlist(Path(args.output), "#EXTM3U", published_results)
     write_report(
@@ -665,6 +748,9 @@ def refresh(args: argparse.Namespace) -> tuple[int, int, int]:
         duplicate_count,
         potential_duplicate_count,
         potential_duplicate_records,
+        manual_excluded_count,
+        manual_excluded_records,
+        incompatible_hls_count,
         source_summaries,
     )
     update_readme(
@@ -675,11 +761,14 @@ def refresh(args: argparse.Namespace) -> tuple[int, int, int]:
         working,
         duplicate_count,
         potential_duplicate_count,
+        manual_excluded_count,
+        incompatible_hls_count,
     )
 
     print(
         f"Wrote {working} working channels to {args.output}; "
-        f"skipped {potential_duplicate_count} potential duplicate channels.",
+        f"skipped {potential_duplicate_count} potential duplicate channels "
+        f"and {manual_excluded_count} manual exclusions.",
         flush=True,
     )
     return checked, working, workers
