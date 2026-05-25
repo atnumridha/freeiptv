@@ -23,6 +23,9 @@ from urllib.request import Request, urlopen
 
 
 DEFAULT_SOURCES = (
+    "https://iptv-org.github.io/iptv/languages/ben.m3u",
+    "https://iptv-org.github.io/iptv/languages/hin.m3u",
+    "https://iptv-org.github.io/iptv/languages/mar.m3u",
     "https://raw.githubusercontent.com/FunctionError/PiratesTv/main/combined_playlist.m3u",
 )
 RAW_PLAYLIST_URL = "https://raw.githubusercontent.com/atnumridha/freeiptv/main/in.m3u"
@@ -73,7 +76,7 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help=(
             "Input M3U URL or local file. May be provided more than once. "
-            "Defaults to the PiratesTv combined playlist."
+            "Defaults to PiratesTv plus IPTV-org Bengali, Hindi, and Marathi feeds."
         ),
     )
     parser.add_argument("--output", default="in.m3u", help="Output M3U path.")
@@ -454,9 +457,9 @@ def update_readme(
     source_list = "\n".join(f"- `{source}`" for source in sources)
     content = f"""# freeiptv
 
-Filtered working channels from the PiratesTv combined playlist.
+Filtered working channels from PiratesTv plus Bengali, Hindi, and Marathi feeds.
 
-## PiratesTv Working Playlist
+## Combined Working Playlist
 
 Playlist:
 
