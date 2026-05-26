@@ -17,9 +17,11 @@ from pathlib import Path
 from refresh_playlist import Channel
 from refresh_playlist import ProbeResult
 from refresh_playlist import dedupe_streams
-from refresh_playlist import dedupe_working_results
+from refresh_playlist import is_manually_excluded
 from refresh_playlist import is_hls_url
 from refresh_playlist import load_text
+from refresh_playlist import normalize_channel_name
+from refresh_playlist import potential_duplicate_key
 from refresh_playlist import probe_channel
 from refresh_playlist import resolve_worker_count
 
@@ -60,6 +62,11 @@ WEB_SEARCHED_SOURCE_RECORDS = (
         "note": "Free-TV global public playlist",
     },
     {
+        "url": "https://www.apsattv.com/distro.m3u",
+        "reason": "article-reviewed",
+        "note": "DistroTV public playlist from article review; strict duplicate name guard enabled",
+    },
+    {
         "url": "https://gist.githubusercontent.com/grtesdwq/2be8e71010caa5c1d8dfd50a527aeba9/raw/iptv.m3u",
         "reason": "web-searched",
         "note": "Pakistan and India GitHub gist found by web search",
@@ -85,6 +92,9 @@ WEB_SEARCHED_SOURCE_RECORDS = (
         "note": "Bangla and Hindi playlist found by web search",
     },
 )
+STRICT_DUPLICATE_SOURCE_URLS = {
+    "https://www.apsattv.com/distro.m3u",
+}
 CRICKET_KEYWORDS = (
     "cricket",
     "willow",
@@ -1661,6 +1671,70 @@ def should_retry_probe_result(result: ProbeResult) -> bool:
     )
     normalized_error = result.error.casefold()
     return any(marker in normalized_error for marker in retryable_markers)
+
+
+def dedupe_working_results(
+    results: list[ProbeResult],
+) -> tuple[list[ProbeResult], int, list[dict[str, str]], int, list[dict[str, str]]]:
+    seen_keys: dict[tuple[str, str], ProbeResult] = {}
+    seen_names: dict[str, ProbeResult] = {}
+    unique: list[ProbeResult] = []
+    duplicate_records: list[dict[str, str]] = []
+    manual_excluded_records: list[dict[str, str]] = []
+
+    for result in sorted(results, key=lambda item: item.channel.index):
+        if not result.ok:
+            continue
+        if is_manually_excluded(result.channel):
+            manual_excluded_records.append(
+                {
+                    "name": result.channel.name,
+                    "tvg_id": result.channel.tvg_id,
+                    "url": result.channel.url,
+                    "source": result.channel.source,
+                }
+            )
+            continue
+
+        key = potential_duplicate_key(result.channel)
+        duplicate = seen_keys.get(key)
+        key_type = key[0]
+        key_value = key[1]
+
+        normalized_name = normalize_channel_name(result.channel.name)
+        if duplicate is None and is_strict_duplicate_source(result.channel) and normalized_name:
+            duplicate = seen_names.get(normalized_name)
+            key_type = "name"
+            key_value = normalized_name
+
+        if duplicate is not None:
+            duplicate_records.append(
+                {
+                    "key_type": key_type,
+                    "key": key_value,
+                    "kept": duplicate.channel.name,
+                    "skipped": result.channel.name,
+                    "skipped_url": result.channel.url,
+                }
+            )
+            continue
+
+        seen_keys[key] = result
+        if normalized_name:
+            seen_names.setdefault(normalized_name, result)
+        unique.append(result)
+
+    return (
+        unique,
+        len(duplicate_records),
+        duplicate_records,
+        len(manual_excluded_records),
+        manual_excluded_records,
+    )
+
+
+def is_strict_duplicate_source(channel: Channel) -> bool:
+    return channel.source.strip().casefold() in STRICT_DUPLICATE_SOURCE_URLS
 
 
 def write_probe_report(

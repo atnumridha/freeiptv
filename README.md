@@ -30,6 +30,10 @@ remaining channels in that category. The first priority brands are Aaj Tak, Zee,
 Sony, Colors, Star, TV9, and Republic. The script also loads the Telelibrary
 `TV_Channels_in_India` Fandom category through its public MediaWiki API as an
 additional priority source.
+The free-playlist article links were reviewed as candidate inputs. IPTV-Org and
+Free-TV were already in the build path; DistroTV is now included with a stricter
+same-name duplicate guard. The other static article playlists either produced no
+in-scope channels, only duplicates, or were unavailable during validation.
 
 ```text
 https://raw.githubusercontent.com/atnumridha/freeiptv/main/south_asia_cricket.m3u
@@ -54,11 +58,11 @@ Generated files:
 
 Latest South Asia build:
 
-- Working screenshot-verified channels: 207
-- Screenshot captures: 207/207
-- Category order/counts: News 102, Movies 25, Entertainment 55, Music 8,
+- Working screenshot-verified channels: 208
+- Screenshot captures: 208/209 candidates; 1 failed candidate removed
+- Category order/counts: News 104, Movies 25, Entertainment 55, Music 7,
   Sports 10, Infotainment 6, Horror 1
-- English channels retained: 30, starting at position 178
+- English channels retained: 31, starting at position 178
 - Free-TV India skip-list matches remaining: 0
 
 ## Current Sources

@@ -554,6 +554,10 @@ English channels are allowed but sorted after the Indian-language sections.
 Channels outside News, Movies, Entertainment, Music, Sports, Infotainment, and
 Horror are removed. Recognizable Indian TV brands are promoted within each
 category before the remaining channels in that category.
+The free-playlist article links were reviewed as candidate inputs. IPTV-Org and
+Free-TV were already in the build path; DistroTV is now included with a stricter
+same-name duplicate guard. The other static article playlists either produced no
+in-scope channels, only duplicates, or were unavailable during validation.
 
 ```text
 https://raw.githubusercontent.com/atnumridha/freeiptv/main/south_asia_cricket.m3u
