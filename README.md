@@ -19,15 +19,16 @@ This generated playlist is separate from `in.m3u`. It is built by scraping
 public playlist indexes and web-searched public M3U sources, then keeping only
 India, Pakistan, Bangladesh, and cricket-broadcast candidates that pass both HLS
 probing and screenshot validation. Arabic and Arab-region channels are excluded,
-and the final list is restricted to Hindi, Bengali/Bangla, Marathi, and English
-channels. Channels listed in the Free-TV India markdown list are used as a
-default skip list and are excluded by EPG id, stream URL, and normalized channel
-name.
-Recognizable Indian TV brands are promoted to the top of this playlist before
-the remaining channels continue in the normal group order. The first priority
-brands are Aaj Tak, Zee, Sony, Colors, Star, TV9, Republic, and BBC. The script
-also loads the Telelibrary `TV_Channels_in_India` Fandom category through its
-public MediaWiki API as an additional priority source.
+and the final list is restricted to Hindi, Bengali/Bangla, and Marathi
+channels. Channels outside News, Movies, Entertainment, Music, Sports,
+Infotainment, and Horror are removed. Channels listed in the Free-TV India
+markdown list are used as a default skip list and are excluded by EPG id,
+stream URL, and normalized channel name.
+Recognizable Indian TV brands are promoted within each category before the
+remaining channels in that category. The first priority brands are Aaj Tak, Zee,
+Sony, Colors, Star, TV9, and Republic. The script also loads the Telelibrary
+`TV_Channels_in_India` Fandom category through its public MediaWiki API as an
+additional priority source.
 
 ```text
 https://raw.githubusercontent.com/atnumridha/freeiptv/main/south_asia_cricket.m3u
@@ -49,6 +50,14 @@ Generated files:
 - `reports/south-asia-cricket-channels.md`: final working channel list.
 - `screenshots/south-asia-cricket/*.jpg`: screenshot evidence for each retained
   channel.
+
+Latest South Asia build:
+
+- Working screenshot-verified channels: 176
+- Screenshot captures: 176/176
+- Category order/counts: News 86, Movies 22, Entertainment 53, Music 8,
+  Sports 4, Infotainment 2, Horror 1
+- Free-TV India skip-list matches remaining: 0
 
 ## Current Sources
 

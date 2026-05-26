@@ -548,7 +548,11 @@ Use this playlist URL in IPTV players:
 This generated playlist is separate from `in.m3u`. It is built by scraping
 public playlist indexes and web-searched public M3U sources, then keeping only
 India, Pakistan, Bangladesh, and cricket-broadcast candidates that pass both HLS
-probing and screenshot validation.
+probing and screenshot validation. Arabic and Arab-region channels are excluded,
+and the final list is restricted to Hindi, Bengali/Bangla, and Marathi
+channels. Channels outside News, Movies, Entertainment, Music, Sports,
+Infotainment, and Horror are removed. Recognizable Indian TV brands are promoted
+within each category before the remaining channels in that category.
 
 ```text
 https://raw.githubusercontent.com/atnumridha/freeiptv/main/south_asia_cricket.m3u

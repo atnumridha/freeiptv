@@ -20,7 +20,6 @@ from refresh_playlist import dedupe_streams
 from refresh_playlist import dedupe_working_results
 from refresh_playlist import is_hls_url
 from refresh_playlist import load_text
-from refresh_playlist import playlist_sort_key
 from refresh_playlist import probe_channel
 from refresh_playlist import resolve_worker_count
 
@@ -40,8 +39,9 @@ DEFAULT_SKIP_CHANNEL_SOURCE = "https://raw.githubusercontent.com/Free-TV/IPTV/ma
 LANGUAGE_PLAYLIST_URL_TEMPLATE = "https://iptv-org.github.io/iptv/languages/{code}.m3u"
 DEFAULT_CHANNEL_METADATA_SOURCE = "https://iptv-org.github.io/api/channels.json"
 SOUTH_ASIA_COUNTRIES = ("in", "pk", "bd")
-ALLOWED_LANGUAGE_CODES = ("hin", "ben", "mar", "eng")
+ALLOWED_LANGUAGE_CODES = ("hin", "ben", "mar")
 DISALLOWED_LANGUAGE_CODES = (
+    "eng",
     "tel",
     "tam",
     "kan",
@@ -131,9 +131,9 @@ ALLOWED_LANGUAGE_MARKERS = (
     "bangla",
     "bengali",
     "marathi",
-    "english",
 )
 DISALLOWED_LANGUAGE_MARKERS = (
+    "english",
     "telugu",
     "tamil",
     "kannada",
@@ -158,32 +158,24 @@ KNOWN_ALLOWED_LANGUAGE_CHANNEL_PREFIXES = (
     "bansal news",
     "bharat express",
     "bharat samachar",
-    "cnn news 18",
-    "cnbc",
+    "cnbc awaaz",
     "colors",
-    "cricket gold",
-    "cvr english",
     "dangal",
-    "dd india",
     "dd kisan",
     "dd national",
     "dd news",
     "dd sports",
-    "et now",
+    "et now swadesh",
     "good news today",
     "goldmines",
     "hindi khabar",
     "india daily live",
-    "india today",
     "india tv",
     "janta tv",
     "kolkata tv",
-    "mirror now",
-    "ndtv good times",
     "ndtv india",
     "ndtv madhya pradesh chhattisgarh",
     "ndtv marathi",
-    "ndtv profit",
     "news 1 india",
     "news 24",
     "news nation",
@@ -199,18 +191,14 @@ KNOWN_ALLOWED_LANGUAGE_CHANNEL_PREFIXES = (
     "newstime bangla",
     "republic bangla",
     "republic bharat",
-    "republic tv",
-    "rt india",
     "sadhna",
     "sansad tv",
     "sanskar",
     "satsang",
     "shemaroo",
     "sheemaroo",
-    "sony pix",
-    "sony sports ten 1",
-    "sony sports ten 2",
     "sony sports ten 3",
+    "sony marathi",
     "sony wah",
     "sony yay",
     "star news",
@@ -218,12 +206,9 @@ KNOWN_ALLOWED_LANGUAGE_CHANNEL_PREFIXES = (
     "svbc 4",
     "swadesh news",
     "the movie club",
-    "travelxp",
-    "tv brics english",
     "tv9 bangla",
     "tv9 bharatvarsh",
     "tv9 marathi",
-    "weatherspy",
     "yrf music",
     "zee 24 ghanta",
     "zee 24 taas",
@@ -247,7 +232,11 @@ KNOWN_DISALLOWED_LANGUAGE_CHANNEL_PREFIXES = (
     "argus news",
     "asianet",
     "balle balle",
+    "bbc",
     "cnbc bajar",
+    "cnbc tv18",
+    "cnn news 18",
+    "cvr english",
     "dd manipur",
     "dd meghalaya",
     "dd mizoram",
@@ -260,15 +249,25 @@ KNOWN_DISALLOWED_LANGUAGE_CHANNEL_PREFIXES = (
     "etv telangana",
     "etv telugu",
     "fateh tv",
+    "god stands tv english",
+    "history tv18",
+    "india today",
     "joo music",
     "joomusic",
     "kairali",
     "kaumudy tv",
     "manorama",
     "mazhavil manorama",
+    "mirror now",
     "namdhari",
+    "ndtv good times",
+    "ndtv profit",
     "ptc punjabi",
+    "republic tv",
     "salaam tv",
+    "sony pix",
+    "sony sports ten 1",
+    "sony sports ten 2",
     "sony sports ten 4",
     "star maa",
     "star suvarna",
@@ -276,6 +275,8 @@ KNOWN_DISALLOWED_LANGUAGE_CHANNEL_PREFIXES = (
     "svbc 3",
     "svbc sri",
     "tehzeeb tv",
+    "travelxp",
+    "tv brics english",
     "tv5",
     "v6 news",
     "zainabia channel",
@@ -294,7 +295,216 @@ TOP_CHANNEL_BRAND_PRIORITY = (
     ("star",),
     ("tv9",),
     ("republic",),
-    ("bbc",),
+)
+ALLOWED_CATEGORY_ORDER = (
+    "News",
+    "Movies",
+    "Entertainment",
+    "Music",
+    "Sports",
+    "Infotainment",
+    "Horror",
+)
+ALLOWED_CATEGORY_RANK = {
+    category.casefold(): index for index, category in enumerate(ALLOWED_CATEGORY_ORDER)
+}
+CATEGORY_MARKERS = {
+    "News": (
+        "news",
+        "business",
+        "finance",
+        "market",
+        "markets",
+    ),
+    "Movies": (
+        "movie",
+        "movies",
+        "cinema",
+        "cine",
+        "film",
+        "films",
+        "bollywood",
+        "classic",
+    ),
+    "Entertainment": (
+        "entertainment",
+        "general",
+        "comedy",
+        "kids",
+        "kid",
+        "animation",
+        "cartoon",
+        "bangla",
+        "bengali",
+        "bangladeshi",
+        "kolkata bangla",
+    ),
+    "Music": (
+        "music",
+        "song",
+        "songs",
+    ),
+    "Sports": (
+        "sports",
+        "sport",
+        "cricket",
+    ),
+    "Infotainment": (
+        "infotainment",
+        "documentary",
+        "education",
+        "educational",
+        "science",
+        "travel",
+        "lifestyle",
+        "culture",
+        "weather",
+        "history",
+        "knowledge",
+    ),
+    "Horror": (
+        "horror",
+    ),
+}
+CATEGORY_PREFIXES = {
+    "News": (
+        "aaj tak",
+        "abp",
+        "akd calcutta news",
+        "amarujala",
+        "ananda barta",
+        "bansal news",
+        "bharat express",
+        "bharat samachar",
+        "bt tv",
+        "channel 24",
+        "cnbc awaaz",
+        "ekattor",
+        "et now swadesh",
+        "good news today",
+        "hindi khabar",
+        "independent tv",
+        "india daily live",
+        "india tv",
+        "jamuna tv",
+        "jumuna tv",
+        "janta tv",
+        "kolkata tv",
+        "ndtv",
+        "news",
+        "newstime",
+        "republic",
+        "r plus",
+        "saam tv",
+        "sansad tv",
+        "somoy",
+        "swadesh news",
+        "taaza tv",
+        "total tv",
+        "tv9",
+        "zee 24",
+        "zee bharat",
+        "zee business",
+        "zee bihar",
+        "zee delhi",
+        "zee madhya",
+        "zee news",
+        "zee punjab",
+        "zee rajasthan",
+        "zee uttar",
+        "zillar barta",
+    ),
+    "Movies": (
+        "b4u",
+        "goldmines",
+        "shemaroo",
+        "sheemaroo",
+        "the movie club",
+        "zb cinema",
+        "zee cine",
+        "zee south flix",
+    ),
+    "Entertainment": (
+        "aakash aath",
+        "atn bangla",
+        "boishakhi",
+        "btv",
+        "channel i",
+        "colors",
+        "dangal",
+        "deepto",
+        "deshi tv",
+        "dipto",
+        "ekushey",
+        "enter 10 bangla",
+        "green tv",
+        "ntv",
+        "rongeen",
+        "sony marathi",
+        "sony wah",
+        "sony yay",
+        "star pravah",
+        "zee comedy",
+        "zee dil se",
+        "zb cartoon",
+    ),
+    "Music": (
+        "9xm",
+        "zoom",
+        "yrf music",
+    ),
+    "Sports": (
+        "dd sports",
+        "sony sports ten 3",
+        "star sports",
+    ),
+    "Infotainment": (
+        "gyandarshan",
+        "medibiz",
+        "vyas",
+    ),
+    "Horror": (
+        "zee horror",
+    ),
+}
+DISALLOWED_CATEGORY_MARKERS = (
+    "religious",
+    "devotional",
+    "spiritual",
+    "bhakti",
+    "pravachan",
+    "satsang",
+    "quran",
+    "islam",
+    "bible",
+    "church",
+    "radio",
+)
+DISALLOWED_CATEGORY_PREFIXES = (
+    "aastha",
+    "adhyatm",
+    "anand tv",
+    "aradana",
+    "channel divya",
+    "god stands",
+    "goodnews tv",
+    "harvest",
+    "ishwar bhakti",
+    "jinvani",
+    "king tv",
+    "madani channel",
+    "mercy tv",
+    "peace tv",
+    "sanskar",
+    "santvani",
+    "satsang",
+    "salvation",
+    "shubhsandesh",
+    "spice fm",
+    "svbc",
+    "total bhakti",
+    "vedic",
+    "zb bhakti",
 )
 KNOWN_INDIAN_CHANNEL_PRIORITY = (
     ("aaj tak",),
@@ -302,86 +512,44 @@ KNOWN_INDIAN_CHANNEL_PRIORITY = (
     ("abp ananda",),
     ("abp asmita",),
     ("abp ganga",),
-    ("india today",),
     ("india tv",),
-    ("cnn news 18", "cnn news18"),
     ("news18 india", "news 18 india"),
     ("ndtv india",),
-    ("ndtv profit",),
-    ("ndtv good times",),
-    ("republic tv",),
     ("republic bharat",),
     ("republic bangla",),
-    ("republic kannada",),
     ("zee news",),
     ("zee bharat",),
     ("zee business",),
     ("zee 24 taas",),
     ("zee 24 ghanta",),
-    ("zee tamil news",),
-    ("zee telugu news",),
-    ("zee kannada news",),
-    ("cnbc tv18",),
     ("cnbc awaaz",),
-    ("et now",),
-    ("mirror now",),
+    ("et now swadesh",),
     ("news nation",),
     ("news 24",),
     ("dd news",),
     ("dd national",),
-    ("dd india",),
     ("dd sports",),
     ("dd kisan",),
     ("tv9 bharatvarsh",),
     ("tv9 bangla",),
     ("tv9 marathi",),
-    ("tv9 telugu",),
-    ("tv9 gujarati",),
-    ("asianet news",),
-    ("asianet movies",),
-    ("asianet plus",),
-    ("asianet",),
-    ("manorama news",),
-    ("mazhavil manorama",),
-    ("puthiya thalaimurai",),
-    ("thanthi tv",),
-    ("tv5 news",),
-    ("tv5 kannada",),
-    ("v6 news",),
-    ("etv news",),
-    ("etv telugu",),
-    ("etv cinema",),
-    ("etv comedy",),
-    ("etv life",),
     ("dangal tv",),
     ("dangal 2",),
     ("sab tv",),
-    ("sony sports ten",),
-    ("sony pix",),
+    ("sony sports ten 3",),
     ("sony wah",),
     ("sony marathi",),
     ("sony yay",),
-    ("star maa",),
     ("star pravah",),
-    ("star suvarna",),
     ("b4u movies",),
     ("b4u kadak",),
-    ("b4u bhojpuri",),
     ("goldmines",),
     ("shemaroo", "sheemaroo"),
     ("epic tv",),
-    ("ptc punjabi",),
-    ("ptc punjabi gold",),
     ("9xm",),
     ("zoom",),
     ("yrf music",),
-    ("travelxp",),
     ("sansad tv",),
-    ("aastha",),
-    ("sanskar",),
-    ("satsang",),
-    ("svbc",),
-    ("animax",),
 )
 
 
@@ -391,6 +559,7 @@ class SelectionResult:
     skipped_arabic_channels: int
     skipped_language_channels: int
     skipped_source_channels: int
+    skipped_category_channels: int
 
 
 @dataclass(frozen=True)
@@ -404,8 +573,8 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Scrape public IPTV playlist indexes, keep India/Pakistan/Bangladesh "
-            "channels plus cricket sports candidates, then screenshot-filter the "
-            "final playlist."
+            "Hindi/Bengali/Marathi channels in supported categories plus cricket "
+            "sports candidates, then screenshot-filter the final playlist."
         )
     )
     parser.add_argument(
@@ -483,7 +652,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--no-language-filter",
         action="store_true",
-        help="Disable Hindi/Bengali/Marathi/English-only filtering.",
+        help="Disable Hindi/Bengali/Marathi-only filtering.",
     )
     parser.add_argument(
         "--workers",
@@ -636,6 +805,7 @@ def load_candidate_channels(
                 "skipped_arabic_channels": selection.skipped_arabic_channels,
                 "skipped_language_channels": selection.skipped_language_channels,
                 "skipped_source_channels": selection.skipped_source_channels,
+                "skipped_category_channels": selection.skipped_category_channels,
             }
         )
 
@@ -663,6 +833,7 @@ def load_candidate_channels(
                 "skipped_arabic_channels": selection.skipped_arabic_channels,
                 "skipped_language_channels": selection.skipped_language_channels,
                 "skipped_source_channels": selection.skipped_source_channels,
+                "skipped_category_channels": selection.skipped_category_channels,
             }
         )
 
@@ -689,6 +860,7 @@ def select_channels(
     skipped_arabic_channels = 0
     skipped_language_channels = 0
     skipped_source_channels = 0
+    skipped_category_channels = 0
     for channel in channels:
         if not is_hls_url(channel.url):
             continue
@@ -705,12 +877,17 @@ def select_channels(
             continue
         if reason != "cricket-sports" and not is_allowed_channel(channel):
             continue
-        selected.append(channel)
+        categorized = canonicalize_allowed_category(channel)
+        if categorized is None:
+            skipped_category_channels += 1
+            continue
+        selected.append(categorized)
     return SelectionResult(
         channels=selected,
         skipped_arabic_channels=skipped_arabic_channels,
         skipped_language_channels=skipped_language_channels,
         skipped_source_channels=skipped_source_channels,
+        skipped_category_channels=skipped_category_channels,
     )
 
 
@@ -1060,6 +1237,91 @@ def is_cricket_candidate(channel: Channel) -> bool:
     return any(has_phrase(normalized, keyword) for keyword in CRICKET_KEYWORDS)
 
 
+def canonicalize_allowed_category(channel: Channel) -> Channel | None:
+    category = infer_allowed_category(channel)
+    if not category:
+        return None
+    return replace(
+        channel,
+        groups=(category,),
+        tags=rewrite_group_title_tags(channel.tags, category),
+    )
+
+
+def infer_allowed_category(channel: Channel) -> str:
+    normalized_name = normalize_text(channel.name)
+    normalized_text = normalize_text(
+        " ".join(
+            (
+                channel.name,
+                channel.tvg_id,
+                " ".join(channel.groups),
+                " ".join(channel.tags),
+            )
+        )
+    )
+
+    if has_any_category_prefix(normalized_name, DISALLOWED_CATEGORY_PREFIXES):
+        return ""
+    if has_any_category_marker(normalized_text, DISALLOWED_CATEGORY_MARKERS):
+        return ""
+
+    if has_any_category_marker(normalized_text, CATEGORY_MARKERS["Horror"]):
+        return "Horror"
+
+    for category in ALLOWED_CATEGORY_ORDER:
+        if category == "Horror":
+            continue
+        if has_any_category_prefix(normalized_name, CATEGORY_PREFIXES[category]):
+            return category
+        if has_any_category_marker(normalized_text, CATEGORY_MARKERS[category]):
+            return category
+
+    return ""
+
+
+def has_any_category_prefix(normalized_name: str, prefixes: tuple[str, ...]) -> bool:
+    return any(has_channel_prefix(normalized_name, prefix) for prefix in prefixes)
+
+
+def has_any_category_marker(normalized_text: str, markers: tuple[str, ...]) -> bool:
+    return any(has_phrase(normalized_text, marker) for marker in markers)
+
+
+def rewrite_group_title_tags(tags: tuple[str, ...], category: str) -> tuple[str, ...]:
+    rewritten: list[str] = []
+    for tag in tags:
+        if tag.upper().startswith("#EXTINF"):
+            rewritten.append(rewrite_extinf_group_title(tag, category))
+        else:
+            rewritten.append(tag)
+    return tuple(rewritten)
+
+
+def rewrite_extinf_group_title(tag: str, category: str) -> str:
+    if re.search(r'group-title="[^"]*"', tag, flags=re.IGNORECASE):
+        return re.sub(
+            r'group-title="[^"]*"',
+            f'group-title="{category}"',
+            tag,
+            count=1,
+            flags=re.IGNORECASE,
+        )
+    if re.search(r"group-title=[^,\s]+", tag, flags=re.IGNORECASE):
+        return re.sub(
+            r"group-title=[^,\s]+",
+            f'group-title="{category}"',
+            tag,
+            count=1,
+            flags=re.IGNORECASE,
+        )
+
+    prefix, separator, suffix = tag.partition(",")
+    if separator:
+        return f'{prefix} group-title="{category}",{suffix}'
+    return f'{tag} group-title="{category}"'
+
+
 def has_phrase(normalized: str, phrase: str) -> bool:
     escaped = re.escape(normalize_text(phrase))
     return re.search(rf"(?<!\S){escaped}(?!\S)", normalized) is not None
@@ -1169,11 +1431,32 @@ def sort_priority_results(
 def priority_sort_key(
     result: ProbeResult,
     known_channel_aliases: tuple[tuple[str, ...], ...],
-) -> tuple[int, int, tuple[int, str, str, int]]:
+) -> tuple[int, int, int, str, str, int]:
+    category_rank = channel_category_rank(result.channel)
     priority = known_indian_channel_priority(result.channel, known_channel_aliases)
     if priority >= 0:
-        return (0, priority, playlist_sort_key(result))
-    return (1, 0, playlist_sort_key(result))
+        return (
+            category_rank,
+            0,
+            priority,
+            normalize_text(result.channel.name),
+            result.channel.url,
+            result.channel.index,
+        )
+    return (
+        category_rank,
+        1,
+        len(known_channel_aliases),
+        normalize_text(result.channel.name),
+        result.channel.url,
+        result.channel.index,
+    )
+
+
+def channel_category_rank(channel: Channel) -> int:
+    if not channel.groups:
+        return len(ALLOWED_CATEGORY_ORDER)
+    return ALLOWED_CATEGORY_RANK.get(channel.groups[0].casefold(), len(ALLOWED_CATEGORY_ORDER))
 
 
 def known_indian_channel_priority(
@@ -1274,6 +1557,9 @@ def write_probe_report(
         ),
         "skipped_source_channels": sum(
             int(summary.get("skipped_source_channels", 0)) for summary in source_summaries
+        ),
+        "skipped_category_channels": sum(
+            int(summary.get("skipped_category_channels", 0)) for summary in source_summaries
         ),
         "skipped_potential_duplicate_channels": potential_duplicates,
         "skipped_manual_exclusions": manual_exclusions,
