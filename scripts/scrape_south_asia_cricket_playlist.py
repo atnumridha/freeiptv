@@ -39,9 +39,8 @@ DEFAULT_SKIP_CHANNEL_SOURCE = "https://raw.githubusercontent.com/Free-TV/IPTV/ma
 LANGUAGE_PLAYLIST_URL_TEMPLATE = "https://iptv-org.github.io/iptv/languages/{code}.m3u"
 DEFAULT_CHANNEL_METADATA_SOURCE = "https://iptv-org.github.io/api/channels.json"
 SOUTH_ASIA_COUNTRIES = ("in", "pk", "bd")
-ALLOWED_LANGUAGE_CODES = ("hin", "ben", "mar")
+ALLOWED_LANGUAGE_CODES = ("hin", "ben", "mar", "eng")
 DISALLOWED_LANGUAGE_CODES = (
-    "eng",
     "tel",
     "tam",
     "kan",
@@ -131,9 +130,9 @@ ALLOWED_LANGUAGE_MARKERS = (
     "bangla",
     "bengali",
     "marathi",
+    "english",
 )
 DISALLOWED_LANGUAGE_MARKERS = (
-    "english",
     "telugu",
     "tamil",
     "kannada",
@@ -228,15 +227,40 @@ KNOWN_ALLOWED_LANGUAGE_CHANNEL_PREFIXES = (
     "zee uttar pradesh uttarakhand",
     "zoom",
 )
+KNOWN_ENGLISH_LANGUAGE_CHANNEL_PREFIXES = (
+    "animax asia india",
+    "bbc",
+    "bt tv",
+    "cnbc tv18",
+    "cnn news 18",
+    "cricket gold",
+    "cvr english",
+    "dd india",
+    "history tv18",
+    "hornbill tv",
+    "india today",
+    "indywood tv",
+    "mirror now",
+    "motor vision",
+    "ndtv 24x7",
+    "ndtv good times",
+    "ndtv profit",
+    "news9live",
+    "prudent media",
+    "republic tv",
+    "rt india",
+    "sony pix",
+    "sony sports ten 1",
+    "sony sports ten 2",
+    "times of india",
+    "travelxp",
+    "tv brics english",
+)
 KNOWN_DISALLOWED_LANGUAGE_CHANNEL_PREFIXES = (
     "argus news",
     "asianet",
     "balle balle",
-    "bbc",
     "cnbc bajar",
-    "cnbc tv18",
-    "cnn news 18",
-    "cvr english",
     "dd manipur",
     "dd meghalaya",
     "dd mizoram",
@@ -250,24 +274,16 @@ KNOWN_DISALLOWED_LANGUAGE_CHANNEL_PREFIXES = (
     "etv telugu",
     "fateh tv",
     "god stands tv english",
-    "history tv18",
-    "india today",
     "joo music",
+    "hi joo music",
     "joomusic",
     "kairali",
     "kaumudy tv",
     "manorama",
     "mazhavil manorama",
-    "mirror now",
     "namdhari",
-    "ndtv good times",
-    "ndtv profit",
     "ptc punjabi",
-    "republic tv",
     "salaam tv",
-    "sony pix",
-    "sony sports ten 1",
-    "sony sports ten 2",
     "sony sports ten 4",
     "star maa",
     "star suvarna",
@@ -275,8 +291,6 @@ KNOWN_DISALLOWED_LANGUAGE_CHANNEL_PREFIXES = (
     "svbc 3",
     "svbc sri",
     "tehzeeb tv",
-    "travelxp",
-    "tv brics english",
     "tv5",
     "v6 news",
     "zainabia channel",
@@ -374,26 +388,36 @@ CATEGORY_PREFIXES = {
         "amarujala",
         "ananda barta",
         "bansal news",
+        "bbc",
         "bharat express",
         "bharat samachar",
         "bt tv",
         "channel 24",
         "cnbc awaaz",
+        "cnbc tv18",
+        "cnn news 18",
+        "cvr english",
+        "dd india",
         "ekattor",
         "et now swadesh",
         "good news today",
         "hindi khabar",
+        "hornbill tv",
         "independent tv",
         "india daily live",
+        "india today",
         "india tv",
         "jamuna tv",
         "jumuna tv",
         "janta tv",
         "kolkata tv",
+        "mirror now",
         "ndtv",
         "news",
         "newstime",
+        "prudent media",
         "republic",
+        "rt india",
         "r plus",
         "saam tv",
         "sansad tv",
@@ -417,8 +441,10 @@ CATEGORY_PREFIXES = {
     "Movies": (
         "b4u",
         "goldmines",
+        "indywood tv",
         "shemaroo",
         "sheemaroo",
+        "sony pix",
         "the movie club",
         "zb cinema",
         "zee cine",
@@ -430,6 +456,7 @@ CATEGORY_PREFIXES = {
         "boishakhi",
         "btv",
         "channel i",
+        "animax asia india",
         "colors",
         "dangal",
         "deepto",
@@ -454,13 +481,21 @@ CATEGORY_PREFIXES = {
         "yrf music",
     ),
     "Sports": (
+        "cricket gold",
         "dd sports",
+        "motor vision",
+        "sony sports ten 1",
+        "sony sports ten 2",
         "sony sports ten 3",
         "star sports",
     ),
     "Infotainment": (
         "gyandarshan",
+        "history tv18",
         "medibiz",
+        "ndtv good times",
+        "travelxp",
+        "tv brics",
         "vyas",
     ),
     "Horror": (
@@ -573,8 +608,8 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Scrape public IPTV playlist indexes, keep India/Pakistan/Bangladesh "
-            "Hindi/Bengali/Marathi channels in supported categories plus cricket "
-            "sports candidates, then screenshot-filter the final playlist."
+            "Hindi/Bengali/Marathi channels plus English channels in supported "
+            "categories, then screenshot-filter the final playlist."
         )
     )
     parser.add_argument(
@@ -652,7 +687,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--no-language-filter",
         action="store_true",
-        help="Disable Hindi/Bengali/Marathi-only filtering.",
+        help="Disable Hindi/Bengali/Marathi/English filtering.",
     )
     parser.add_argument(
         "--workers",
@@ -663,8 +698,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--timeout",
         type=float,
-        default=10.0,
-        help="Network timeout per HLS probe request. Default: 10",
+        default=20.0,
+        help="Network timeout per HLS probe request. Default: 20",
     )
     parser.add_argument(
         "--capture-workers",
@@ -877,7 +912,7 @@ def select_channels(
             continue
         if reason != "cricket-sports" and not is_allowed_channel(channel):
             continue
-        categorized = canonicalize_allowed_category(channel)
+        categorized = canonicalize_allowed_category(channel, language_filter)
         if categorized is None:
             skipped_category_channels += 1
             continue
@@ -1045,11 +1080,14 @@ def load_language_filter(
         return {}
 
     allowed_ids, allowed_urls = load_language_playlist_records(ALLOWED_LANGUAGE_CODES, timeout)
+    english_ids, english_urls = load_language_playlist_records(("eng",), timeout)
     disallowed_ids, disallowed_urls = load_language_playlist_records(DISALLOWED_LANGUAGE_CODES, timeout)
     metadata = load_channel_metadata(channel_metadata_source, timeout)
     return {
         "allowed_ids": allowed_ids,
         "allowed_urls": allowed_urls,
+        "english_ids": english_ids,
+        "english_urls": english_urls,
         "disallowed_ids": disallowed_ids,
         "disallowed_urls": disallowed_urls,
         "metadata": metadata,
@@ -1123,6 +1161,8 @@ def is_allowed_language_channel(
         return True
     if has_any_channel_prefix(channel, KNOWN_ALLOWED_LANGUAGE_CHANNEL_PREFIXES):
         return True
+    if has_any_channel_prefix(channel, KNOWN_ENGLISH_LANGUAGE_CHANNEL_PREFIXES):
+        return True
 
     if has_any_language_marker(combined, DISALLOWED_LANGUAGE_MARKERS):
         return False
@@ -1164,6 +1204,26 @@ def has_any_language_marker(normalized: str, markers: tuple[str, ...]) -> bool:
 def has_any_channel_prefix(channel: Channel, prefixes: tuple[str, ...]) -> bool:
     normalized = normalize_text(channel.name)
     return any(has_channel_prefix(normalized, prefix) for prefix in prefixes)
+
+
+def is_english_language_channel(
+    channel: Channel,
+    language_filter: dict[str, set[str] | dict[str, str]],
+) -> bool:
+    if has_any_channel_prefix(channel, KNOWN_ALLOWED_LANGUAGE_CHANNEL_PREFIXES):
+        return False
+    if is_bangladeshi_channel(channel) or contains_bengali_script(channel.name):
+        return False
+
+    base_id = channel_id_base(channel)
+    english_ids = language_filter.get("english_ids", set())
+    english_urls = language_filter.get("english_urls", set())
+    if base_id in english_ids or channel.url in english_urls:
+        return True
+    if has_any_channel_prefix(channel, KNOWN_ENGLISH_LANGUAGE_CHANNEL_PREFIXES):
+        return True
+    combined = combined_language_text(channel, "")
+    return has_phrase(combined, "english")
 
 
 def has_channel_name(channel: Channel, names: tuple[str, ...]) -> bool:
@@ -1237,14 +1297,20 @@ def is_cricket_candidate(channel: Channel) -> bool:
     return any(has_phrase(normalized, keyword) for keyword in CRICKET_KEYWORDS)
 
 
-def canonicalize_allowed_category(channel: Channel) -> Channel | None:
+def canonicalize_allowed_category(
+    channel: Channel,
+    language_filter: dict[str, set[str] | dict[str, str]],
+) -> Channel | None:
     category = infer_allowed_category(channel)
     if not category:
         return None
+    tags = rewrite_group_title_tags(channel.tags, category)
+    if language_filter and is_english_language_channel(channel, language_filter):
+        tags = mark_english_language_tags(tags)
     return replace(
         channel,
         groups=(category,),
-        tags=rewrite_group_title_tags(channel.tags, category),
+        tags=tags,
     )
 
 
@@ -1296,6 +1362,26 @@ def rewrite_group_title_tags(tags: tuple[str, ...], category: str) -> tuple[str,
         else:
             rewritten.append(tag)
     return tuple(rewritten)
+
+
+def mark_english_language_tags(tags: tuple[str, ...]) -> tuple[str, ...]:
+    marked: list[str] = []
+    for tag in tags:
+        if tag.upper().startswith("#EXTINF"):
+            marked.append(add_extinf_attribute(tag, "tvg-language", "English"))
+        else:
+            marked.append(tag)
+    return tuple(marked)
+
+
+def add_extinf_attribute(tag: str, attribute: str, value: str) -> str:
+    if re.search(rf'{re.escape(attribute)}="[^"]*"', tag, flags=re.IGNORECASE):
+        return tag
+
+    prefix, separator, suffix = tag.partition(",")
+    if separator:
+        return f'{prefix} {attribute}="{value}",{suffix}'
+    return f'{tag} {attribute}="{value}"'
 
 
 def rewrite_extinf_group_title(tag: str, category: str) -> str:
@@ -1431,11 +1517,13 @@ def sort_priority_results(
 def priority_sort_key(
     result: ProbeResult,
     known_channel_aliases: tuple[tuple[str, ...], ...],
-) -> tuple[int, int, int, str, str, int]:
+) -> tuple[int, int, int, int, str, str, int]:
+    language_rank = channel_language_rank(result.channel)
     category_rank = channel_category_rank(result.channel)
     priority = known_indian_channel_priority(result.channel, known_channel_aliases)
     if priority >= 0:
         return (
+            language_rank,
             category_rank,
             0,
             priority,
@@ -1444,6 +1532,7 @@ def priority_sort_key(
             result.channel.index,
         )
     return (
+        language_rank,
         category_rank,
         1,
         len(known_channel_aliases),
@@ -1451,6 +1540,27 @@ def priority_sort_key(
         result.channel.url,
         result.channel.index,
     )
+
+
+def channel_language_rank(channel: Channel) -> int:
+    return 1 if is_english_channel(channel) else 0
+
+
+def is_english_channel(channel: Channel) -> bool:
+    normalized_name = normalize_text(channel.name)
+    if has_any_category_prefix(normalized_name, KNOWN_ENGLISH_LANGUAGE_CHANNEL_PREFIXES):
+        return True
+    text = normalize_text(
+        " ".join(
+            (
+                channel.name,
+                channel.tvg_id,
+                " ".join(channel.groups),
+                " ".join(channel.tags),
+            )
+        )
+    )
+    return has_phrase(text, "english")
 
 
 def channel_category_rank(channel: Channel) -> int:
@@ -1506,7 +1616,10 @@ def probe_candidates(
         max_workers=resolved_workers,
         thread_name_prefix="south-asia-cricket",
     ) as executor:
-        futures = {executor.submit(probe_channel, channel, timeout): channel for channel in streams}
+        futures = {
+            executor.submit(probe_channel_with_retry, channel, timeout): channel
+            for channel in streams
+        }
         for completed, future in enumerate(as_completed(futures), start=1):
             channel = futures[future]
             try:
@@ -1527,6 +1640,27 @@ def probe_candidates(
 
     results.sort(key=lambda result: result.channel.index)
     return results
+
+
+def probe_channel_with_retry(channel: Channel, timeout: float) -> ProbeResult:
+    result = probe_channel(channel, timeout)
+    if should_retry_probe_result(result):
+        return probe_channel(channel, timeout)
+    return result
+
+
+def should_retry_probe_result(result: ProbeResult) -> bool:
+    if result.ok:
+        return False
+    retryable_markers = (
+        "fragment out of range",
+        "http error 404",
+        "remote end closed connection",
+        "timed out",
+        "timeout",
+    )
+    normalized_error = result.error.casefold()
+    return any(marker in normalized_error for marker in retryable_markers)
 
 
 def write_probe_report(
