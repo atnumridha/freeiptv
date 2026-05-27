@@ -14,7 +14,7 @@ env:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -93,3 +93,33 @@ jobs:
               print(f"- {item.get('name')}: {item.get('error')}")
           PY
           fi
+
+      - name: Build South Asia and cricket playlist
+        id: south_asia_cricket
+        if: always()
+        run: >
+          python3 scripts/scrape_south_asia_cricket_playlist.py
+          --workers 24
+          --timeout 20
+          --capture-workers 8
+          --capture-timeout 90
+          --capture-seconds 2
+          --retry-capture-seconds 20
+
+      - name: Commit and push South Asia and cricket playlist changes
+        if: always() && steps.south_asia_cricket.outcome == 'success'
+        run: |
+          git add south_asia_cricket.m3u \
+            reports/south-asia-cricket-report.json \
+            reports/south-asia-cricket-screenshot-report.json \
+            reports/south-asia-cricket-channels.md \
+            screenshots/south-asia-cricket
+          if git diff --cached --quiet; then
+            echo "No South Asia and cricket playlist changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Refresh South Asia cricket IPTV playlist"
+          git push
