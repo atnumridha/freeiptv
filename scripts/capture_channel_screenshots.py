@@ -211,51 +211,19 @@ def capture_channel_once(
         screenshot.unlink()
 
     headers = request_headers(channel)
-    command = [
+    command = build_ffmpeg_command(
         ffmpeg,
-        "-y",
-        "-hide_banner",
-        "-loglevel",
-        "error",
-        "-rw_timeout",
-        str(int(timeout * 1_000_000)),
-        "-allowed_segment_extensions",
-        "ALL",
-        "-extension_picky",
-        "0",
-        "-user_agent",
-        headers.get("User-Agent", DEFAULT_USER_AGENT),
-    ]
-    if "Referer" in headers:
-        command.extend(["-headers", f"Referer: {headers['Referer']}\r\n"])
-    command.extend(
-        [
-            "-i",
-            channel.url,
-            "-ss",
-            str(capture_seconds),
-            "-frames:v",
-            "1",
-            "-an",
-            "-sn",
-            "-dn",
-            "-vf",
-            f"scale={width}:-2",
-            "-q:v",
-            "4",
-            str(screenshot),
-        ]
+        channel.url,
+        headers,
+        screenshot,
+        capture_seconds,
+        timeout,
+        width,
+        use_hls_options=True,
     )
 
-    try:
-        completed = subprocess.run(
-            command,
-            capture_output=True,
-            text=True,
-            timeout=timeout + capture_seconds + 5,
-            check=False,
-        )
-    except subprocess.TimeoutExpired:
+    completed = run_capture_command(command, timeout + capture_seconds + 5)
+    if completed is None:
         return make_result(
             channel,
             False,
@@ -265,6 +233,45 @@ def capture_channel_once(
             attempts,
             "ffmpeg timed out",
         )
+
+    if completed.returncode != 0 and is_option_parse_error(completed):
+        if screenshot.exists():
+            screenshot.unlink()
+        fallback_command = build_ffmpeg_command(
+            ffmpeg,
+            channel.url,
+            headers,
+            screenshot,
+            capture_seconds,
+            timeout,
+            width,
+            use_hls_options=False,
+        )
+        fallback = run_capture_command(fallback_command, timeout + capture_seconds + 5)
+        if fallback is None:
+            return make_result(
+                channel,
+                False,
+                screenshot,
+                started,
+                capture_seconds,
+                attempts,
+                f"{last_error(completed)}; fallback without HLS options timed out",
+            )
+        if fallback.returncode != 0:
+            return make_result(
+                channel,
+                False,
+                screenshot,
+                started,
+                capture_seconds,
+                attempts,
+                (
+                    f"{last_error(completed)}; "
+                    f"fallback without HLS options failed: {last_error(fallback)}"
+                ),
+            )
+        completed = fallback
 
     if completed.returncode != 0:
         return make_result(
@@ -288,6 +295,83 @@ def capture_channel_once(
         )
 
     return make_result(channel, True, screenshot, started, capture_seconds, attempts)
+
+
+def build_ffmpeg_command(
+    ffmpeg: str,
+    url: str,
+    headers: dict[str, str],
+    screenshot: Path,
+    capture_seconds: float,
+    timeout: float,
+    width: int,
+    use_hls_options: bool,
+) -> list[str]:
+    command = [
+        ffmpeg,
+        "-y",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-rw_timeout",
+        str(int(timeout * 1_000_000)),
+        "-user_agent",
+        headers.get("User-Agent", DEFAULT_USER_AGENT),
+    ]
+    if use_hls_options:
+        command.extend(
+            [
+                "-allowed_segment_extensions",
+                "ALL",
+                "-extension_picky",
+                "0",
+            ]
+        )
+    if "Referer" in headers:
+        command.extend(["-headers", f"Referer: {headers['Referer']}\r\n"])
+    command.extend(
+        [
+            "-i",
+            url,
+            "-ss",
+            str(capture_seconds),
+            "-frames:v",
+            "1",
+            "-an",
+            "-sn",
+            "-dn",
+            "-vf",
+            f"scale={width}:-2",
+            "-q:v",
+            "4",
+            str(screenshot),
+        ]
+    )
+    return command
+
+
+def run_capture_command(
+    command: list[str], timeout: float
+) -> subprocess.CompletedProcess[str] | None:
+    try:
+        return subprocess.run(
+            command,
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+            check=False,
+        )
+    except subprocess.TimeoutExpired:
+        return None
+
+
+def is_option_parse_error(completed: subprocess.CompletedProcess[str]) -> bool:
+    output = f"{completed.stderr or ''}\n{completed.stdout or ''}"
+    return (
+        "Option not found" in output
+        or "Unrecognized option" in output
+        or "Error splitting the argument list" in output
+    )
 
 
 def capture_audio_only_stream(
@@ -402,35 +486,32 @@ def capture_audio_only_stream(
 def is_audio_only_stream(ffprobe: str, channel, timeout: float) -> bool:
     headers = request_headers(channel)
     probe_timeout = min(timeout, 30.0)
-    command = [
-        ffprobe,
-        "-hide_banner",
-        "-loglevel",
-        "error",
-        "-rw_timeout",
-        str(int(probe_timeout * 1_000_000)),
-        "-allowed_segment_extensions",
-        "ALL",
-        "-extension_picky",
-        "0",
-        "-user_agent",
-        headers.get("User-Agent", DEFAULT_USER_AGENT),
-    ]
-    if "Referer" in headers:
-        command.extend(["-headers", f"Referer: {headers['Referer']}\r\n"])
-    command.extend(["-show_entries", "stream=codec_type", "-of", "json", channel.url])
-
-    try:
-        completed = subprocess.run(
-            command,
-            capture_output=True,
-            text=True,
-            timeout=probe_timeout + 5,
-            check=False,
+    completed = run_probe_command(
+        build_ffprobe_command(
+            ffprobe,
+            channel.url,
+            headers,
+            probe_timeout,
+            use_hls_options=True,
+        ),
+        probe_timeout + 5,
+    )
+    if (
+        completed is not None
+        and completed.returncode != 0
+        and is_option_parse_error(completed)
+    ):
+        completed = run_probe_command(
+            build_ffprobe_command(
+                ffprobe,
+                channel.url,
+                headers,
+                probe_timeout,
+                use_hls_options=False,
+            ),
+            probe_timeout + 5,
         )
-    except subprocess.TimeoutExpired:
-        return False
-    if completed.returncode != 0:
+    if completed is None or completed.returncode != 0:
         return False
 
     try:
@@ -444,6 +525,53 @@ def is_audio_only_stream(ffprobe: str, channel, timeout: float) -> bool:
         if isinstance(stream, dict)
     }
     return "audio" in stream_types and "video" not in stream_types
+
+
+def build_ffprobe_command(
+    ffprobe: str,
+    url: str,
+    headers: dict[str, str],
+    probe_timeout: float,
+    use_hls_options: bool,
+) -> list[str]:
+    command = [
+        ffprobe,
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-rw_timeout",
+        str(int(probe_timeout * 1_000_000)),
+        "-user_agent",
+        headers.get("User-Agent", DEFAULT_USER_AGENT),
+    ]
+    if use_hls_options:
+        command.extend(
+            [
+                "-allowed_segment_extensions",
+                "ALL",
+                "-extension_picky",
+                "0",
+            ]
+        )
+    if "Referer" in headers:
+        command.extend(["-headers", f"Referer: {headers['Referer']}\r\n"])
+    command.extend(["-show_entries", "stream=codec_type", "-of", "json", url])
+    return command
+
+
+def run_probe_command(
+    command: list[str], timeout: float
+) -> subprocess.CompletedProcess[str] | None:
+    try:
+        return subprocess.run(
+            command,
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+            check=False,
+        )
+    except subprocess.TimeoutExpired:
+        return None
 
 
 def make_result(
@@ -471,7 +599,11 @@ def make_result(
 
 def last_error(completed: subprocess.CompletedProcess[str]) -> str:
     output = (completed.stderr or completed.stdout or "").strip().splitlines()
-    return output[-1] if output else f"ffmpeg exited {completed.returncode}"
+    if not output:
+        return f"ffmpeg exited {completed.returncode}"
+    if len(output) > 1 and "Option not found" in output[-1]:
+        return "; ".join(output[-2:])
+    return output[-1]
 
 
 def slugify(name: str) -> str:
