@@ -22,14 +22,8 @@ probing and screenshot validation. Arabic and Arab-region channels are excluded,
 and the main list is restricted to Hindi, Bengali/Bangla, and Marathi channels.
 English channels are allowed but sorted after the Indian-language sections.
 Channels outside News, Movies, Entertainment, Music, Sports, Infotainment, and
-Horror are removed. Channels listed in the Free-TV India markdown list are used
-as a default skip list and are excluded by EPG id, stream URL, and normalized
-channel name.
-Recognizable Indian TV brands are promoted within each category before the
-remaining channels in that category. The first priority brands are Aaj Tak, Zee,
-Sony, Colors, Star, TV9, and Republic. The script also loads the Telelibrary
-`TV_Channels_in_India` Fandom category through its public MediaWiki API as an
-additional priority source.
+Horror are removed. Recognizable Indian TV brands are promoted within each
+category before the remaining channels in that category.
 The free-playlist article links were reviewed as candidate inputs. IPTV-Org and
 Free-TV were already in the build path; DistroTV is now included with a stricter
 same-name duplicate guard. The other static article playlists either produced no
@@ -56,15 +50,6 @@ Generated files:
 - `screenshots/south-asia-cricket/*.jpg`: screenshot evidence for each retained
   channel.
 
-Latest South Asia build:
-
-- Working screenshot-verified channels: 208
-- Screenshot captures: 208/209 candidates; 1 failed candidate removed
-- Category order/counts: News 104, Movies 25, Entertainment 55, Music 7,
-  Sports 10, Infotainment 6, Horror 1
-- English channels retained: 31, starting at position 178
-- Free-TV India skip-list matches remaining: 0
-
 ## Current Sources
 
 - `https://iptv-org.github.io/iptv/languages/ben.m3u`
@@ -74,14 +59,13 @@ Latest South Asia build:
 
 ## Latest Build Stats
 
-- Checked HLS streams: 668
-- Working channels: 351
-- Screenshot playback captures: 351/351
+- Checked HLS streams: 662
+- Working channels: 353
 - Duplicate stream URLs skipped: 64
-- Potential duplicate channels skipped: 33
+- Potential duplicate channels skipped: 34
 - Manual exclusions skipped: 0
 - Incompatible fMP4 HLS streams skipped: 6
-- IP-literal HLS streams skipped: 135
+- IP-literal HLS streams skipped: 131
 - Probe mode: HLS segment probe
 - Worker threads: 24
 
