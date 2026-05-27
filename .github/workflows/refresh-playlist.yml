@@ -8,9 +8,13 @@ on:
 permissions:
   contents: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,19 +29,16 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg
 
-      - name: Build playlist and screenshots
+      - name: Build playlist
         run: >
           python3 scripts/build_playlist.py
+          --skip-screenshots
           --refresh-workers 24
           --refresh-timeout 10
-          --capture-workers 8
-          --capture-timeout 90
-          --capture-seconds 2
-          --retry-capture-seconds 20
 
-      - name: Commit and push changes
+      - name: Commit and push playlist changes
         run: |
-          git add README.md in.m3u reports/in-report.json reports/screenshot-report.json screenshots/latest
+          git add README.md in.m3u reports/in-report.json
           if git diff --cached --quiet; then
             echo "No playlist changes to commit."
             exit 0
@@ -47,3 +48,48 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Refresh India IPTV playlist"
           git push
+
+      - name: Capture screenshots
+        id: screenshots
+        continue-on-error: true
+        run: >
+          python3 scripts/capture_channel_screenshots.py
+          --playlist in.m3u
+          --readme README.md
+          --output-dir screenshots/latest
+          --report reports/screenshot-report.json
+          --workers 8
+          --timeout 90
+          --capture-seconds 2
+          --retry-capture-seconds 20
+
+      - name: Commit and push screenshot changes
+        if: steps.screenshots.outcome == 'success'
+        run: |
+          git add README.md reports/screenshot-report.json screenshots/latest
+          if git diff --cached --quiet; then
+            echo "No screenshot changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Refresh IPTV playback screenshots"
+          git push
+
+      - name: Report screenshot capture failure
+        if: steps.screenshots.outcome == 'failure'
+        run: |
+          echo "::warning::Screenshot capture failed on the GitHub runner. Playlist refresh was already committed; rerun manually to refresh screenshots."
+          if [ -f reports/screenshot-report.json ]; then
+            python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(Path("reports/screenshot-report.json").read_text())
+          print(f"Screenshot report: captured {report.get('captured', 0)}/{report.get('checked', 0)}")
+          failures = [item for item in report.get("results", []) if not item.get("ok")]
+          for item in failures[:20]:
+              print(f"- {item.get('name')}: {item.get('error')}")
+          PY
+          fi
