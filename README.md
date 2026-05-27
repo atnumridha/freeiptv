@@ -60,7 +60,7 @@ Generated files:
 ## Latest Build Stats
 
 - Checked HLS streams: 662
-- Working channels: 353
+- Working channels: 357
 - Duplicate stream URLs skipped: 64
 - Potential duplicate channels skipped: 34
 - Manual exclusions skipped: 0
