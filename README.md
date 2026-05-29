@@ -61,13 +61,13 @@ Generated files:
 ## Latest Build Stats
 
 - Checked HLS streams: 674
-- Published channels: 354
+- Published channels: 359
 - Duplicate stream URLs skipped: 69
-- Potential duplicate channels skipped: 35
+- Potential duplicate channels skipped: 34
 - Manual exclusions skipped: 0
 - Incompatible fMP4 HLS streams skipped: 6
 - IP-literal HLS streams skipped: 134
-- Always-included failed probes published: 0
+- Always-included failed probes published: 2
 - Probe mode: HLS segment probe
 - Worker threads: 24
 
