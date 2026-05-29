@@ -121,8 +121,9 @@ The build keeps only HLS `.m3u8` streams during the first refresh stage. It then
 - Rejects fMP4 HLS playlists because many IPTV players fail on them.
 - Rejects raw IP-literal HLS origins, variants, media playlists, and segments
   for better player compatibility.
-- Sorts channels by group with News first, then Movies, then Entertainment, then
-  the remaining groups alphabetically.
+- Sorts channels by group with News first, pins Aaj Tak HD first, promotes top
+  Indian news brands such as ABP, Republic, TV9, News18, India TV, NDTV, and
+  Zee, then keeps Sports and Movies ahead of general entertainment/other groups.
 
 Screenshot validation is currently evidence-only by default. It does not remove
 a channel from `in.m3u` unless `--filter-by-screenshot` is explicitly provided.

@@ -37,11 +37,12 @@ DEFAULT_USER_AGENT = (
 MAX_AUTO_WORKERS = 32
 GROUP_PRIORITY = {
     "news": 0,
-    "movie": 1,
-    "movies": 1,
-    "entertainment": 2,
+    "sports": 1,
+    "movie": 2,
+    "movies": 2,
+    "entertainment": 3,
 }
-DEFAULT_GROUP_RANK = 3
+DEFAULT_GROUP_RANK = 4
 MIN_MEDIA_SEGMENTS_TO_VERIFY = 2
 MANUAL_EXCLUDED_TVG_IDS = {
     "bigmagic.in@sd",
@@ -49,6 +50,51 @@ MANUAL_EXCLUDED_TVG_IDS = {
 MANUAL_EXCLUDED_NAMES = {
     "big magic",
 }
+ALWAYS_FIRST_CHANNELS = (
+    ("aaj tak hd", "aaj tak"),
+)
+TOP_INDIAN_NEWS_CHANNELS = (
+    ("aaj tak hd", "aaj tak"),
+    ("abp news",),
+    ("republic bharat",),
+    ("tv9 bharatvarsh",),
+    ("news18 india",),
+    ("india tv",),
+    ("ndtv india", "ndtv 24x7", "ndtv news", "ndtv"),
+    ("zee news",),
+    ("dd news",),
+    ("good news today",),
+    ("news 24",),
+    ("news nation",),
+    ("cnbc awaaz",),
+    ("abp",),
+    ("republic",),
+    ("tv9",),
+    ("news18",),
+    ("zee",),
+)
+KNOWN_INDIAN_CHANNELS = (
+    ("aaj tak",),
+    ("abp",),
+    ("news18",),
+    ("india tv",),
+    ("ndtv",),
+    ("republic",),
+    ("zee",),
+    ("tv9",),
+    ("dd ", "ddnews", "dd national"),
+    ("cnbc awaaz",),
+    ("good news today",),
+    ("news 24",),
+    ("news nation",),
+    ("goldmines",),
+    ("shemaroo",),
+    ("sony",),
+    ("star",),
+    ("dangal",),
+    ("b4u",),
+    ("sansad",),
+)
 ssl_warning_printed = False
 
 
@@ -437,20 +483,107 @@ def write_playlist(path: Path, header: str, results: list[ProbeResult]) -> None:
             output.write(result.channel.url.rstrip() + "\n")
 
 
-def playlist_sort_key(result: ProbeResult) -> tuple[int, str, str, int]:
+def playlist_sort_key(result: ProbeResult) -> tuple[int, int, int, int, str, str, int]:
     channel = result.channel
     return (
         group_rank(channel.groups),
+        always_first_rank(channel),
+        top_news_rank(channel),
+        known_indian_channel_rank(channel),
         primary_group_name(channel.groups),
+        normalize_channel_name(channel.name),
         channel.name.casefold(),
         channel.index,
     )
 
 
+def always_first_rank(channel: Channel) -> int:
+    return channel_priority_rank(channel, ALWAYS_FIRST_CHANNELS, default=1)
+
+
+def top_news_rank(channel: Channel) -> int:
+    if group_rank(channel.groups) != GROUP_PRIORITY["news"]:
+        return len(TOP_INDIAN_NEWS_CHANNELS)
+    return channel_priority_rank(
+        channel,
+        TOP_INDIAN_NEWS_CHANNELS,
+        default=len(TOP_INDIAN_NEWS_CHANNELS),
+    )
+
+
+def known_indian_channel_rank(channel: Channel) -> int:
+    priority = channel_priority_rank(
+        channel,
+        KNOWN_INDIAN_CHANNELS,
+        default=len(KNOWN_INDIAN_CHANNELS),
+    )
+    if priority < len(KNOWN_INDIAN_CHANNELS):
+        return priority
+    if is_indian_channel(channel):
+        return len(KNOWN_INDIAN_CHANNELS)
+    return len(KNOWN_INDIAN_CHANNELS) + 1
+
+
+def channel_priority_rank(
+    channel: Channel,
+    priority_aliases: tuple[tuple[str, ...], ...],
+    default: int,
+) -> int:
+    normalized_name = normalize_channel_name(channel.name)
+    normalized_tvg_id = normalize_channel_name(channel.tvg_id)
+    for index, aliases in enumerate(priority_aliases):
+        for alias in aliases:
+            normalized_alias = normalize_channel_name(alias)
+            if channel_name_matches(normalized_name, normalized_alias):
+                return index
+            if tvg_id_matches(normalized_tvg_id, normalized_alias):
+                return index
+    return default
+
+
+def channel_name_matches(normalized_name: str, normalized_alias: str) -> bool:
+    if not normalized_alias:
+        return False
+    return normalized_name == normalized_alias or normalized_name.startswith(f"{normalized_alias} ")
+
+
+def tvg_id_matches(normalized_tvg_id: str, normalized_alias: str) -> bool:
+    if channel_name_matches(normalized_tvg_id, normalized_alias):
+        return True
+    compact_tvg_id = normalized_tvg_id.replace(" ", "")
+    compact_alias = normalized_alias.replace(" ", "")
+    return bool(compact_alias) and compact_tvg_id.startswith(compact_alias)
+
+
+def is_indian_channel(channel: Channel) -> bool:
+    if ".in@" in channel.tvg_id.casefold():
+        return True
+    text = normalize_channel_name(
+        " ".join(
+            (
+                channel.name,
+                channel.tvg_id,
+                " ".join(channel.groups),
+            )
+        )
+    )
+    return " india " in f" {text} " or text.endswith(" in")
+
+
 def group_rank(groups: tuple[str, ...]) -> int:
     if not groups:
         return DEFAULT_GROUP_RANK
-    return GROUP_PRIORITY.get(groups[0].casefold(), DEFAULT_GROUP_RANK)
+    normalized_group = normalize_channel_name(groups[0])
+    if "news" in normalized_group:
+        return GROUP_PRIORITY["news"]
+    if any(
+        keyword in normalized_group
+        for keyword in ("sport", "cricket", "football")
+    ):
+        return GROUP_PRIORITY["sports"]
+    if "movie" in normalized_group:
+        return GROUP_PRIORITY["movies"]
+    return GROUP_PRIORITY.get(normalized_group, DEFAULT_GROUP_RANK)
 
 
 def primary_group_name(groups: tuple[str, ...]) -> str:
@@ -647,8 +780,9 @@ The build keeps only HLS `.m3u8` streams during the first refresh stage. It then
 - Rejects fMP4 HLS playlists because many IPTV players fail on them.
 - Rejects raw IP-literal HLS origins, variants, media playlists, and segments
   for better player compatibility.
-- Sorts channels by group with News first, then Movies, then Entertainment, then
-  the remaining groups alphabetically.
+- Sorts channels by group with News first, pins Aaj Tak HD first, promotes top
+  Indian news brands such as ABP, Republic, TV9, News18, India TV, NDTV, and
+  Zee, then keeps Sports and Movies ahead of general entertainment/other groups.
 
 Screenshot validation is currently evidence-only by default. It does not remove
 a channel from `in.m3u` unless `--filter-by-screenshot` is explicitly provided.
