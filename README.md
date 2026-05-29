@@ -61,6 +61,7 @@ Generated files:
 
 - Checked HLS streams: 670
 - Working channels: 359
+- Screenshot playback captures: 357/359
 - Duplicate stream URLs skipped: 66
 - Potential duplicate channels skipped: 34
 - Manual exclusions skipped: 0
