@@ -34,7 +34,7 @@ jobs:
           python3 scripts/build_playlist.py
           --skip-screenshots
           --refresh-workers 24
-          --refresh-timeout 10
+          --refresh-timeout 60
 
       - name: Commit and push playlist changes
         run: |

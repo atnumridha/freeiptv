@@ -74,8 +74,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--refresh-timeout",
         type=float,
-        default=10.0,
-        help="Network timeout per HLS probe request in seconds. Default: 10",
+        default=60.0,
+        help="Network timeout budget per HLS channel probe in seconds. Default: 60",
     )
     parser.add_argument(
         "--capture-workers",

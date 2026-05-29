@@ -52,6 +52,7 @@ Generated files:
 
 ## Current Sources
 
+- `manual:always-included`
 - `https://iptv-org.github.io/iptv/languages/ben.m3u`
 - `https://iptv-org.github.io/iptv/languages/hin.m3u`
 - `https://iptv-org.github.io/iptv/languages/mar.m3u`
@@ -59,14 +60,14 @@ Generated files:
 
 ## Latest Build Stats
 
-- Checked HLS streams: 671
-- Working channels: 363
-- Screenshot playback captures: 362/363
-- Duplicate stream URLs skipped: 65
+- Checked HLS streams: 674
+- Published channels: 354
+- Duplicate stream URLs skipped: 69
 - Potential duplicate channels skipped: 35
 - Manual exclusions skipped: 0
 - Incompatible fMP4 HLS streams skipped: 6
 - IP-literal HLS streams skipped: 134
+- Always-included failed probes published: 0
 - Probe mode: HLS segment probe
 - Worker threads: 24
 
@@ -179,7 +180,7 @@ The GitHub Actions workflow runs daily and can also be started manually from the
 Actions tab. It runs:
 
 ```sh
-python3 scripts/build_playlist.py --refresh-workers 24 --refresh-timeout 10 --capture-workers 8 --capture-timeout 90 --capture-seconds 2 --retry-capture-seconds 20
+python3 scripts/build_playlist.py --refresh-workers 24 --refresh-timeout 60 --capture-workers 8 --capture-timeout 90 --capture-seconds 2 --retry-capture-seconds 20
 ```
 
 If the generated playlist, reports, README, or screenshots change, the workflow

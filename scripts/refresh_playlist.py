@@ -29,6 +29,17 @@ DEFAULT_SOURCES = (
     "https://iptv-org.github.io/iptv/languages/mar.m3u",
     "https://raw.githubusercontent.com/FunctionError/PiratesTv/main/combined_playlist.m3u",
 )
+ALWAYS_INCLUDED_SOURCE = "manual:always-included"
+ALWAYS_INCLUDED_M3U = """#EXTM3U
+#EXTINF:-1 tvg-id="ZeeDilSe.in@HD" tvg-logo="https://d2mxb63djushzm.cloudfront.net/images/Zee_Dil_Se.png" group-title="Entertainment",Zee Dil Se (1080p)
+https://amg00862-amg00862c6-amgplt0173.playout.now3.amagi.tv/playlist/amg00862-amg00862c6-amgplt0173/playlist.m3u8
+#EXTINF:-1 tvg-id="ZeeHorrorNights.in@HD" tvg-logo="https://d3bd0tgyk368z1.cloudfront.net/zeelg/LG%20logo%20artwork/400x200/zhornights.png" group-title="Entertainment",Zee Horror Nights (1080p)
+https://amg00862-amg00862c7-amgplt0173.playout.now3.amagi.tv/playlist/amg00862-amg00862c7-amgplt0173/playlist.m3u8
+"""
+ALWAYS_INCLUDED_TVG_IDS = {
+    "zeedilse.in@hd",
+    "zeehorrornights.in@hd",
+}
 RAW_PLAYLIST_URL = "https://raw.githubusercontent.com/atnumridha/freeiptv/main/in.m3u"
 DEFAULT_USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -153,8 +164,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--timeout",
         type=float,
-        default=10.0,
-        help="Network timeout per request in seconds. Default: 10",
+        default=60.0,
+        help="Network timeout budget per channel probe in seconds. Default: 60",
     )
     parser.add_argument(
         "--progress-every",
@@ -392,13 +403,25 @@ def is_fragmented_mp4_playlist(manifest: str, segments: list[str]) -> bool:
     return any(urlparse(segment).path.casefold().endswith(".m4s") for segment in segments)
 
 
+def remaining_probe_timeout(deadline: float) -> float:
+    remaining = deadline - time.monotonic()
+    if remaining <= 0:
+        raise TimeoutError("channel probe timed out")
+    return remaining
+
+
 def probe_channel(channel: Channel, timeout: float) -> ProbeResult:
     started = time.monotonic()
+    deadline = started + timeout
     checked_url = channel.url
     try:
         headers = request_headers(channel)
         reject_ip_literal_url(channel.url, "origin")
-        manifest, manifest_url = fetch_text(channel.url, headers, timeout)
+        manifest, manifest_url = fetch_text(
+            channel.url,
+            headers,
+            remaining_probe_timeout(deadline),
+        )
         reject_ip_literal_url(manifest_url, "origin")
         if "#EXTM3U" not in manifest[:4096].upper():
             raise ValueError("response is not an M3U/HLS playlist")
@@ -408,7 +431,11 @@ def probe_channel(channel: Channel, timeout: float) -> ProbeResult:
             if stream_uri:
                 reject_ip_literal_url(stream_uri, "variant")
                 checked_url = stream_uri
-                manifest, manifest_url = fetch_text(stream_uri, headers, timeout)
+                manifest, manifest_url = fetch_text(
+                    stream_uri,
+                    headers,
+                    remaining_probe_timeout(deadline),
+                )
                 reject_ip_literal_url(manifest_url, "variant")
                 continue
 
@@ -418,7 +445,11 @@ def probe_channel(channel: Channel, timeout: float) -> ProbeResult:
             if is_hls_url(media_uri):
                 reject_ip_literal_url(media_uri, "media playlist")
                 checked_url = media_uri
-                manifest, manifest_url = fetch_text(media_uri, headers, timeout)
+                manifest, manifest_url = fetch_text(
+                    media_uri,
+                    headers,
+                    remaining_probe_timeout(deadline),
+                )
                 reject_ip_literal_url(manifest_url, "media playlist")
                 continue
 
@@ -436,7 +467,7 @@ def probe_channel(channel: Channel, timeout: float) -> ProbeResult:
 
             checked_url = segment_uris[-1]
             for segment_uri in segment_uris:
-                fetch_bytes(segment_uri, headers, timeout)
+                fetch_bytes(segment_uri, headers, remaining_probe_timeout(deadline))
             return make_result(channel, True, started, checked_url)
 
         raise ValueError("nested playlist depth exceeded")
@@ -471,7 +502,11 @@ def resolve_worker_count(requested: int, stream_count: int) -> int:
 
 def write_playlist(path: Path, header: str, results: list[ProbeResult]) -> None:
     sorted_results = sorted(
-        (result for result in results if result.ok),
+        (
+            result
+            for result in results
+            if result.ok or is_always_included(result.channel)
+        ),
         key=playlist_sort_key,
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -609,6 +644,11 @@ def write_report(
     source_summaries: list[dict[str, int | str]],
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
+    always_included_failed_count = sum(
+        1
+        for result in published_results
+        if is_always_included(result.channel) and not result.ok
+    )
     payload = {
         "sources": sources,
         "checked_at": datetime.now(timezone.utc).isoformat(),
@@ -624,6 +664,7 @@ def write_report(
         "skipped_manual_exclusions": manual_excluded_count,
         "skipped_incompatible_hls": incompatible_hls_count,
         "skipped_ip_literal_hls": ip_literal_hls_count,
+        "published_always_included_failed": always_included_failed_count,
         "potential_duplicate_records": potential_duplicate_records,
         "manual_excluded_records": manual_excluded_records,
         "source_summaries": source_summaries,
@@ -659,6 +700,7 @@ def update_readme(
     manual_excluded_count: int,
     incompatible_hls_count: int,
     ip_literal_hls_count: int,
+    always_included_failed_count: int,
 ) -> None:
     source_list = "\n".join(f"- `{source}`" for source in sources)
     content = f"""# freeiptv
@@ -720,12 +762,13 @@ Generated files:
 ## Latest Build Stats
 
 - Checked HLS streams: {checked}
-- Working channels: {working}
+- Published channels: {working}
 - Duplicate stream URLs skipped: {duplicate_count}
 - Potential duplicate channels skipped: {potential_duplicate_count}
 - Manual exclusions skipped: {manual_excluded_count}
 - Incompatible fMP4 HLS streams skipped: {incompatible_hls_count}
 - IP-literal HLS streams skipped: {ip_literal_hls_count}
+- Always-included failed probes published: {always_included_failed_count}
 - Probe mode: HLS segment probe
 - Worker threads: {workers}
 
@@ -838,7 +881,7 @@ The GitHub Actions workflow runs daily and can also be started manually from the
 Actions tab. It runs:
 
 ```sh
-python3 scripts/build_playlist.py --refresh-workers 24 --refresh-timeout 10 --capture-workers 8 --capture-timeout 90 --capture-seconds 2 --retry-capture-seconds 20
+python3 scripts/build_playlist.py --refresh-workers 24 --refresh-timeout 60 --capture-workers 8 --capture-timeout 90 --capture-seconds 2 --retry-capture-seconds 20
 ```
 
 If the generated playlist, reports, README, or screenshots change, the workflow
@@ -880,7 +923,7 @@ def load_sources(sources: list[str], timeout: float) -> tuple[list[Channel], int
     source_summaries: list[dict[str, int | str]] = []
 
     for source in sources:
-        text = load_text(source, timeout)
+        text = ALWAYS_INCLUDED_M3U if source == ALWAYS_INCLUDED_SOURCE else load_text(source, timeout)
         _, channels = parse_m3u(text, source)
         streams = [channel for channel in channels if is_hls_url(channel.url)]
         skipped = len(channels) - len(streams)
@@ -922,7 +965,7 @@ def dedupe_working_results(
     manual_excluded_records: list[dict[str, str]] = []
 
     for result in sorted(results, key=lambda item: item.channel.index):
-        if not result.ok:
+        if not result.ok and not is_always_included(result.channel):
             continue
         if is_manually_excluded(result.channel):
             manual_excluded_records.append(
@@ -965,6 +1008,18 @@ def is_manually_excluded(channel: Channel) -> bool:
     return normalize_channel_name(channel.name) in MANUAL_EXCLUDED_NAMES
 
 
+def is_always_included(channel: Channel) -> bool:
+    return channel.tvg_id.casefold() in ALWAYS_INCLUDED_TVG_IDS
+
+
+def always_included_failed_count(results: list[ProbeResult]) -> int:
+    return sum(
+        1
+        for result in results
+        if is_always_included(result.channel) and not result.ok
+    )
+
+
 def incompatible_hls_result_count(results: list[ProbeResult]) -> int:
     return sum(
         1
@@ -1000,7 +1055,8 @@ def normalize_channel_name(name: str) -> str:
 
 
 def refresh(args: argparse.Namespace) -> tuple[int, int, int]:
-    sources = args.source or list(DEFAULT_SOURCES)
+    configured_sources = args.source or list(DEFAULT_SOURCES)
+    sources = [ALWAYS_INCLUDED_SOURCE, *configured_sources]
     loaded_streams, skipped, source_summaries = load_sources(sources, args.timeout)
     streams, duplicate_count = dedupe_streams(loaded_streams)
     workers = resolve_worker_count(args.workers, len(streams))
@@ -1053,6 +1109,7 @@ def refresh(args: argparse.Namespace) -> tuple[int, int, int]:
     working = len(published_results)
     incompatible_hls_count = incompatible_hls_result_count(results)
     ip_literal_hls_count = ip_literal_hls_result_count(results)
+    always_included_failed = always_included_failed_count(published_results)
 
     write_playlist(Path(args.output), "#EXTM3U", published_results)
     write_report(
@@ -1082,12 +1139,14 @@ def refresh(args: argparse.Namespace) -> tuple[int, int, int]:
         manual_excluded_count,
         incompatible_hls_count,
         ip_literal_hls_count,
+        always_included_failed,
     )
 
     print(
-        f"Wrote {working} working channels to {args.output}; "
+        f"Wrote {working} channels to {args.output}; "
         f"skipped {potential_duplicate_count} potential duplicate channels "
-        f"and {manual_excluded_count} manual exclusions.",
+        f"and {manual_excluded_count} manual exclusions; "
+        f"published {always_included_failed} always-included failed probes.",
         flush=True,
     )
     return checked, working, workers
