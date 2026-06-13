@@ -60,13 +60,13 @@ Generated files:
 
 ## Latest Build Stats
 
-- Checked HLS streams: 685
-- Published channels: 360
-- Duplicate stream URLs skipped: 82
-- Potential duplicate channels skipped: 30
+- Checked HLS streams: 690
+- Published channels: 368
+- Duplicate stream URLs skipped: 83
+- Potential duplicate channels skipped: 33
 - Manual exclusions skipped: 0
 - Incompatible fMP4 HLS streams skipped: 5
-- IP-literal HLS streams skipped: 137
+- IP-literal HLS streams skipped: 136
 - Always-included failed probes published: 2
 - Probe mode: HLS segment probe
 - Worker threads: 24
@@ -185,4 +185,3 @@ python3 scripts/build_playlist.py --refresh-workers 24 --refresh-timeout 60 --ca
 
 If the generated playlist, reports, README, or screenshots change, the workflow
 commits and pushes the updates back to `main`.
-- Screenshot playback captures: 320/360
