@@ -923,7 +923,21 @@ def load_sources(sources: list[str], timeout: float) -> tuple[list[Channel], int
     source_summaries: list[dict[str, int | str]] = []
 
     for source in sources:
-        text = ALWAYS_INCLUDED_M3U if source == ALWAYS_INCLUDED_SOURCE else load_text(source, timeout)
+        try:
+            text = ALWAYS_INCLUDED_M3U if source == ALWAYS_INCLUDED_SOURCE else load_text(source, timeout)
+        except (HTTPError, URLError, TimeoutError, OSError, UnicodeDecodeError) as error:
+            print(f"Warning: skipped unavailable source {source}: {error}", file=sys.stderr, flush=True)
+            source_summaries.append(
+                {
+                    "source": source,
+                    "channels": 0,
+                    "hls_streams": 0,
+                    "skipped_non_m3u8": 0,
+                    "error": str(error),
+                }
+            )
+            continue
+
         _, channels = parse_m3u(text, source)
         streams = [channel for channel in channels if is_hls_url(channel.url)]
         skipped = len(channels) - len(streams)
