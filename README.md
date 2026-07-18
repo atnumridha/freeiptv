@@ -60,9 +60,9 @@ Generated files:
 
 ## Latest Build Stats
 
-- Checked HLS streams: 423
-- Published channels: 199
-- Duplicate stream URLs skipped: 12
+- Checked HLS streams: 427
+- Published channels: 195
+- Duplicate stream URLs skipped: 13
 - Potential duplicate channels skipped: 0
 - Manual exclusions skipped: 0
 - Incompatible fMP4 HLS streams skipped: 6
@@ -185,4 +185,3 @@ python3 scripts/build_playlist.py --refresh-workers 24 --refresh-timeout 60 --ca
 
 If the generated playlist, reports, README, or screenshots change, the workflow
 commits and pushes the updates back to `main`.
-- Screenshot playback captures: 191/199
