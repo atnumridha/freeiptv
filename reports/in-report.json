@@ -6,22 +6,29 @@
     "https://iptv-org.github.io/iptv/languages/mar.m3u",
     "https://raw.githubusercontent.com/FunctionError/PiratesTv/main/combined_playlist.m3u"
   ],
-  "checked_at": "2026-07-18T03:49:32.294988+00:00",
+  "checked_at": "2026-07-19T04:19:05.244192+00:00",
   "probe_mode": "hls",
   "worker_threads": 24,
   "checked": 427,
-  "working_before_duplicate_filter": 193,
-  "working": 195,
-  "failed": 234,
+  "working_before_duplicate_filter": 190,
+  "working": 191,
+  "failed": 237,
   "skipped_non_m3u8": 14,
   "skipped_duplicate_urls": 13,
   "skipped_potential_duplicate_channels": 0,
-  "skipped_manual_exclusions": 0,
+  "skipped_manual_exclusions": 1,
   "skipped_incompatible_hls": 6,
   "skipped_ip_literal_hls": 123,
   "published_always_included_failed": 2,
   "potential_duplicate_records": [],
-  "manual_excluded_records": [],
+  "manual_excluded_records": [
+    {
+      "name": "Big Magic (576p)",
+      "tvg_id": "BigMagic.in@SD",
+      "url": "https://mumt05.tangotv.in/87NeALx2BIGMAGIC/index.m3u8",
+      "source": "https://iptv-org.github.io/iptv/languages/hin.m3u"
+    }
+  ],
   "source_summaries": [
     {
       "source": "manual:always-included",
@@ -100,8 +107,8 @@
       "url": "https://mumt03.tangotv.in/Dsly5z3HAAKASHAATH/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 4488,
-      "checked_url": "https://mumt03.tangotv.in/Dsly5z3HAAKASHAATH/tracks-v1a1/2026/07/18/03/47/17-06000.ts",
+      "elapsed_ms": 3783,
+      "checked_url": "https://mumt03.tangotv.in/Dsly5z3HAAKASHAATH/tracks-v1a1/2026/07/19/04/16/46-06000.ts",
       "error": ""
     },
     {
@@ -114,11 +121,11 @@
         "Entertainment"
       ],
       "url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/amarbanglatv.stream/playlist.m3u8",
-      "ok": true,
-      "published": true,
-      "elapsed_ms": 1498,
-      "checked_url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/amarbanglatv.stream/live-orgin/amarbanglatv.stream/l_42725680_17880100_1490.png?nimblesessionid=1116693985",
-      "error": ""
+      "ok": false,
+      "published": false,
+      "elapsed_ms": 1344,
+      "checked_url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/amarbanglatv.stream/live-orgin/amarbanglatv.stream/l_42725680_106044100_8837.png?nimblesessionid=1118109789",
+      "error": "HTTP Error 500: Internal Server Error"
     },
     {
       "index": 4,
@@ -132,8 +139,8 @@
       "url": "https://d2l4ar6y3mrs4k.cloudfront.net/live-streaming/ananda-livetv/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3048,
-      "checked_url": "https://d2l4ar6y3mrs4k.cloudfront.net/live-streaming/ananda-livetv/master_180/01932/master_180_00183.ts",
+      "elapsed_ms": 3053,
+      "checked_url": "https://d2l4ar6y3mrs4k.cloudfront.net/live-streaming/ananda-livetv/master_180/01962/master_180_00003.ts",
       "error": ""
     },
     {
@@ -148,8 +155,8 @@
       "url": "https://live.legitpro.co.in/cnnnews/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3676,
-      "checked_url": "https://live.legitpro.co.in/cnnnews/tracks-v1a1/2026/07/18/03/46/34-07200.ts",
+      "elapsed_ms": 3666,
+      "checked_url": "https://live.legitpro.co.in/cnnnews/tracks-v1a1/2026/07/19/04/15/59-07200.ts",
       "error": ""
     },
     {
@@ -164,8 +171,8 @@
       "url": "https://account19.livebox.co.in/Anandabarta2hls/live.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3208,
-      "checked_url": "https://account19.livebox.co.in/Anandabarta2hls/live-56.ts",
+      "elapsed_ms": 3417,
+      "checked_url": "https://account19.livebox.co.in/Anandabarta2hls/live-41.ts",
       "error": ""
     },
     {
@@ -180,7 +187,7 @@
       "url": "https://bozztv.com/rongo/rongo-AnandaTV/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 10203,
+      "elapsed_ms": 10265,
       "checked_url": "https://bozztv.com/rongo/rongo-AnandaTV/index.m3u8",
       "error": "HTTP Error 404: Not Found"
     },
@@ -196,7 +203,7 @@
       "url": "https://tvsen6.aynaott.com/asiantv/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 60015,
+      "elapsed_ms": 60074,
       "checked_url": "https://tvsen6.aynaott.com/asiantv/index.m3u8",
       "error": "<urlopen error timed out>"
     },
@@ -226,11 +233,11 @@
         "General"
       ],
       "url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/atnbanglauk-off.stream/playlist.m3u8",
-      "ok": false,
-      "published": false,
-      "elapsed_ms": 975,
-      "checked_url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/atnbanglauk-off.stream/live-orgin/atnbanglauk-off.stream/l_41873819_105768433_23902.png?nimblesessionid=1116693987",
-      "error": "HTTP Error 500: Internal Server Error"
+      "ok": true,
+      "published": true,
+      "elapsed_ms": 1511,
+      "checked_url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/atnbanglauk-off.stream/live-orgin/atnbanglauk-off.stream/l_41873819_193938433_38597.png?nimblesessionid=1118109788",
+      "error": ""
     },
     {
       "index": 11,
@@ -244,9 +251,9 @@
       "url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/atnmusic.stream/playlist.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 385,
-      "checked_url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/atnmusic.stream/playlist.m3u8",
-      "error": "HTTP Error 404: Not Found"
+      "elapsed_ms": 1335,
+      "checked_url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/atnmusic.stream/live-orgin/atnmusic.stream/l_43316107_39547847_3258.png?nimblesessionid=1118109792",
+      "error": "HTTP Error 500: Internal Server Error"
     },
     {
       "index": 12,
@@ -260,8 +267,8 @@
       "url": "https://bozztv.com/rongo/rongo-ATNNews/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 712,
-      "checked_url": "https://bozztv.com/rongo/rongo-ATNNews/tracks-v2a1/2026/07/18/03/47/20-03000.ts",
+      "elapsed_ms": 789,
+      "checked_url": "https://bozztv.com/rongo/rongo-ATNNews/tracks-v2a1/2026/07/19/04/16/43-03000.ts",
       "error": ""
     },
     {
@@ -276,8 +283,8 @@
       "url": "https://dbcanada.sonarbanglatv.com/azantv/atv/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 944,
-      "checked_url": "https://dbcanada.sonarbanglatv.com/azantv/atv/9367.ts",
+      "elapsed_ms": 940,
+      "checked_url": "https://dbcanada.sonarbanglatv.com/azantv/atv/19947.ts",
       "error": ""
     },
     {
@@ -292,7 +299,7 @@
       "url": "https://tvsen6.aynaott.com/banglatv/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 60073,
+      "elapsed_ms": 60070,
       "checked_url": "https://tvsen6.aynaott.com/banglatv/index.m3u8",
       "error": "<urlopen error timed out>"
     },
@@ -308,7 +315,7 @@
       "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1715/output/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 40,
+      "elapsed_ms": 18,
       "checked_url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1715/output/index.m3u8",
       "error": "<urlopen error [Errno -5] No address associated with hostname>"
     },
@@ -324,7 +331,7 @@
       "url": "https://tvsen6.aynaott.com/bijoytv/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 60072,
+      "elapsed_ms": 60070,
       "checked_url": "https://tvsen6.aynaott.com/bijoytv/index.m3u8",
       "error": "<urlopen error timed out>"
     },
@@ -354,11 +361,11 @@
         "Undefined"
       ],
       "url": "https://bozztv.com/rongo/rongo-BTVChattagram/index.m3u8",
-      "ok": false,
-      "published": false,
-      "elapsed_ms": 526,
-      "checked_url": "https://bozztv.com/rongo/rongo-BTVChattagram/tracks-v1a1/2026/07/18/03/47/15-06000.ts",
-      "error": "HTTP Error 404: Not Found"
+      "ok": true,
+      "published": true,
+      "elapsed_ms": 773,
+      "checked_url": "https://bozztv.com/rongo/rongo-BTVChattagram/tracks-v1a1/2026/07/19/04/16/36-03000.ts",
+      "error": ""
     },
     {
       "index": 19,
@@ -372,7 +379,7 @@
       "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/1709.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 39,
+      "elapsed_ms": 17,
       "checked_url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/1709.m3u8",
       "error": "<urlopen error [Errno -5] No address associated with hostname>"
     },
@@ -404,7 +411,7 @@
       "url": "https://www.btvlive.gov.bd/streams/ef8b8bbc-98b7-4ba7-a49d-a0adaf259d35/ES/d96eb7f4-83c2-4472-9597-3568390a8ebf/d96eb7f4-83c2-4472-9597-3568390a8ebf_3_playlist.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 460,
+      "elapsed_ms": 383,
       "checked_url": "https://www.btvlive.gov.bd/streams/ef8b8bbc-98b7-4ba7-a49d-a0adaf259d35/ES/d96eb7f4-83c2-4472-9597-3568390a8ebf/d96eb7f4-83c2-4472-9597-3568390a8ebf_3_playlist.m3u8",
       "error": "HTTP Error 404: "
     },
@@ -420,7 +427,7 @@
       "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1729/output/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 37,
+      "elapsed_ms": 16,
       "checked_url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1729/output/index.m3u8",
       "error": "<urlopen error [Errno -5] No address associated with hostname>"
     },
@@ -436,7 +443,7 @@
       "url": "https://bozztv.com/rongo/rongo-Channel24HD/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 174,
+      "elapsed_ms": 236,
       "checked_url": "https://bozztv.com/rongo/rongo-Channel24HD/index.m3u8",
       "error": "HTTP Error 404: Not Found"
     },
@@ -452,7 +459,7 @@
       "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1723/output/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 38,
+      "elapsed_ms": 28,
       "checked_url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1723/output/index.m3u8",
       "error": "<urlopen error [Errno -5] No address associated with hostname>"
     },
@@ -466,11 +473,11 @@
         "Culture"
       ],
       "url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/channels.stream/live-orgin/channels.stream/playlist.m3u8",
-      "ok": true,
-      "published": true,
-      "elapsed_ms": 1495,
-      "checked_url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/channels.stream/live-orgin/channels.stream/l_42833107_1927040_321.png?nimblesessionid=1116693991",
-      "error": ""
+      "ok": false,
+      "published": false,
+      "elapsed_ms": 1293,
+      "checked_url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/channels.stream/live-orgin/channels.stream/l_43435992_1843360_307.png?nimblesessionid=1118109786",
+      "error": "HTTP Error 500: Internal Server Error"
     },
     {
       "index": 26,
@@ -484,8 +491,8 @@
       "url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/chsukoff.stream/playlist.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 929,
-      "checked_url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/chsukoff.stream/live-orgin/chsukoff.stream/l_41873732_149496120_23902.png?nimblesessionid=1116693992",
+      "elapsed_ms": 558,
+      "checked_url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/chsukoff.stream/playlist.m3u8",
       "error": "HTTP Error 500: Internal Server Error"
     },
     {
@@ -546,11 +553,11 @@
         "News"
       ],
       "url": "https://live.legitpro.co.in/ctvnakdplus/index.m3u8",
-      "ok": true,
-      "published": true,
-      "elapsed_ms": 3649,
-      "checked_url": "https://live.legitpro.co.in/ctvnakdplus/tracks-v4a1/2026/07/18/03/46/39-06000.ts",
-      "error": ""
+      "ok": false,
+      "published": false,
+      "elapsed_ms": 2725,
+      "checked_url": "https://live.legitpro.co.in/ctvnakdplus/tracks-v4a1/2026/07/19/04/16/08-06000.ts",
+      "error": "HTTP Error 404: Not Found"
     },
     {
       "index": 31,
@@ -564,7 +571,7 @@
       "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1728/output/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 29,
+      "elapsed_ms": 26,
       "checked_url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1728/output/index.m3u8",
       "error": "<urlopen error [Errno -5] No address associated with hostname>"
     },
@@ -580,8 +587,8 @@
       "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/7ff57cc9046b4c188b51a0d506f36e7f/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1428,
-      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/7ff57cc9046b4c188b51a0d506f36e7f/index_1_9177647.ts?m=1728054567",
+      "elapsed_ms": 1306,
+      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/7ff57cc9046b4c188b51a0d506f36e7f/index_1_9192342.ts?m=1728054567",
       "error": ""
     },
     {
@@ -596,8 +603,8 @@
       "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/52b998e9510d41c29ad2ceca8ea3d849/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1250,
-      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/52b998e9510d41c29ad2ceca8ea3d849/index_1_9269481.ts?m=1728052211",
+      "elapsed_ms": 1271,
+      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/52b998e9510d41c29ad2ceca8ea3d849/index_1_9284171.ts?m=1728052211",
       "error": ""
     },
     {
@@ -612,7 +619,7 @@
       "url": "https://ap02.iqplay.tv:8082/iqb8002/d33ntv/playlist.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 60112,
+      "elapsed_ms": 60077,
       "checked_url": "https://ap02.iqplay.tv:8082/iqb8002/d33ntv/playlist.m3u8",
       "error": "<urlopen error timed out>"
     },
@@ -628,7 +635,7 @@
       "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 26,
+      "elapsed_ms": 31,
       "checked_url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/index.m3u8",
       "error": "<urlopen error [Errno -5] No address associated with hostname>"
     },
@@ -644,8 +651,8 @@
       "url": "https://bozztv.com/rongo/rongo-DeshTV/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 685,
-      "checked_url": "https://bozztv.com/rongo/rongo-DeshTV/tracks-v1a1/2026/07/18/03/47/17-06000.ts",
+      "elapsed_ms": 739,
+      "checked_url": "https://bozztv.com/rongo/rongo-DeshTV/tracks-v1a1/2026/07/19/04/16/44-03000.ts",
       "error": ""
     },
     {
@@ -660,8 +667,8 @@
       "url": "https://dbcanada.sonarbanglatv.com/deshebideshe/dbtv/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 876,
-      "checked_url": "https://dbcanada.sonarbanglatv.com/deshebideshe/dbtv/16339.ts",
+      "elapsed_ms": 890,
+      "checked_url": "https://dbcanada.sonarbanglatv.com/deshebideshe/dbtv/35302.ts",
       "error": ""
     },
     {
@@ -676,8 +683,8 @@
       "url": "https://deshitv.deshitv24.net/live/myStream/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 956,
-      "checked_url": "https://deshitv.deshitv24.net/live/myStream/playlist-608759.ts",
+      "elapsed_ms": 999,
+      "checked_url": "https://deshitv.deshitv24.net/live/myStream/playlist-629823.ts",
       "error": ""
     },
     {
@@ -692,7 +699,7 @@
       "url": "https://cdn-1.pishow.tv/live/1456/master.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 674,
+      "elapsed_ms": 726,
       "checked_url": "https://cdn-1.pishow.tv/live/1456/master.m3u8",
       "error": "HTTP Error 404: Not Found"
     },
@@ -708,8 +715,8 @@
       "url": "https://3d46w.doyeltv.com/memfs/aa3aa6f7-ec12-41a2-8183-a891e157bbf8.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 816,
-      "checked_url": "https://3d46w.doyeltv.com/memfs/aa3aa6f7-ec12-41a2-8183-a891e157bbf8_output_0_702025.ts?session=FzmoKcKR9djLhuTfg4onAG",
+      "elapsed_ms": 857,
+      "checked_url": "https://3d46w.doyeltv.com/memfs/aa3aa6f7-ec12-41a2-8183-a891e157bbf8_output_0_745992.ts?session=FYaqHmksch4XMmXGcYdcXd",
       "error": ""
     },
     {
@@ -724,7 +731,7 @@
       "url": "https://trs1.aynaott.com/duronto/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 653,
+      "elapsed_ms": 720,
       "checked_url": "https://trs1.aynaott.com/duronto/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -740,7 +747,7 @@
       "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1705/output/1705.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 26,
+      "elapsed_ms": 27,
       "checked_url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1705/output/1705.m3u8",
       "error": "<urlopen error [Errno -5] No address associated with hostname>"
     },
@@ -756,7 +763,7 @@
       "url": "https://tplay.live/out/bangladesh/ekhontv.index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 357,
+      "elapsed_ms": 550,
       "checked_url": "https://tplay.live/out/bangladesh/ekhontv.index.m3u8",
       "error": "Remote end closed connection without response"
     },
@@ -772,7 +779,7 @@
       "url": "https://tvsen6.aynaott.com/etv/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 60052,
+      "elapsed_ms": 60073,
       "checked_url": "https://tvsen6.aynaott.com/etv/index.m3u8",
       "error": "<urlopen error timed out>"
     },
@@ -788,8 +795,8 @@
       "url": "https://live-bangla.akamaized.net/liveabr/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1824,
-      "checked_url": "https://live-bangla.akamaized.net/liveabr/pub-iobanglakp3sff/live_240p/l_1600119_86520000_30383.ts",
+      "elapsed_ms": 1808,
+      "checked_url": "https://live-bangla.akamaized.net/liveabr/pub-iobanglakp3sff/live_240p/l_1601070_41184000_6894.ts",
       "error": ""
     },
     {
@@ -804,7 +811,7 @@
       "url": "http://tvn1.chowdhury-shaheb.com/gazitv/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 60080,
+      "elapsed_ms": 60097,
       "checked_url": "http://tvn1.chowdhury-shaheb.com/gazitv/index.m3u8",
       "error": "<urlopen error [Errno 101] Network is unreachable>"
     },
@@ -821,7 +828,7 @@
       "url": "https://tvsen6.aynaott.com/globaltvhd/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 60061,
+      "elapsed_ms": 60014,
       "checked_url": "https://tvsen6.aynaott.com/globaltvhd/index.m3u8",
       "error": "<urlopen error timed out>"
     },
@@ -835,11 +842,11 @@
         "Family"
       ],
       "url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/greentv.stream/live-orgin/greentv.stream/playlist.m3u8",
-      "ok": false,
-      "published": false,
-      "elapsed_ms": 193,
-      "checked_url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/greentv.stream/live-orgin/greentv.stream/playlist.m3u8",
-      "error": "HTTP Error 404: Not Found"
+      "ok": true,
+      "published": true,
+      "elapsed_ms": 1200,
+      "checked_url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/greentv.stream/live-orgin/greentv.stream/l_43435804_1884760_314.png?nimblesessionid=1118109814",
+      "error": ""
     },
     {
       "index": 49,
@@ -851,11 +858,11 @@
         "News"
       ],
       "url": "https://highmedia.livebox.co.in/HIGHNEWShls/LIVE.m3u8",
-      "ok": true,
-      "published": true,
-      "elapsed_ms": 2187,
-      "checked_url": "https://highmedia.livebox.co.in/HIGHNEWShls/LIVE-10440.ts",
-      "error": ""
+      "ok": false,
+      "published": false,
+      "elapsed_ms": 60240,
+      "checked_url": "https://highmedia.livebox.co.in/HIGHNEWShls/LIVE.m3u8",
+      "error": "<urlopen error timed out>"
     },
     {
       "index": 50,
@@ -869,7 +876,7 @@
       "url": "http://tvsen7.aynascope.net/ibtvusa/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 10500,
+      "elapsed_ms": 10485,
       "checked_url": "http://tvsen7.aynascope.net/ibtvusa/index.m3u8",
       "error": "HTTP Error 404: Not Found"
     },
@@ -885,8 +892,8 @@
       "url": "https://bozztv.com/rongo/rongo-IndependentTV/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 713,
-      "checked_url": "https://bozztv.com/rongo/rongo-IndependentTV/tracks-v1a1/2026/07/18/03/47/18-06000.ts",
+      "elapsed_ms": 708,
+      "checked_url": "https://bozztv.com/rongo/rongo-IndependentTV/tracks-v1a1/2026/07/19/04/16/41-03000.ts",
       "error": ""
     },
     {
@@ -901,7 +908,7 @@
       "url": "https://ap02.iqplay.tv:8082/iqb8002/i09/playlist.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 60085,
+      "elapsed_ms": 60607,
       "checked_url": "https://ap02.iqplay.tv:8082/iqb8002/i09/playlist.m3u8",
       "error": "<urlopen error timed out>"
     },
@@ -933,8 +940,8 @@
       "url": "https://bozztv.com/rongo/rongo-JamunaTelevision/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 703,
-      "checked_url": "https://bozztv.com/rongo/rongo-JamunaTelevision/tracks-v1a1/2026/07/18/03/47/22-03000.ts",
+      "elapsed_ms": 715,
+      "checked_url": "https://bozztv.com/rongo/rongo-JamunaTelevision/tracks-v1a1/2026/07/19/04/16/36-06000.ts",
       "error": ""
     },
     {
@@ -949,8 +956,8 @@
       "url": "https://jtvs.ncare.live/Gznr84Woj7UEye3OPVeWq2ForboWAgdV/jonmobhumitv.stream/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2261,
-      "checked_url": "https://jtvs.ncare.live/Gznr84Woj7UEye3OPVeWq2ForboWAgdV/jonmobhumitv.stream/tracks-v1a1/2026/07/18/03/47/23-06000.webm",
+      "elapsed_ms": 2236,
+      "checked_url": "https://jtvs.ncare.live/Gznr84Woj7UEye3OPVeWq2ForboWAgdV/jonmobhumitv.stream/tracks-v1a1/2026/07/19/04/16/52-06000.webm",
       "error": ""
     },
     {
@@ -965,8 +972,8 @@
       "url": "https://cdn-4.pishow.tv/live/1473/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2812,
-      "checked_url": "https://cdn-4.pishow.tv/live/1473/1473_1_s021167.ts",
+      "elapsed_ms": 2599,
+      "checked_url": "https://cdn-4.pishow.tv/live/1473/1473_1_s019345.ts",
       "error": ""
     },
     {
@@ -981,8 +988,8 @@
       "url": "https://cdn.ottlive.co.in/kolkatatv/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2270,
-      "checked_url": "https://cdn.ottlive.co.in/kolkatatv/tracks-v3a1/2026/07/18/03/46/31-06200.ts",
+      "elapsed_ms": 2237,
+      "checked_url": "https://cdn.ottlive.co.in/kolkatatv/tracks-v3a1/2026/07/19/04/16/08-06000.ts",
       "error": ""
     },
     {
@@ -997,8 +1004,8 @@
       "url": "https://server.livelegitpro.in:9899/tribetv/tribetv/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3663,
-      "checked_url": "https://server.livelegitpro.in:9899/tribetv/tribetv/tracks-v1a1/2026/07/18/03/47/22-06000.ts",
+      "elapsed_ms": 3678,
+      "checked_url": "https://server.livelegitpro.in:9899/tribetv/tribetv/tracks-v1a1/2026/07/19/04/16/47-06000.ts",
       "error": ""
     },
     {
@@ -1013,7 +1020,7 @@
       "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1722/output/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 9,
+      "elapsed_ms": 19,
       "checked_url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1722/output/index.m3u8",
       "error": "<urlopen error [Errno -5] No address associated with hostname>"
     },
@@ -1029,8 +1036,8 @@
       "url": "https://streaming.madanichannel.tv/static/streaming-playlists/hls/d3e49b76-ac06-4689-a641-9200445b647f/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1811,
-      "checked_url": "https://streaming.madanichannel.tv/static/streaming-playlists/hls/d3e49b76-ac06-4689-a641-9200445b647f/1-012881.ts",
+      "elapsed_ms": 1800,
+      "checked_url": "https://streaming.madanichannel.tv/static/streaming-playlists/hls/d3e49b76-ac06-4689-a641-9200445b647f/1-018471.ts",
       "error": ""
     },
     {
@@ -1045,7 +1052,7 @@
       "url": "https://bozztv.com/rongo/rongo-MohonaTV/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 176,
+      "elapsed_ms": 174,
       "checked_url": "https://bozztv.com/rongo/rongo-MohonaTV/index.m3u8",
       "error": "HTTP Error 404: Not Found"
     },
@@ -1061,8 +1068,8 @@
       "url": "http://alvetv.com/moviebanglatv/8080/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1456,
-      "checked_url": "http://alvetv.com/moviebanglatv/8080/33869.ts",
+      "elapsed_ms": 1509,
+      "checked_url": "http://alvetv.com/moviebanglatv/8080/14357.ts",
       "error": ""
     },
     {
@@ -1077,8 +1084,8 @@
       "url": "https://chlivemta1.akamaized.net/hls/live/2008145/mta1/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2735,
-      "checked_url": "https://chlivemta1.akamaized.net/hls/live/2008145/mta1/20260709T141154/playlist_4300/00929/playlist_4300_00127.ts",
+      "elapsed_ms": 2722,
+      "checked_url": "https://chlivemta1.akamaized.net/hls/live/2008145/mta1/20260709T141154/playlist_4300/01039/playlist_4300_00168.ts",
       "error": ""
     },
     {
@@ -1093,8 +1100,8 @@
       "url": "https://chlivemta1.akamaized.net/hls/live/2008145/mta2/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2121,
-      "checked_url": "https://chlivemta1.akamaized.net/hls/live/2008145/mta2/20260707T175431/playlist_4300/00112/playlist_4300_01788.ts",
+      "elapsed_ms": 2443,
+      "checked_url": "https://chlivemta1.akamaized.net/hls/live/2008145/mta2/20260707T175431/playlist_4300/00123/playlist_4300_01828.ts",
       "error": ""
     },
     {
@@ -1109,8 +1116,8 @@
       "url": "https://livemtaasia.akamaized.net/hls/live/2039224/mta6asia/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2787,
-      "checked_url": "https://livemtaasia.akamaized.net/hls/live/2039224/mta6asia/20260604T165012/playlist_4300/04697/playlist_4300_00153.ts",
+      "elapsed_ms": 2815,
+      "checked_url": "https://livemtaasia.akamaized.net/hls/live/2039224/mta6asia/20260604T165012/playlist_4300/04807/playlist_4300_00194.ts",
       "error": ""
     },
     {
@@ -1125,8 +1132,8 @@
       "url": "https://livemtaasia.akamaized.net/hls/live/2039224/mtaasia2/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2768,
-      "checked_url": "https://livemtaasia.akamaized.net/hls/live/2039224/mtaasia2/20260604T164658/playlist_4300/04698/playlist_4300_00002.ts",
+      "elapsed_ms": 2786,
+      "checked_url": "https://livemtaasia.akamaized.net/hls/live/2039224/mtaasia2/20260604T164658/playlist_4300/04808/playlist_4300_00043.ts",
       "error": ""
     },
     {
@@ -1141,7 +1148,7 @@
       "url": "https://tvsen6.aynaott.com/mytv/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 60060,
+      "elapsed_ms": 60066,
       "checked_url": "https://tvsen6.aynaott.com/mytv/index.m3u8",
       "error": "<urlopen error timed out>"
     },
@@ -1157,8 +1164,8 @@
       "url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/nantv.stream/live-orgin/nantv.stream/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1156,
-      "checked_url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/nantv.stream/live-orgin/nantv.stream/l_42737806_15920000_2299.png?nimblesessionid=1116694052",
+      "elapsed_ms": 1199,
+      "checked_url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/nantv.stream/live-orgin/nantv.stream/l_43164858_40935960_2057.png?nimblesessionid=1118109858",
       "error": ""
     },
     {
@@ -1203,11 +1210,11 @@
         "News"
       ],
       "url": "https://n18syndication.akamaized.net/bpk-tv/News18_Bangla_NW18_MOB/output01/master.m3u8",
-      "ok": true,
-      "published": true,
-      "elapsed_ms": 4528,
-      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/News18_Bangla_NW18_MOB/output01/News18_Bangla_NW18_MOB-audio_33636_ben=33600-video=148000-297390978.ts",
-      "error": ""
+      "ok": false,
+      "published": false,
+      "elapsed_ms": 1061,
+      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/News18_Bangla_NW18_MOB/output01/master.m3u8",
+      "error": "IncompleteRead(1054 bytes read)"
     },
     {
       "index": 72,
@@ -1253,7 +1260,7 @@
       "url": "https://trs1.aynaott.com/NewsTime/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 681,
+      "elapsed_ms": 660,
       "checked_url": "https://trs1.aynaott.com/NewsTime/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -1269,7 +1276,7 @@
       "url": "https://nktv.smartstream.video/smartstream-us/nkbangla/nkbangla/playlist.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 1269,
+      "elapsed_ms": 1254,
       "checked_url": "https://nktv.smartstream.video/smartstream-us/nkbangla/nkbangla/playlist.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -1285,7 +1292,7 @@
       "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1716/output/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 5,
+      "elapsed_ms": 6,
       "checked_url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1716/output/index.m3u8",
       "error": "<urlopen error [Errno -5] No address associated with hostname>"
     },
@@ -1301,7 +1308,7 @@
       "url": "http://tvsen5.aynascope.net/ntveurope/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 494,
+      "elapsed_ms": 457,
       "checked_url": "http://tvsen5.aynascope.net/ntveurope/index.m3u8",
       "error": "HTTP Error 404: Not Found"
     },
@@ -1317,7 +1324,7 @@
       "url": "https://5dd3981940faa.streamlock.net/onkarentertainment/onkarentertainment/playlist.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 1323,
+      "elapsed_ms": 1338,
       "checked_url": "https://5dd3981940faa.streamlock.net/onkarentertainment/onkarentertainment/playlist.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -1333,8 +1340,8 @@
       "url": "https://cdn-4.pishow.tv/live/1499/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2739,
-      "checked_url": "https://cdn-4.pishow.tv/live/1499/1499_1_s005823.ts",
+      "elapsed_ms": 2646,
+      "checked_url": "https://cdn-4.pishow.tv/live/1499/1499_1_s004000.ts",
       "error": ""
     },
     {
@@ -1349,8 +1356,8 @@
       "url": "https://dzkyvlfyge.erbvr.com/PeaceTvBangla/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3438,
-      "checked_url": "https://dzkyvlfyge.fdc.ercdn.net/boauvytocq/PeaceTvBangla/tracks-v4a1/2026/07/18/03/47/18-06000.ts?sid=UxVzOKxwmUeL_vnbqdr1UQ&bvr_flags=1&bvr_ch=PeaceTvBangla&bvr_bw=530000",
+      "elapsed_ms": 2668,
+      "checked_url": "https://dzkyvlfyge.fdc.ercdn.net/boauvytocq/PeaceTvBangla/tracks-v4a1/2026/07/19/04/16/49-06000.ts?sid=V4dG1DSDp02rh4R2av_DRw&bvr_flags=1&bvr_ch=PeaceTvBangla&bvr_bw=520000",
       "error": ""
     },
     {
@@ -1381,8 +1388,8 @@
       "url": "https://thelegitpro.in/pntv/rplusnews24x7/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3678,
-      "checked_url": "https://thelegitpro.in/pntv/rplusnews24x7/tracks-v1a1/2026/07/18/03/46/43-06000.ts",
+      "elapsed_ms": 3636,
+      "checked_url": "https://thelegitpro.in/pntv/rplusnews24x7/tracks-v1a1/2026/07/19/04/16/11-07760.ts",
       "error": ""
     },
     {
@@ -1397,8 +1404,8 @@
       "url": "https://cdn-4.pishow.tv/live/1231/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2662,
-      "checked_url": "https://cdn-4.pishow.tv/live/1231/1231_1_s021438.ts",
+      "elapsed_ms": 2639,
+      "checked_url": "https://cdn-4.pishow.tv/live/1231/1231_1_s019615.ts",
       "error": ""
     },
     {
@@ -1413,8 +1420,8 @@
       "url": "https://vg-republictvlive.akamaized.net/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-456368/main.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 4241,
-      "checked_url": "https://vg-republictvlive.akamaized.net/out/v1/vglive-sk-456368/9a5954cd7b7648b78160649038cfd0e4/main_4_10599269.ts?m=1763456006&sessionId=fb53dcdb-a1c7-4604-a4fd-8118b2bbe05f",
+      "elapsed_ms": 4440,
+      "checked_url": "https://vg-republictvlive.akamaized.net/out/v1/vglive-sk-456368/9a5954cd7b7648b78160649038cfd0e4/main_4_10614085.ts?m=1763456006&sessionId=185504e1-d801-46c6-af17-3e7e0cab3d60",
       "error": ""
     },
     {
@@ -1429,7 +1436,7 @@
       "url": "https://bozztv.com/rongo/rongo-RTV/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 10196,
+      "elapsed_ms": 10201,
       "checked_url": "https://bozztv.com/rongo/rongo-RTV/index.m3u8",
       "error": "HTTP Error 404: Not Found"
     },
@@ -1445,9 +1452,9 @@
       "url": "https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/ruposhibangla.stream/playlist.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 10692,
+      "elapsed_ms": 60075,
       "checked_url": "https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/ruposhibangla.stream/playlist.m3u8",
-      "error": "HTTP Error 404: Not Found"
+      "error": "<urlopen error timed out>"
     },
     {
       "index": 87,
@@ -1461,7 +1468,7 @@
       "url": "https://cdn-4.pishow.tv/live/1039/master.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 663,
+      "elapsed_ms": 639,
       "checked_url": "https://cdn-4.pishow.tv/live/1039/master.m3u8",
       "error": "HTTP Error 404: Not Found"
     },
@@ -1477,7 +1484,7 @@
       "url": "https://tvsen6.aynaott.com/satv/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 60065,
+      "elapsed_ms": 60093,
       "checked_url": "https://tvsen6.aynaott.com/satv/index.m3u8",
       "error": "<urlopen error timed out>"
     },
@@ -1493,8 +1500,8 @@
       "url": "https://server.livelegitpro.in/samaykolkata/samaykolkata/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3669,
-      "checked_url": "https://server.livelegitpro.in/samaykolkata/samaykolkata/tracks-v1a1/2026/07/18/03/47/25-06040.ts",
+      "elapsed_ms": 3612,
+      "checked_url": "https://server.livelegitpro.in/samaykolkata/samaykolkata/tracks-v1a1/2026/07/19/04/16/56-06040.ts",
       "error": ""
     },
     {
@@ -1509,8 +1516,8 @@
       "url": "https://cdn-4.pishow.tv/live/1143/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2788,
-      "checked_url": "https://cdn-4.pishow.tv/live/1143/1143_1_s019415.ts",
+      "elapsed_ms": 2682,
+      "checked_url": "https://cdn-4.pishow.tv/live/1143/1143_1_s017591.ts",
       "error": ""
     },
     {
@@ -1525,7 +1532,7 @@
       "url": "https://bozztv.com/rongo/rongo-SangsadTV/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 10191,
+      "elapsed_ms": 10194,
       "checked_url": "https://bozztv.com/rongo/rongo-SangsadTV/index.m3u8",
       "error": "HTTP Error 404: Not Found"
     },
@@ -1541,8 +1548,8 @@
       "url": "https://bozztv.com/rongo/rongo-somoy/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 687,
-      "checked_url": "https://bozztv.com/rongo/rongo-somoy/tracks-a1/2026/07/18/03/47/40-05013.ts",
+      "elapsed_ms": 689,
+      "checked_url": "https://bozztv.com/rongo/rongo-somoy/tracks-a1/2026/07/19/04/16/46-05013.ts",
       "error": ""
     },
     {
@@ -1557,8 +1564,8 @@
       "url": "http://tvsen7.aynascope.net/sjhdbd/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1785,
-      "checked_url": "http://tvsen7.aynascope.net/sjhdbd/tracks-v1a1/2026/07/18/03/47/56-09000.ts",
+      "elapsed_ms": 1744,
+      "checked_url": "http://tvsen7.aynascope.net/sjhdbd/tracks-v1a1/2026/07/19/04/17/32-09000.ts",
       "error": ""
     },
     {
@@ -1573,7 +1580,7 @@
       "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1710/output/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 14,
+      "elapsed_ms": 38,
       "checked_url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1710/output/index.m3u8",
       "error": "<urlopen error [Errno -5] No address associated with hostname>"
     },
@@ -1589,8 +1596,8 @@
       "url": "http://tvsen7.aynascope.net/sspts1/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1865,
-      "checked_url": "http://tvsen7.aynascope.net/sspts1/tracks-v1a1/2026/07/18/03/47/24-09999.ts",
+      "elapsed_ms": 1801,
+      "checked_url": "http://tvsen7.aynascope.net/sspts1/tracks-v1a1/2026/07/19/04/17/15-09999.ts",
       "error": ""
     },
     {
@@ -1605,7 +1612,7 @@
       "url": "https://trs1.aynaott.com/tsports/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 655,
+      "elapsed_ms": 656,
       "checked_url": "https://trs1.aynaott.com/tsports/index.m3u8",
       "error": "HTTP Error 404: Not Found"
     },
@@ -1621,7 +1628,7 @@
       "url": "https://deltatesttatasky.akamaized.net/out/i/968284.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 158,
+      "elapsed_ms": 180,
       "checked_url": "https://deltatesttatasky.akamaized.net/out/i/968284.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -1637,8 +1644,8 @@
       "url": "https://amg00416-amg00416c9-samsung-in-4882.playouts.now.amagi.tv/playlist/amg00416-travelxp-travelxphd-samsungin/playlist.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 1571,
-      "checked_url": "https://amg00416-amg00416c9-samsung-in-4882.playouts.now.amagi.tv/ts-ap-s1-n1/beacon/amg00416-travelxp-travelxphd-samsungin/y1Y5HGVwZ4uEwzh40vFi4aZZKNgLbIUqarRUh228Tgrc4rWcrhPkeCXBW4s9GhAADne0es4UEcbeFalUW3sOZOvY8ieM_kdbyYFLNS-wfQBS-B4Nq103X_WlWgSMNrA5IhbrAmEfcq61G_IrB9qBCI5hKZvOjDdoPwNAml5a-6NYsevmX0ffOKHnH1WdLUC1n0PIgh2m0oAKll6PcPcUnsT0iNIWh9Pzx5htmlyI878f4-JMoIswg9STfTyYMRtSH0HjsOGGJF6oZjORfGKpxQjRHNydLcFBOr4SkUyFSuUDYecOgzzInrrRAms2t8EZFE95OgXoiVcQnByRgejRenqW5BpxRoMKskdybcGpmkbJq53xx9s4R4748uKxPJlcBNdgqLPq3OKsjYe5MEdcagcDyXGtiVL6J9p9pMsAG5EsLry3Wt6P1VIxLRrI0B6cPhq60oWX0B0zkSAyVPxl1Rsobc90Q0-lFbnLbFPYczXSfH3aSCWMR8u9Lt6uz6pTaOKQlBS_J8SdPv_aTulhNVIH89UpXE5DNJDNbh8_dMYKtYGfrydJM-3xzOzJHG1UblkBWvmNjRS0vYARb3GQAxkxIS9A7EO8D_gPRgcizGy2jRlkiQNbQMWvLVJXadaF8a60lvIG0lvW3PYtICtTAetr5UfrXT0_PyF1PHrbQrwjJi8O4WXig-s/1920x1080_4500000?bcn=1&ca=0&cid=hillsvalleys&dur=6.000000&media_type=C&redirect_url=https%3A%2F%2Flinear-samsung.akamaized.net%2Ftravelxphd%2Ftravelxp%2Ftravelxphd_1080p%2Fl_13609_448464000_68724.ts&seen-ad=1&seg_id=68724&user_id=7227d0f3-825b-11f1-bda8-96603f43165e",
+      "elapsed_ms": 1705,
+      "checked_url": "https://amg00416-amg00416c9-samsung-in-4882.playouts.now.amagi.tv/ts-ap-s1-n1/beacon/amg00416-travelxp-travelxphd-samsungin/y1Q9GXlsZIae1D1i1-9IpPlHH94daYhpPrVRiXXRByTU76idqRSsMFePZoAlXzFBIDaYCaEfEa_Oe6g-NXl4c4OIwzuZxUdu54p0c26sfx1W4A0TwD0oWu3ENkTFMbxyAFPPDG1dPcT9KvU0DZjVFYp9LJWtzQJoKwsdxkJY5qdAoPnzSRfRaqe1TR7GMk3kgErU1R3tgckKm0WDa6UWmsfyi9MTi9DCZss2iEdhntel-PAY6at7hJj8TyudfytDbCSMwbbLPvAC2iEmntrerWrvFrTpb-EydNOI_z5K5oh0EwSPwTcZ8KLnipRbhI43RDKy6rCPtAUyr2_omCS8GW20-Q5xS8Vsl3dlaNC15hWHyhuCuTCN7yk0NtSUSduws4Cvn74KpGWbl8vJaH0ZKkQjlk2un1reK_ZxvIFGcgsDF_vaHe-u7XMcLg-KiVXRUzy82ICMlk4YwnIUV-0viAlQIpx0X33jLOuTcznacUTWY0-UMlGvcbyAXpL2i9pXboqJvQWVCci6BdX6B9sIHUkSv_dWMmZEb9_jY019Oex2pOuIhlMME-fjwu7KMWBV2Xb58xpQgYgkVlRmhsH2BWZlTXGVTTE/1920x1080_4500000?bcn=1&ca=0&cid=badaweekend&dur=6.000000&media_type=C&redirect_url=https%3A%2F%2Flinear-samsung.akamaized.net%2Ftravelxphd%2Ftravelxp%2Ftravelxphd_1080p%2Fl_13609_536634000_83577.ts&seen-ad=1&seg_id=83577&user_id=b9664afc-8328-11f1-a565-d27e20039fc5",
       "error": "HTTP Error 503: Service Unavailable"
     },
     {
@@ -1653,8 +1660,8 @@
       "url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9banaen8yq/liveabr/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1260,
-      "checked_url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9banaen8yq/liveabr/pub-iotv9banaen8yq/live_720p/l_1600160_83766080_13961.ts",
+      "elapsed_ms": 1023,
+      "checked_url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9banaen8yq/liveabr/pub-iotv9banaen8yq/live_720p/l_1600160_171924080_28654.ts",
       "error": ""
     },
     {
@@ -1669,7 +1676,7 @@
       "url": "https://vokta.raytahost.com/live/voktatv/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 34,
+      "elapsed_ms": 40,
       "checked_url": "https://vokta.raytahost.com/live/voktatv/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -1685,8 +1692,8 @@
       "url": "https://server.zillarbarta.com/zbbhakti/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3925,
-      "checked_url": "https://server.zillarbarta.com/zbbhakti/tracks-v1a1/2026/07/18/03/47/21-08333.ts",
+      "elapsed_ms": 3828,
+      "checked_url": "https://server.zillarbarta.com/zbbhakti/tracks-v1a1/2026/07/19/04/16/51-08333.ts",
       "error": ""
     },
     {
@@ -1699,11 +1706,11 @@
         "Kids"
       ],
       "url": "https://server.zillarbarta.com/zbcatun/video.m3u8",
-      "ok": false,
-      "published": false,
-      "elapsed_ms": 967,
-      "checked_url": "https://server.zillarbarta.com/zbcatun/video.m3u8",
-      "error": "HTTP Error 404: Not Found"
+      "ok": true,
+      "published": true,
+      "elapsed_ms": 3715,
+      "checked_url": "https://server.zillarbarta.com/zbcatun/tracks-v1a1/2026/07/19/04/16/45-08333.ts",
+      "error": ""
     },
     {
       "index": 103,
@@ -1718,8 +1725,8 @@
       "url": "https://server.zillarbarta.com/ZBCINEMA/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 4019,
-      "checked_url": "https://server.zillarbarta.com/ZBCINEMA/tracks-v1a1/2026/07/18/03/47/26-08333.ts",
+      "elapsed_ms": 3736,
+      "checked_url": "https://server.zillarbarta.com/ZBCINEMA/tracks-v1a1/2026/07/19/04/16/47-06334.ts",
       "error": ""
     },
     {
@@ -1734,8 +1741,8 @@
       "url": "https://server.zillarbarta.com/zbmusic/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 4096,
-      "checked_url": "https://server.zillarbarta.com/zbmusic/tracks-v1a1/2026/07/18/03/47/20-08333.ts",
+      "elapsed_ms": 3738,
+      "checked_url": "https://server.zillarbarta.com/zbmusic/tracks-v1a1/2026/07/19/04/16/46-08333.ts",
       "error": ""
     },
     {
@@ -1782,8 +1789,8 @@
       "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/ColorsHD/default/ColorsHD.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 950,
-      "checked_url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/ColorsHD/default/ColorsHD-video=247600-446086611.ts",
+      "elapsed_ms": 860,
+      "checked_url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/ColorsHD/default/ColorsHD-video=247600-446108652.ts",
       "error": ""
     },
     {
@@ -1799,8 +1806,8 @@
       "url": "https://server.zillarbarta.com/zillarbarta/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3760,
-      "checked_url": "https://server.zillarbarta.com/zillarbarta/tracks-v1a1/2026/07/18/03/47/29-06006.ts",
+      "elapsed_ms": 3748,
+      "checked_url": "https://server.zillarbarta.com/zillarbarta/tracks-v1a1/2026/07/19/04/16/59-06006.ts",
       "error": ""
     },
     {
@@ -1815,7 +1822,7 @@
       "url": "https://b.jsrdn.com/strm/channels/9xjalwa/master.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 346,
+      "elapsed_ms": 511,
       "checked_url": "https://b.jsrdn.com/strm/channels/9xjalwa/master.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -1831,8 +1838,8 @@
       "url": "https://9xjio.wiseplayout.com/9XM/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3206,
-      "checked_url": "https://9xjio.wiseplayout.com/9XM/HD720/WiseVideo00018858_926285772300.ts",
+      "elapsed_ms": 3137,
+      "checked_url": "https://9xjio.wiseplayout.com/9XM/HD720/WiseVideo00033592_729892154700.ts",
       "error": ""
     },
     {
@@ -1847,7 +1854,7 @@
       "url": "https://thelegitpro.in/HDlive/22scope/index.fmp4.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 1816,
+      "elapsed_ms": 1830,
       "checked_url": "https://thelegitpro.in/HDlive/22scope/tracks-v1/index.fmp4.m3u8",
       "error": "fragmented MP4 HLS rejected for IPTV compatibility"
     },
@@ -1879,7 +1886,7 @@
       "url": "https://trs1.aynaott.com/andpictureshd/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 665,
+      "elapsed_ms": 656,
       "checked_url": "https://trs1.aynaott.com/andpictureshd/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -1911,7 +1918,7 @@
       "url": "https://trs1.aynaott.com/andtvhd/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 652,
+      "elapsed_ms": 653,
       "checked_url": "https://trs1.aynaott.com/andtvhd/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -1927,7 +1934,7 @@
       "url": "https://amg01117-amg01117c1-amgplt0029.playout.now3.amagi.tv/playlist/amg01117-amg01117c1-amgplt0029/playlist.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 237,
+      "elapsed_ms": 366,
       "checked_url": "https://amg01117-amg01117c1-amgplt0029.playout.now3.amagi.tv/playlist/amg01117-amg01117c1-amgplt0029/playlist.m3u8",
       "error": "response is not an M3U/HLS playlist"
     },
@@ -1975,8 +1982,8 @@
       "url": "https://feeds.intoday.in/aajtak/api/aajtakhd/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3271,
-      "checked_url": "https://aajtakhdlive-amd.akamaized.net/hls/live/2014415/aajtakhd/aajtakhdlive/live_180p/l_6156192000_1032714.ts",
+      "elapsed_ms": 2582,
+      "checked_url": "https://aajtakhdlive-amd.akamaized.net/hls/live/2014415/aajtakhd/aajtakhdlive/live_180p/l_6244362000_1047511.ts",
       "error": ""
     },
     {
@@ -2007,8 +2014,8 @@
       "url": "https://mumt05.tangotv.in/87NeALx2AASTHABHAJAN/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3703,
-      "checked_url": "https://mumt05.tangotv.in/87NeALx2AASTHABHAJAN/tracks-v1a1/2026/07/18/03/47/32-06000.ts",
+      "elapsed_ms": 3753,
+      "checked_url": "https://mumt05.tangotv.in/87NeALx2AASTHABHAJAN/tracks-v1a1/2026/07/19/04/17/00-06000.ts",
       "error": ""
     },
     {
@@ -2023,8 +2030,8 @@
       "url": "https://aasthaott.akamaized.net/110923/smil:aasthaprime1.smil/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1207,
-      "checked_url": "https://aasthaott.akamaized.net/110923/smil:aasthaprime1.smil/media-u1w51zzal_b264000_4857.ts",
+      "elapsed_ms": 1344,
+      "checked_url": "https://aasthaott.akamaized.net/110923/smil:aasthaprime1.smil/media-u1w51zzal_b264000_26891.ts",
       "error": ""
     },
     {
@@ -2039,8 +2046,8 @@
       "url": "https://mediaserver.abnvideos.com/streams/abntvindia.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 811,
-      "checked_url": "https://s3.us-east-005.backblazeb2.com/abnvideos/e71446e9-ffc3-4727-968a-5fb376f720ac/segment_360p_0394.ts",
+      "elapsed_ms": 857,
+      "checked_url": "https://s3.us-east-005.backblazeb2.com/abnvideos/d65d4079-7822-4c87-9822-5113d6ff40e5/segment_360p_0174.ts",
       "error": ""
     },
     {
@@ -2055,8 +2062,8 @@
       "url": "https://d2l4ar6y3mrs4k.cloudfront.net/live-streaming/ganga-livetv/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3020,
-      "checked_url": "https://d2l4ar6y3mrs4k.cloudfront.net/live-streaming/ganga-livetv/master_180p/03505/master_180p_00012.ts",
+      "elapsed_ms": 2560,
+      "checked_url": "https://d2l4ar6y3mrs4k.cloudfront.net/live-streaming/ganga-livetv/master_180p/03534/master_180p_00206.ts",
       "error": ""
     },
     {
@@ -2071,8 +2078,8 @@
       "url": "https://d1rc86nwwc9fag.cloudfront.net/vglive-sk-472500/abpnews/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 701,
-      "checked_url": "https://d1rc86nwwc9fag.cloudfront.net/vglive-sk-472500/abpnews/20260202T012101/master_360p/04824/master_360p_00436.ts",
+      "elapsed_ms": 340,
+      "checked_url": "https://d1rc86nwwc9fag.cloudfront.net/vglive-sk-472500/abpnews/20260202T012101/master_360p/04854/master_360p_00230.ts",
       "error": ""
     },
     {
@@ -2087,8 +2094,8 @@
       "url": "https://mumbai-edge.smartplaytv.in/AdhyatmTV/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3985,
-      "checked_url": "https://mumbai-edge.smartplaytv.in/AdhyatmTV/tracks-v1a1/2026/07/18/03/47/38-06000.ts",
+      "elapsed_ms": 3939,
+      "checked_url": "https://mumbai-edge.smartplaytv.in/AdhyatmTV/tracks-v1a1/2026/07/19/04/17/02-06000.ts",
       "error": ""
     },
     {
@@ -2101,11 +2108,11 @@
         "Movies"
       ],
       "url": "https://mumt03.tangotv.in/Dsly5z3HALLTIMEMOVIES/index.m3u8",
-      "ok": true,
-      "published": true,
-      "elapsed_ms": 3872,
-      "checked_url": "https://mumt03.tangotv.in/Dsly5z3HALLTIMEMOVIES/tracks-v1a1/2026/07/18/03/47/32-06000.ts",
-      "error": ""
+      "ok": false,
+      "published": false,
+      "elapsed_ms": 3207,
+      "checked_url": "https://mumt03.tangotv.in/Dsly5z3HALLTIMEMOVIES/tracks-v1a1/2026/07/19/04/16/57-06000.ts",
+      "error": "HTTP Error 404: Not Found"
     },
     {
       "index": 128,
@@ -2119,8 +2126,8 @@
       "url": "https://amarujala.ottlive.co.in/amarujala/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 4120,
-      "checked_url": "https://amarujala.ottlive.co.in/amarujala/tracks-v1a1/2026/07/18/03/47/35-04800.ts",
+      "elapsed_ms": 3419,
+      "checked_url": "https://amarujala.ottlive.co.in/amarujala/tracks-v1a1/2026/07/19/04/17/01-06000.ts",
       "error": ""
     },
     {
@@ -2135,8 +2142,8 @@
       "url": "https://live.legitpro.co.in/anandtv/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3651,
-      "checked_url": "https://live.legitpro.co.in/anandtv/tracks-v1a1/2026/07/18/03/46/55-06000.ts",
+      "elapsed_ms": 3624,
+      "checked_url": "https://live.legitpro.co.in/anandtv/tracks-v1a1/2026/07/19/04/16/32-06000.ts",
       "error": ""
     },
     {
@@ -2151,8 +2158,8 @@
       "url": "https://server.livelegitpro.in:9899/anbnews/anbnews/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3660,
-      "checked_url": "https://server.livelegitpro.in:9899/anbnews/anbnews/tracks-v1a1/2026/07/18/03/47/32-06006.ts",
+      "elapsed_ms": 3634,
+      "checked_url": "https://server.livelegitpro.in:9899/anbnews/anbnews/tracks-v1a1/2026/07/19/04/17/00-06006.ts",
       "error": ""
     },
     {
@@ -2166,11 +2173,11 @@
         "Music"
       ],
       "url": "https://mumt03.tangotv.in/Dsly5z3HANDYHARYANA/index.m3u8",
-      "ok": true,
-      "published": true,
-      "elapsed_ms": 3916,
-      "checked_url": "https://mumt03.tangotv.in/Dsly5z3HANDYHARYANA/tracks-v1a1/2026/07/18/03/47/32-06000.ts",
-      "error": ""
+      "ok": false,
+      "published": false,
+      "elapsed_ms": 3146,
+      "checked_url": "https://mumt03.tangotv.in/Dsly5z3HANDYHARYANA/tracks-v1a1/2026/07/19/04/16/55-06000.ts",
+      "error": "HTTP Error 404: Not Found"
     },
     {
       "index": 132,
@@ -2184,8 +2191,8 @@
       "url": "https://anjan.vstream.online/anjanorg/ngrp:anjan_hdall/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3014,
-      "checked_url": "https://anjan.vstream.online/anjanorg/ngrp:anjan_hdall/media-uspdp5w3u_b846000_687.ts",
+      "elapsed_ms": 3018,
+      "checked_url": "https://anjan.vstream.online/anjanorg/ngrp:anjan_hdall/media-ut5kcnb16_b846000_892.ts",
       "error": ""
     },
     {
@@ -2248,8 +2255,8 @@
       "url": "https://plus.gigabitcdn.net/live-stream/apna-punjab-H3sE/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 393,
-      "checked_url": "https://plus.gigabitcdn.net/live-stream/apna-punjab-H3sE/tracks-v1a1/2026/07/18/03/47/34-05506.ts",
+      "elapsed_ms": 496,
+      "checked_url": "https://plus.gigabitcdn.net/live-stream/apna-punjab-H3sE/tracks-v1a1/2026/07/19/04/17/04-06340.ts",
       "error": ""
     },
     {
@@ -2264,8 +2271,8 @@
       "url": "https://cdn-1.pishow.tv/live/961/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2675,
-      "checked_url": "https://cdn-1.pishow.tv/live/961/961_1_s017152.ts",
+      "elapsed_ms": 2944,
+      "checked_url": "https://cdn-1.pishow.tv/live/961/961_1_s015329.ts",
       "error": ""
     },
     {
@@ -2280,8 +2287,8 @@
       "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/argus-news/index.m3u8?ads.vf=IvskZqDOz5G",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3870,
-      "checked_url": "https://stream.ottlive.co.in/argus/tracks-v3a1/2026/07/18/03/47/06-06000.ts",
+      "elapsed_ms": 3845,
+      "checked_url": "https://stream.ottlive.co.in/argus/tracks-v3a1/2026/07/19/04/16/13-06000.ts",
       "error": ""
     },
     {
@@ -2296,8 +2303,8 @@
       "url": "https://mumt04.tangotv.in/m18aqlK4ARYANTVNATIONAL/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3680,
-      "checked_url": "https://mumt04.tangotv.in/m18aqlK4ARYANTVNATIONAL/tracks-v1a1/2026/07/18/03/47/32-02000.ts",
+      "elapsed_ms": 3724,
+      "checked_url": "https://mumt04.tangotv.in/m18aqlK4ARYANTVNATIONAL/tracks-v1a1/2026/07/19/04/17/07-04000.ts",
       "error": ""
     },
     {
@@ -2312,8 +2319,8 @@
       "url": "https://awaazindia.livebox.co.in/AwaazIndaTVhls/Live.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2901,
-      "checked_url": "https://awaazindia.livebox.co.in/AwaazIndaTVhls/Live-7526.ts",
+      "elapsed_ms": 3013,
+      "checked_url": "https://awaazindia.livebox.co.in/AwaazIndaTVhls/Live-6618.ts",
       "error": ""
     },
     {
@@ -2328,7 +2335,7 @@
       "url": "https://cdnb4u.wiseplayout.com/B4U_Kadak/master.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 228,
+      "elapsed_ms": 237,
       "checked_url": "https://cdnb4u.wiseplayout.com/B4U_Kadak/master.m3u8",
       "error": "HTTP Error 404: Not Found"
     },
@@ -2344,8 +2351,8 @@
       "url": "https://amg00877-b4unew-amg00877c2-lg-in-5260.playouts.now.amagi.tv/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 798,
-      "checked_url": "https://amg00877-b4unew-amg00877c2-lg-in-5260.playouts.now.amagi.tv/360p/seg_0366511.ts",
+      "elapsed_ms": 821,
+      "checked_url": "https://amg00877-b4unew-amg00877c2-lg-in-5260.playouts.now.amagi.tv/360p/seg_0381296.ts",
       "error": ""
     },
     {
@@ -2376,8 +2383,8 @@
       "url": "https://cdn-2.pishow.tv/live/415/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2719,
-      "checked_url": "https://cdn-2.pishow.tv/live/415/415_1_s020616.ts",
+      "elapsed_ms": 3014,
+      "checked_url": "https://cdn-2.pishow.tv/live/415/415_1_s018793.ts",
       "error": ""
     },
     {
@@ -2392,8 +2399,8 @@
       "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/balle-balle/index.m3u8?ads.vf=b8WZfP1_RIy",
       "ok": true,
       "published": true,
-      "elapsed_ms": 916,
-      "checked_url": "https://mcncdndigital.com/balleballe_Distro/tracks-v3a1/2026/07/18/03/46/45-07680.ts",
+      "elapsed_ms": 820,
+      "checked_url": "https://mcncdndigital.com/balleballe_Distro/tracks-v3a1/2026/07/19/04/16/10-07680.ts",
       "error": ""
     },
     {
@@ -2424,7 +2431,7 @@
       "url": "https://cdn.ottlive.co.in/bharat24/index.fmp4.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 3150,
+      "elapsed_ms": 2241,
       "checked_url": "https://cdn.ottlive.co.in/bharat24/tracks-v3/index.fmp4.m3u8",
       "error": "fragmented MP4 HLS rejected for IPTV compatibility"
     },
@@ -2440,7 +2447,7 @@
       "url": "https://trs1.aynaott.com/BharatSamachar/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 662,
+      "elapsed_ms": 675,
       "checked_url": "https://trs1.aynaott.com/BharatSamachar/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -2454,11 +2461,11 @@
         "Entertainment"
       ],
       "url": "https://mumt05.tangotv.in/87NeALx2BIGMAGIC/index.m3u8",
-      "ok": false,
+      "ok": true,
       "published": false,
-      "elapsed_ms": 2770,
-      "checked_url": "https://mumt05.tangotv.in/87NeALx2BIGMAGIC/tracks-v1a1/2026/07/18/03/47/35-06000.ts",
-      "error": "HTTP Error 404: Not Found"
+      "elapsed_ms": 4210,
+      "checked_url": "https://mumt05.tangotv.in/87NeALx2BIGMAGIC/tracks-v1a1/2026/07/19/04/17/05-06000.ts",
+      "error": ""
     },
     {
       "index": 150,
@@ -2472,8 +2479,8 @@
       "url": "https://xykt-fix.github.io/cinerama_edge01/hls/BOLLYWOOD_RU/Movie009.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3308,
-      "checked_url": "https://stream8.cinerama.uz/1444/tracks-v1a1/2026/07/18/03/47/28-06000.ts",
+      "elapsed_ms": 3667,
+      "checked_url": "https://stream8.cinerama.uz/1444/tracks-v1a1/2026/07/19/04/16/52-06000.ts",
       "error": ""
     },
     {
@@ -2488,8 +2495,8 @@
       "url": "https://vg-pitaaratvlive.akamaized.net/v1/vglive-sk-906482/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2957,
-      "checked_url": "https://vg-pitaaratvlive.akamaized.net/v1/vglive-sk-906482/Live/Divya_Samsung_4/l_236250000_499189.ts",
+      "elapsed_ms": 3393,
+      "checked_url": "https://vg-pitaaratvlive.akamaized.net/v1/vglive-sk-906482/Live/Divya_Samsung_4/l_228966000_514016.ts",
       "error": ""
     },
     {
@@ -2504,8 +2511,8 @@
       "url": "http://cdn19.live247stream.com/channely/tv/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 621,
-      "checked_url": "http://cdn19.live247stream.com/channely/tv/channely/stream/l_80_26286753_4381.ts?nimblesessionid=391847667",
+      "elapsed_ms": 646,
+      "checked_url": "http://cdn19.live247stream.com/channely/tv/channely/stream/l_159_41322489_6887.ts?nimblesessionid=393070731",
       "error": ""
     },
     {
@@ -2520,8 +2527,8 @@
       "url": "https://n18syndication.akamaized.net/bpk-tv/CNBC_Awaaz_NW18_MOB/output01/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2734,
-      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/CNBC_Awaaz_NW18_MOB/output01/CNBC_Awaaz_NW18_MOB-audio_33636_hin=33600-video=148000-297390980.ts",
+      "elapsed_ms": 2518,
+      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/CNBC_Awaaz_NW18_MOB/output01/CNBC_Awaaz_NW18_MOB-audio_33636_hin=33600-video=148000-297405675.ts",
       "error": ""
     },
     {
@@ -2536,7 +2543,7 @@
       "url": "https://legitpro.co.in/cnews/cnews/index.fmp4.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 1808,
+      "elapsed_ms": 1824,
       "checked_url": "https://legitpro.co.in/cnews/cnews/tracks-v1/index.fmp4.m3u8",
       "error": "fragmented MP4 HLS rejected for IPTV compatibility"
     },
@@ -2664,8 +2671,8 @@
       "url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/308556d9fd1246adb479ef012a39bbfe/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1818,
-      "checked_url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/308556d9fd1246adb479ef012a39bbfe/index_1_9293142.ts?m=1728054466",
+      "elapsed_ms": 1187,
+      "checked_url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/308556d9fd1246adb479ef012a39bbfe/index_1_9307832.ts?m=1728054466",
       "error": ""
     },
     {
@@ -2696,8 +2703,8 @@
       "url": "https://cdn-4.pishow.tv/live/35/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2796,
-      "checked_url": "https://cdn-4.pishow.tv/live/35/35_1_s002648.ts",
+      "elapsed_ms": 3606,
+      "checked_url": "https://cdn-4.pishow.tv/live/35/35_1_s002579.ts",
       "error": ""
     },
     {
@@ -2712,8 +2719,8 @@
       "url": "https://cdn-1.pishow.tv/live/15/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2716,
-      "checked_url": "https://cdn-1.pishow.tv/live/15/15_1_s012772.ts",
+      "elapsed_ms": 3154,
+      "checked_url": "https://cdn-1.pishow.tv/live/15/15_1_s010950.ts",
       "error": ""
     },
     {
@@ -2728,8 +2735,8 @@
       "url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/950fc69666474351bde0a32b9600c804/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1204,
-      "checked_url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/950fc69666474351bde0a32b9600c804/index_1_9246315.ts?m=1728053428",
+      "elapsed_ms": 1290,
+      "checked_url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/950fc69666474351bde0a32b9600c804/index_1_9261009.ts?m=1728053428",
       "error": ""
     },
     {
@@ -2744,8 +2751,8 @@
       "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/afd2e335b0ba40eb9bdf1096118c6ede/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1287,
-      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/afd2e335b0ba40eb9bdf1096118c6ede/index_1_9266636.ts?m=1728051657",
+      "elapsed_ms": 1286,
+      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/afd2e335b0ba40eb9bdf1096118c6ede/index_1_9281331.ts?m=1728051657",
       "error": ""
     },
     {
@@ -2760,8 +2767,8 @@
       "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/e8c3741f8c154d3185831f4e31777fb2/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1284,
-      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/e8c3741f8c154d3185831f4e31777fb2/index_1_9264160.ts?m=1728052001",
+      "elapsed_ms": 1336,
+      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/e8c3741f8c154d3185831f4e31777fb2/index_1_9278855.ts?m=1728052001",
       "error": ""
     },
     {
@@ -2776,8 +2783,8 @@
       "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/8a59a828e80c49d0958925950cec0204/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1466,
-      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/8a59a828e80c49d0958925950cec0204/index_1_9211568.ts?m=1728052458",
+      "elapsed_ms": 1180,
+      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/8a59a828e80c49d0958925950cec0204/index_1_9226152.ts?m=1728052458",
       "error": ""
     },
     {
@@ -2793,8 +2800,8 @@
       "url": "https://cdn-6.pishow.tv/live/9/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2806,
-      "checked_url": "https://cdn-6.pishow.tv/live/9/9_1_s001853.ts",
+      "elapsed_ms": 2637,
+      "checked_url": "https://cdn-6.pishow.tv/live/9/9_1_s002190.ts",
       "error": ""
     },
     {
@@ -2809,8 +2816,8 @@
       "url": "https://cdn-1.pishow.tv/live/31/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2664,
-      "checked_url": "https://cdn-1.pishow.tv/live/31/31_1_s001283.ts",
+      "elapsed_ms": 3031,
+      "checked_url": "https://cdn-1.pishow.tv/live/31/31_1_s023325.ts",
       "error": ""
     },
     {
@@ -2825,8 +2832,8 @@
       "url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/8b75afc6576f450e8f554b6c877681d2/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1211,
-      "checked_url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/8b75afc6576f450e8f554b6c877681d2/index_1_9047091.ts?m=1728053647",
+      "elapsed_ms": 1151,
+      "checked_url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/8b75afc6576f450e8f554b6c877681d2/index_1_9061785.ts?m=1728053647",
       "error": ""
     },
     {
@@ -2841,8 +2848,8 @@
       "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/40492a64c1db4a1385ba1a397d357d3a/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1293,
-      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/40492a64c1db4a1385ba1a397d357d3a/index_1_9321031.ts?m=1728054926",
+      "elapsed_ms": 1249,
+      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/40492a64c1db4a1385ba1a397d357d3a/index_1_9335726.ts?m=1728054926",
       "error": ""
     },
     {
@@ -2857,8 +2864,8 @@
       "url": "https://cdn-1.pishow.tv/live/11/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2787,
-      "checked_url": "https://cdn-1.pishow.tv/live/11/11_1_s002798.ts",
+      "elapsed_ms": 3036,
+      "checked_url": "https://cdn-1.pishow.tv/live/11/11_1_s006106.ts",
       "error": ""
     },
     {
@@ -2873,8 +2880,8 @@
       "url": "https://cdn-2.pishow.tv/live/12/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2868,
-      "checked_url": "https://cdn-2.pishow.tv/live/12/12_1_s005663.ts",
+      "elapsed_ms": 3091,
+      "checked_url": "https://cdn-2.pishow.tv/live/12/12_1_s003840.ts",
       "error": ""
     },
     {
@@ -2889,8 +2896,8 @@
       "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/0811cd8c37ca4c409d5385a6cd2fa18b/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1187,
-      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/0811cd8c37ca4c409d5385a6cd2fa18b/index_1_9815875.ts?m=1723210916",
+      "elapsed_ms": 1209,
+      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/0811cd8c37ca4c409d5385a6cd2fa18b/index_1_9830569.ts?m=1723210916",
       "error": ""
     },
     {
@@ -2905,8 +2912,8 @@
       "url": "https://cdn-1.pishow.tv/live/34/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2651,
-      "checked_url": "https://cdn-1.pishow.tv/live/34/34_1_s011543.ts",
+      "elapsed_ms": 3100,
+      "checked_url": "https://cdn-1.pishow.tv/live/34/34_1_s016845.ts",
       "error": ""
     },
     {
@@ -2921,8 +2928,8 @@
       "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/b17adfe543354fdd8d189b110617cddd/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1115,
-      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/b17adfe543354fdd8d189b110617cddd/index_1_9296204.ts?m=1728054250",
+      "elapsed_ms": 1188,
+      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/b17adfe543354fdd8d189b110617cddd/index_1_9310898.ts?m=1728054250",
       "error": ""
     },
     {
@@ -2937,8 +2944,8 @@
       "url": "https://cdn-4.pishow.tv/live/8/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2745,
-      "checked_url": "https://cdn-4.pishow.tv/live/8/8_1_s016748.ts",
+      "elapsed_ms": 2621,
+      "checked_url": "https://cdn-4.pishow.tv/live/8/8_1_s014925.ts",
       "error": ""
     },
     {
@@ -2953,8 +2960,8 @@
       "url": "https://cdn-1.pishow.tv/live/36/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2804,
-      "checked_url": "https://cdn-1.pishow.tv/live/36/36_1_s011559.ts",
+      "elapsed_ms": 3140,
+      "checked_url": "https://cdn-1.pishow.tv/live/36/36_1_s017370.ts",
       "error": ""
     },
     {
@@ -2969,8 +2976,8 @@
       "url": "https://cdn-1.pishow.tv/live/17/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2726,
-      "checked_url": "https://cdn-1.pishow.tv/live/17/17_1_s001133.ts",
+      "elapsed_ms": 3047,
+      "checked_url": "https://cdn-1.pishow.tv/live/17/17_1_s023176.ts",
       "error": ""
     },
     {
@@ -2985,7 +2992,7 @@
       "url": "https://cdn-1.pishow.tv/live/1291/master.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 666,
+      "elapsed_ms": 759,
       "checked_url": "https://cdn-1.pishow.tv/live/1291/master.m3u8",
       "error": "HTTP Error 404: Not Found"
     },
@@ -3001,7 +3008,7 @@
       "url": "https://cdn-1.pishow.tv/live/235/master.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 721,
+      "elapsed_ms": 755,
       "checked_url": "https://cdn-1.pishow.tv/live/235/master.m3u8",
       "error": "HTTP Error 404: Not Found"
     },
@@ -3017,8 +3024,8 @@
       "url": "https://cdn-2.pishow.tv/live/1455/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2770,
-      "checked_url": "https://cdn-2.pishow.tv/live/1455/1455_1_s020468.ts",
+      "elapsed_ms": 3025,
+      "checked_url": "https://cdn-2.pishow.tv/live/1455/1455_1_s018645.ts",
       "error": ""
     },
     {
@@ -3033,8 +3040,8 @@
       "url": "https://live.we2live.in/dheerantv/dheerantv/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1361,
-      "checked_url": "https://live.we2live.in/dheerantv/dheerantv/tracks-v1a1/2026/07/18/03/47/53-06000.ts",
+      "elapsed_ms": 1334,
+      "checked_url": "https://live.we2live.in/dheerantv/dheerantv/tracks-v1a1/2026/07/19/04/17/24-06000.ts",
       "error": ""
     },
     {
@@ -3097,7 +3104,7 @@
       "url": "https://trs1.aynaott.com/e24/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 718,
+      "elapsed_ms": 653,
       "checked_url": "https://trs1.aynaott.com/e24/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -3337,8 +3344,8 @@
       "url": "https://cc-czbq30x55knit.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-czbq30x55knit/DIYC/PMSL/IN10/Epic_TV_IN_B/Epic_TV_IN_B.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3490,
-      "checked_url": "https://cc-czbq30x55knit.akamaized.net/DIYC/PMSL/IN10/Epic_TV_IN_B/Epic_TV_IN_B_1080_330884.ts",
+      "elapsed_ms": 2869,
+      "checked_url": "https://cc-czbq30x55knit.akamaized.net/DIYC/PMSL/IN10/Epic_TV_IN_B/Epic_TV_IN_B_1080_345819.ts",
       "error": ""
     },
     {
@@ -3351,11 +3358,11 @@
         "Religious"
       ],
       "url": "https://ott.livelegitpro.in/fatehtv/fatehtv/index.m3u8",
-      "ok": true,
-      "published": true,
-      "elapsed_ms": 3626,
-      "checked_url": "https://ott.livelegitpro.in/fatehtv/fatehtv/tracks-v1a1/2026/07/18/03/47/52-06000.ts",
-      "error": ""
+      "ok": false,
+      "published": false,
+      "elapsed_ms": 10925,
+      "checked_url": "https://ott.livelegitpro.in/fatehtv/fatehtv/index.m3u8",
+      "error": "HTTP Error 404: Not Found"
     },
     {
       "index": 206,
@@ -3369,7 +3376,7 @@
       "url": "https://xlbor37ydvaj-hls-live.wmncdn.net/firstindianewstv1/live.stream/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 7091,
+      "elapsed_ms": 2152,
       "checked_url": "https://xlbor37ydvaj-hls-live.wmncdn.net/firstindianewstv1/live.stream/chunks.m3u8",
       "error": "playlist has too few media segments"
     },
@@ -3384,11 +3391,11 @@
         "Lifestyle"
       ],
       "url": "https://mumt03.tangotv.in/Dsly5z3HFOODFOOD/index.m3u8",
-      "ok": false,
-      "published": false,
-      "elapsed_ms": 3069,
-      "checked_url": "https://mumt03.tangotv.in/Dsly5z3HFOODFOOD/tracks-v1a1/2026/07/18/03/47/42-06000.ts",
-      "error": "HTTP Error 404: Not Found"
+      "ok": true,
+      "published": true,
+      "elapsed_ms": 3831,
+      "checked_url": "https://mumt03.tangotv.in/Dsly5z3HFOODFOOD/tracks-v1a1/2026/07/19/04/17/12-06000.ts",
+      "error": ""
     },
     {
       "index": 208,
@@ -3402,8 +3409,8 @@
       "url": "https://pbgangaur.wiseplayout.com/Gangaur/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 619,
-      "checked_url": "https://pbgangaur.wiseplayout.com/Gangaur/HD1080/WiseVideo00071422_1478463470400.ts",
+      "elapsed_ms": 556,
+      "checked_url": "https://pbgangaur.wiseplayout.com/Gangaur/HD1080/WiseVideo00086120_1282019092800.ts",
       "error": ""
     },
     {
@@ -3418,8 +3425,8 @@
       "url": "https://online.godstands.tv:5443/WebRTCApp/streams/HindiStreaming.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1931,
-      "checked_url": "https://online.godstands.tv:5443/WebRTCApp/streams/HindiStreaming000002886.ts",
+      "elapsed_ms": 2007,
+      "checked_url": "https://online.godstands.tv:5443/WebRTCApp/streams/HindiStreaming000001186.ts",
       "error": ""
     },
     {
@@ -3434,7 +3441,7 @@
       "url": "https://trs1.aynaott.com/Goldmines/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 678,
+      "elapsed_ms": 653,
       "checked_url": "https://trs1.aynaott.com/Goldmines/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -3450,8 +3457,8 @@
       "url": "https://cdn-2.pishow.tv/live/1460/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2841,
-      "checked_url": "https://cdn-2.pishow.tv/live/1460/1460_1_s023840.ts",
+      "elapsed_ms": 3166,
+      "checked_url": "https://cdn-2.pishow.tv/live/1460/1460_1_s022022.ts",
       "error": ""
     },
     {
@@ -3498,8 +3505,8 @@
       "url": "https://aajtaklive.vgcdn.net/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/3196cced-ce29-4219-9809-f07ccdaa02b9/vglive-sk-848805/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 4207,
-      "checked_url": "https://aajtaklive.vgcdn.net/vglive-sk-848805/hls/live/2016145/gnt/gntlive/live_360p/l_6156006000_1033086.ts",
+      "elapsed_ms": 5958,
+      "checked_url": "https://aajtaklive.vgcdn.net/vglive-sk-848805/hls/live/2016145/gnt/gntlive/live_360p/l_6244176000_1047886.ts",
       "error": ""
     },
     {
@@ -3514,8 +3521,8 @@
       "url": "http://cdn12.henico.net:8080/live/gsctv/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 487,
-      "checked_url": "http://cdn12.henico.net:8080/live/gsctv/index152689.ts",
+      "elapsed_ms": 479,
+      "checked_url": "http://cdn12.henico.net:8080/live/gsctv/index196729.ts",
       "error": ""
     },
     {
@@ -3530,8 +3537,8 @@
       "url": "https://cdn-6.pishow.tv/live/14/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3912,
-      "checked_url": "https://cdn-6.pishow.tv/live/14/14_1_s005170.ts",
+      "elapsed_ms": 2574,
+      "checked_url": "https://cdn-6.pishow.tv/live/14/14_1_s002237.ts",
       "error": ""
     },
     {
@@ -3546,7 +3553,7 @@
       "url": "https://trs1.aynaott.com/HindiKhabar/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 673,
+      "elapsed_ms": 651,
       "checked_url": "https://trs1.aynaott.com/HindiKhabar/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -3594,7 +3601,7 @@
       "url": "https://ott.livelegitpro.in:9899/hnnnews/hnnnews/tracks-v1/index.fmp4.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 904,
+      "elapsed_ms": 923,
       "checked_url": "https://ott.livelegitpro.in:9899/hnnnews/hnnnews/tracks-v1/index.fmp4.m3u8",
       "error": "fragmented MP4 HLS rejected for IPTV compatibility"
     },
@@ -3610,8 +3617,8 @@
       "url": "https://cdn.live247stream.com/hyder/tv/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1178,
-      "checked_url": "https://cdn.live247stream.com/hyder/tv/hyder/stream1/l_95_26292526_4382.ts?nimblesessionid=391847758",
+      "elapsed_ms": 1206,
+      "checked_url": "https://cdn.live247stream.com/hyder/tv/hyder/stream1/l_95_114462529_19077.ts?nimblesessionid=393070875",
       "error": ""
     },
     {
@@ -3626,8 +3633,8 @@
       "url": "https://cdn-3.pishow.tv/live/220/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2742,
-      "checked_url": "https://cdn-3.pishow.tv/live/220/220_1_s000594.ts",
+      "elapsed_ms": 2634,
+      "checked_url": "https://cdn-3.pishow.tv/live/220/220_1_s022636.ts",
       "error": ""
     },
     {
@@ -3642,8 +3649,8 @@
       "url": "https://indiadaily.ottlive.co.in/indiadailylive/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2018,
-      "checked_url": "https://indiadaily.ottlive.co.in/indiadailylive/tracks-v4a1/2026/07/18/03/47/05-05440.ts",
+      "elapsed_ms": 3363,
+      "checked_url": "https://indiadaily.ottlive.co.in/indiadailylive/tracks-v4a1/2026/07/19/04/16/37-06000.ts",
       "error": ""
     },
     {
@@ -3658,7 +3665,7 @@
       "url": "https://livetv.newsx.com/itv/itvnetwork7/playlist.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 19441,
+      "elapsed_ms": 19288,
       "checked_url": "https://livetv.newsx.com/itv/itvnetwork7/playlist.m3u8",
       "error": "HTTP Error 522: <none>"
     },
@@ -3674,8 +3681,8 @@
       "url": "https://pl-indiatvnews.akamaized.net/out/v1/db79179b608641ceaa5a4d0dd0dca8da/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 869,
-      "checked_url": "https://pl-indiatvnews.akamaized.net/out/v1/db79179b608641ceaa5a4d0dd0dca8da/index_3_21506238.ts?m=1674650495",
+      "elapsed_ms": 859,
+      "checked_url": "https://pl-indiatvnews.akamaized.net/out/v1/db79179b608641ceaa5a4d0dd0dca8da/index_3_21521069.ts?checkedby:iptvcat.com&m=1674650495",
       "error": ""
     },
     {
@@ -3691,8 +3698,8 @@
       "url": "https://amg01550-amg01550c6-samsung-in-4679.playouts.now.amagi.tv/playlist/amg01550-indiatvfast-indiatvakasamsung-samsungin/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 4466,
-      "checked_url": "https://amg01550-amg01550c6-samsung-in-4679.playouts.now.amagi.tv/ts-ap-s1-n1/beacon/amg01550-indiatvfast-indiatvakasamsung-samsungin/y1Y5HGVwZ4uEwzh40vFi4aZZKNgLbIUqarRUh228Tgrc4rWcrhPkeCXBW4s9GhAADne0es4UEcbeFalUW3sOZOvY8ieM_kdbyYFLNS-wfQBS-B4Nq103X_WlWgSMNrA5IhbrAmEfcq61G_IrB9qBCI5hKZvOjDdoPwNAml5a-6NYsevmCUHabvSyFVWdLUC1n0PIgh2miNYJz17SdPlFy8Hz3ddDh4_zx5htmlyI878f4-JMoIswg9STfTyYMRtSH0HjsOGGJF6oZjORfGKpxQjRHNydLcFBOr4SkUyFSuUDYecOgzzInrrRAms2t8EZFE95OgXoiVcQnByRgejRenqW5BpxRoMKskdybcGpmkbJq53xx9s4R4748uKxPJlcBNdgqLPq3OKsjYe5MEdcagcDyXGtiVL6J9p9pMsAG5EsLry3Wt6P1VIxLRrI0B6cPhq60oWX0B0zkSAyVPxl1Rsobc90Q0-lFbnLbFPYczXSfH3aSCWMR8u9Lt6uz6pTaOKQlBS_J8SdPv_aTulhNVIH89UpXE5DNJDNbh8_dMYKtYGfrydJM-3xzOzJHG1UblkBWvmNjRS0vYARb3GQAxkxIS9A7EO8D_gPRgcizGy2jRlkiQNbQMWvLVJXadaF8a60lvIG0lvW3PYtICtTAOxnU8YPSzgG65u1cyJyq1M7bUN5NEhfvjKV/1920x1080_13312635?bcn=1&ca=0&cid=amg-SH055443260000&dur=6.000000&media_type=C&redirect_url=https%3A%2F%2Findiatv-samsung.akamaized.net%2Fv1%2Fvglive-sk-912213%2Fmain_1_9997522.ts%3Fm%3D1724947685&seen-ad=1&seg_id=9997522&user_id=7d422e39-825b-11f1-82ba-d28afc3f4c59",
+      "elapsed_ms": 4733,
+      "checked_url": "https://amg01550-amg01550c6-samsung-in-4679.playouts.now.amagi.tv/ts-ap-s1-n1/beacon/amg01550-indiatvfast-indiatvakasamsung-samsungin/y1Q9GXlsZIae1D1i1-9IpPlHH94daYhpPrVRiXXRByTU76idqRSsMFePZoAlXzFBIDaYCaEfEa_Oe6g-NXl4c4OIwzuZxUdu54p0c26sfx1W4A0TwD0oWu3ENkTFMbxyAFPPDG1dPcT9KvU0DZjVFYp9LJWtzQJoKwsdxkJY5qdAoPnzSRbePvSwG0jGMk3kgErU1R3tgclSzEWPa_IWzsDzg4VCi46RNcs2iEdhntel-PAY6at7hJj8TyudfytDbCSMwbbLPvAC2iEmntrerWrvFrTpb-EydNOI_z5K5oh0EwSPwTcZ8KLnipRbhI43RDKy6rCPtAUyr2_omCS8GW20-Q5xS8Vsl3dlaNC15hWHyhuCuTCN7yk0NtSUSduws4Cvn74KpGWbl8vJaH0ZKkQjlk2un1reK_ZxvIFGcgsDF_vaHe-u7XMcLg-KiVXRUzy82ICMlk4YwnIUV-0viAlQIpx0X33jLOuTcznacUTWY0-UMlGvcbyAXpL2i9pXboqJvQWVCci6BdX6B9sIHUkSv_dWMmZEb9_jY019Oex2pOuIhlMME-fjwu7KMWlX2XbQ8xpQgTDA-2acZt0gQYl2RCY92Ag/1920x1080_13312635?bcn=1&ca=0&cid=amg-SH043298180000&dur=6.000000&media_type=C&redirect_url=https%3A%2F%2Findiatv-samsung.akamaized.net%2Fv1%2Fvglive-sk-912213%2Fmain_1_10012363.ts%3Fm%3D1724947685&seen-ad=1&seg_id=10012363&user_id=c6be170c-8328-11f1-9b69-32cb38fb980f",
       "error": ""
     },
     {
@@ -3707,8 +3714,8 @@
       "url": "https://cc-lyf4c0hwzg5dd.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-lyf4c0hwzg5dd/v1/vglive-sk-479089/main.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 4534,
-      "checked_url": "https://veto-samsung.akamaized.net/v1/vglive-sk-479089/main_2_9999021.ts?m=1725019358",
+      "elapsed_ms": 4680,
+      "checked_url": "https://veto-samsung.akamaized.net/v1/vglive-sk-479089/main_2_10013850.ts?m=1725019358",
       "error": ""
     },
     {
@@ -3723,8 +3730,8 @@
       "url": "https://d1msejlow1t3l4.cloudfront.net/fta/inh24x7/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1160,
-      "checked_url": "https://d1msejlow1t3l4.cloudfront.net/fta/inh24x7/l_3802_53260688_12074.ts",
+      "elapsed_ms": 1080,
+      "checked_url": "https://d1msejlow1t3l4.cloudfront.net/fta/inh24x7/l_3964_51176120_12794.ts",
       "error": ""
     },
     {
@@ -3739,8 +3746,8 @@
       "url": "https://6n3yow8pl9ok-hls-live.5centscdn.com/ishwartvlive/tv.stream/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 971,
-      "checked_url": "https://6n3yow8pl9ok-hls-live.5centscdn.com/ishwartvlive/tv.stream/l_1216521_1099760_183.ts",
+      "elapsed_ms": 1154,
+      "checked_url": "https://6n3yow8pl9ok-hls-live.5centscdn.com/ishwartvlive/tv.stream/l_1232408_2868720_478.ts",
       "error": ""
     },
     {
@@ -3755,7 +3762,7 @@
       "url": "https://ca1.buximedia.com/itv/indian/tracks-v1a1/mono.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 10328,
+      "elapsed_ms": 10331,
       "checked_url": "https://ca1.buximedia.com/itv/indian/tracks-v1a1/mono.m3u8",
       "error": "HTTP Error 404: Not Found"
     },
@@ -3771,8 +3778,8 @@
       "url": "https://cdn-6.pishow.tv/live/10004/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2781,
-      "checked_url": "https://cdn-6.pishow.tv/live/10004/10004_1_s001136.ts",
+      "elapsed_ms": 2621,
+      "checked_url": "https://cdn-6.pishow.tv/live/10004/10004_1_s006108.ts",
       "error": ""
     },
     {
@@ -3787,7 +3794,7 @@
       "url": "https://live.jswk.online/IK_RTPM/live/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 511,
+      "elapsed_ms": 525,
       "checked_url": "https://live.jswk.online/IK_RTPM/live/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -3803,8 +3810,8 @@
       "url": "https://cdn-2.pishow.tv/live/989/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2826,
-      "checked_url": "https://cdn-2.pishow.tv/live/989/989_1_s020619.ts",
+      "elapsed_ms": 3130,
+      "checked_url": "https://cdn-2.pishow.tv/live/989/989_1_s018797.ts",
       "error": ""
     },
     {
@@ -3819,7 +3826,7 @@
       "url": "https://live.gulistannews.in/hls/jk.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 1134,
+      "elapsed_ms": 1106,
       "checked_url": "https://live.gulistannews.in/hls/jk.m3u8",
       "error": "HTTP Error 404: Not Found"
     },
@@ -3867,8 +3874,8 @@
       "url": "https://live.kanshitv.co.uk/mobile/kanshitvkey.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2717,
-      "checked_url": "https://live.kanshitv.co.uk/mobile/kanshitvkey_720p_6808.ts",
+      "elapsed_ms": 2443,
+      "checked_url": "https://live.kanshitv.co.uk/mobile/kanshitvkey_720p_7689.ts",
       "error": ""
     },
     {
@@ -3883,8 +3890,8 @@
       "url": "https://server.thelegitpro.in/kashishnews/kashishnews/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2793,
-      "checked_url": "https://server.thelegitpro.in/kashishnews/kashishnews/tracks-v1a1/2026/07/18/03/47/40-08000.ts",
+      "elapsed_ms": 2795,
+      "checked_url": "https://server.thelegitpro.in/kashishnews/kashishnews/tracks-v1a1/2026/07/19/04/17/18-08000.ts",
       "error": ""
     },
     {
@@ -3899,8 +3906,8 @@
       "url": "https://oqgdrkxby4rm-hls-live.5centscdn.com/kaumudytv/live.stream/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1340,
-      "checked_url": "https://oqgdrkxby4rm-hls-live.5centscdn.com/kaumudytv/live.stream/l_1216529_1098120_183.ts",
+      "elapsed_ms": 1767,
+      "checked_url": "https://oqgdrkxby4rm-hls-live.5centscdn.com/kaumudytv/live.stream/l_1232432_2875160_479.ts",
       "error": ""
     },
     {
@@ -3915,8 +3922,8 @@
       "url": "https://d1msejlow1t3l4.cloudfront.net/fta/khabreinabhitak/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1101,
-      "checked_url": "https://d1msejlow1t3l4.cloudfront.net/fta/khabreinabhitak/l_2893_14696120_96880.ts",
+      "elapsed_ms": 1071,
+      "checked_url": "https://d1msejlow1t3l4.cloudfront.net/fta/khabreinabhitak/l_2893_7428402_118924.ts",
       "error": ""
     },
     {
@@ -3931,8 +3938,8 @@
       "url": "https://brightstar-southasia-pull-secure.akamaized.net/brightstarsouthasia/stream.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1233,
-      "checked_url": "https://brightstar-southasia-pull-secure.akamaized.net/brightstarsouthasia/stream_300_20260718T034614_1021083.ts",
+      "elapsed_ms": 1368,
+      "checked_url": "https://brightstar-southasia-pull-secure.akamaized.net/brightstarsouthasia/stream_300_20260719T041542_1028423.ts",
       "error": ""
     },
     {
@@ -3947,8 +3954,8 @@
       "url": "https://cdn-6.pishow.tv/live/10007/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2784,
-      "checked_url": "https://cdn-6.pishow.tv/live/10007/10007_1_s011410.ts",
+      "elapsed_ms": 2578,
+      "checked_url": "https://cdn-6.pishow.tv/live/10007/10007_1_s009588.ts",
       "error": ""
     },
     {
@@ -3963,8 +3970,8 @@
       "url": "https://cdn-1.pishow.tv/live/1011/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2679,
-      "checked_url": "https://cdn-1.pishow.tv/live/1011/1011_1_s010271.ts",
+      "elapsed_ms": 3071,
+      "checked_url": "https://cdn-1.pishow.tv/live/1011/1011_1_s008448.ts",
       "error": ""
     },
     {
@@ -3995,8 +4002,8 @@
       "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-bollywood/546eb40d7dcf9a209255dd2496903764/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1047,
-      "checked_url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-bollywood/546eb40d7dcf9a209255dd2496903764/video/1080p2400kbps/segment_pnys4IOQaC_652484_seg.ts",
+      "elapsed_ms": 806,
+      "checked_url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-bollywood/546eb40d7dcf9a209255dd2496903764/video/1080p2400kbps/segment_imnCfjfmx6_1583_seg.ts",
       "error": ""
     },
     {
@@ -4011,8 +4018,8 @@
       "url": "https://5dd3981940faa.streamlock.net/mercytv/mercytv/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 5261,
-      "checked_url": "https://5dd3981940faa.streamlock.net/mercytv/mercytv/media_w139021924_94553.ts",
+      "elapsed_ms": 5071,
+      "checked_url": "https://5dd3981940faa.streamlock.net/mercytv/mercytv/media_w1927673550_103370.ts",
       "error": ""
     },
     {
@@ -4027,8 +4034,8 @@
       "url": "https://mumt04.tangotv.in/m18aqlK4MOVIEPLEX/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3658,
-      "checked_url": "https://mumt04.tangotv.in/m18aqlK4MOVIEPLEX/tracks-v1a1/2026/07/18/03/47/57-02000.ts",
+      "elapsed_ms": 3740,
+      "checked_url": "https://mumt04.tangotv.in/m18aqlK4MOVIEPLEX/tracks-v1a1/2026/07/19/04/17/26-02000.ts",
       "error": ""
     },
     {
@@ -4075,8 +4082,8 @@
       "url": "https://cdn-2.pishow.tv/live/226/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2865,
-      "checked_url": "https://cdn-2.pishow.tv/live/226/226_1_s015941.ts",
+      "elapsed_ms": 3005,
+      "checked_url": "https://cdn-2.pishow.tv/live/226/226_1_s014117.ts",
       "error": ""
     },
     {
@@ -4091,8 +4098,8 @@
       "url": "https://cdn-6.pishow.tv/live/10014/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2810,
-      "checked_url": "https://cdn-6.pishow.tv/live/10014/10014_1_s007061.ts",
+      "elapsed_ms": 2581,
+      "checked_url": "https://cdn-6.pishow.tv/live/10014/10014_1_s005239.ts",
       "error": ""
     },
     {
@@ -4107,8 +4114,8 @@
       "url": "https://namdhari.tv/live/sbs1.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3407,
-      "checked_url": "https://namdhari.tv/live/sbs1-14142.ts",
+      "elapsed_ms": 3502,
+      "checked_url": "https://namdhari.tv/live/sbs1-28837.ts",
       "error": ""
     },
     {
@@ -4123,8 +4130,8 @@
       "url": "https://cc-p1izg43bk7sj5.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-p1izg43bk7sj5/DIYC/PMSL/IN10/Nazara_IN_B/Nazara_IN_B.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3663,
-      "checked_url": "https://cc-p1izg43bk7sj5.akamaized.net/DIYC/PMSL/IN10/Nazara_IN_B/Nazara_IN_B_1080_126249.ts",
+      "elapsed_ms": 3245,
+      "checked_url": "https://cc-p1izg43bk7sj5.akamaized.net/DIYC/PMSL/IN10/Nazara_IN_B/Nazara_IN_B_1080_141162.ts",
       "error": ""
     },
     {
@@ -4139,8 +4146,8 @@
       "url": "https://amg01448-samsungin-ndtvgoodtimes-samsungin-ad-gp.amagi.tv/playlist/amg01448-samsungin-ndtvgoodtimes-samsungin/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 762,
-      "checked_url": "https://amg01448-samsungin-ndtvgoodtimes-samsungin-ad-gp.amagi.tv/ts-eu-w1-n2/beacon/amg01448-samsungin-ndtvgoodtimes-samsungin/cb56391c6570678b84c33878d2f162e1a65928d80b6c852a6ab454876dbc4e0adce2b59cae13e47825c15b8b3d1a10000e77b47ace1411c6de15a9545b7b0e64ebd8f2278cfe475bc9814b352fb07d0052f81e0dab5d375ff5a55a048c36b0392216eb02611f72aeb51bf22b07da81088e61299bce8c37683f03409a5e5afba358b1ebe95d45df64a9b514559d2d40b59f43c8821da688d75f995ed423f41ccc9bf3dfd415838ff3c7986d9a5c88f3bf1fe3e24ca08b3083d4937d3c98311b521f41e3b0e186245ea86633917c62a9c508d11cdc9d2dc1413abe12914c854ae50361e70e833cc89ebad1026b36b7c119144f793a05e88957109c1c9181e8d17a7a96e41a7146830ab247726dc1a99a46c9ab9df1c7db38478ef8f2e2b13c995c04d760a8b3eadce2ac8d87b930475c6a0703c971ad8952fa27da7da4cb001b912c2ebcb75ade8fd552312d1ac8d01e9c3e1abad28597d01d3391203254fc65d51b286dcf74434fa515b9cb6c53d87335d27c7dda48258c47cbbd2edeaecfaa5368e2909414bf27c49d3effda4ee961355207f3d5295c4e433490cd6e1f3f74c60ab5819faf274933edf1ccecc91c6d546e59015af98d8d14b4bd80116f7190031931212f40ec43bc0ff80f460722cc6cb68d196489035b40c5af2d525769d685f1aeb496f206d25bd6dcf62d202b5301ec63e547f25d3d3f3ff29f146fd7b3102936c9c0101479e029/640x360_596000?bcn=1&break_type=MID_ROLL&ca=0&cid=70dfaceb-6637-4248-9135-e4531b3e144d&dur=2.000000&id=amg01448-samsungin-ndtvgoodtimes-samsungin_6060677-cue-out-60.000000_2_default&media_type=F&offset=18&redirect_url=https%3A%2F%2Famg01448-samsungin-ndtvgoodtimes-samsungin-ad-gp.amagi.tv%2Fts-eu-w1-n2%2FTranscode%2F8a3fde60144a41a2f3f6cda9cbb00c7fcc2afcb59055803f705d4253bd502e20_70148847%2Fprofile_21_2%2Fhls_v3%2F640x360_600000_0013.ts&seen-ad=1&seg_id=6060693&user_id=80078848-825b-11f1-8347-be58a93d7519",
+      "elapsed_ms": 973,
+      "checked_url": "https://amg01448-samsungin-ndtvgoodtimes-samsungin-ad-gp.amagi.tv/ts-eu-w1-n2/beacon/amg01448-samsungin-ndtvgoodtimes-samsungin/cb543d19796c64869ed43d62d7ef48a4f9471fde1d6988693eb5518975d10724d4efa89da914ac30578f6680255f314120369809a11f11afce7ba83e357978738388c33b99c5476ee78a74736eac7f1d56e00d13c03d285aedc43644c531bc720053cf0c6d5d3dc4fd2af5340d98d5158a7d2c95adcd02682b0b1dc64258e6a740a0f9f349168a64a9e01440c6324de4804ad4d51ded81c9539d47816ba341989aa182d0448583906acb368847619ed7a5f8f018e9ab7b8498fc4f2b9d7f2b436c248cc1b6cb3ef002da21269edadead6aef16b4e96fe13274d388ff3e4ae6887413048fc13719f0a2e78a945b848e374432b2eab08fb40532af6fe89824bc196db4f90e714bc56c97776568d0b5e61587ca1b82b9308def293436d49449dbb0b380af9fbe0aa4659b97cbc9687d192a4423964dae9f5ade2bf671bc8146720b0317fbda1defaeed731c2e0f8a8955d1533cbcd8808c964e18c2721457ed2f880950229c745f7de32ceb937339da7144d6634f943251af71bc805e92f68bda576e8a89bd059509c8ba05d5fa07db081d4912bff7563266446fdfe3634d7d39ec76a4eb8886530c13e7e3c2eeca316b50d976d8f31a5081ab12f0abb8a876eb09c9d205e8aa08dc/640x360_596000?bcn=1&break_type=MID_ROLL&ca=0&cid=77c42375-3e61-4ed1-8aec-b47dc1028b72&dur=2.000000&id=amg01448-samsungin-ndtvgoodtimes-samsungin_6075523-cue-out-60.000000_1_default&media_type=F&offset=16&redirect_url=https%3A%2F%2Famg01448-samsungin-ndtvgoodtimes-samsungin-ad-gp.amagi.tv%2Fts-eu-w1-n2%2FTranscode%2F8a3fde60144a41a2f3f6cda9cbb00c7fcc2afcb59055803f705d4253bd502e20_70148847%2Fprofile_21_2%2Fhls_v3%2F640x360_600000_0011.ts&seen-ad=1&seg_id=6075528&user_id=cb88a88c-8328-11f1-8347-be58a93d7519",
       "error": ""
     },
     {
@@ -4171,8 +4178,8 @@
       "url": "https://ndtvregional.akamaized.net/hls/live/2102726-b/ndtvmpcg/master_1.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2188,
-      "checked_url": "https://ndtvregional.akamaized.net/hls/live/2102726-b/ndtvmpcg/media_0_3375382.ts",
+      "elapsed_ms": 1948,
+      "checked_url": "https://ndtvregional.akamaized.net/hls/live/2102726-b/ndtvmpcg/media_0_3390185.ts",
       "error": ""
     },
     {
@@ -4187,8 +4194,8 @@
       "url": "https://ndtvregional.akamaized.net/hls/live/2102726-b/ndtvraj/master_1.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1824,
-      "checked_url": "https://ndtvregional.akamaized.net/hls/live/2102726-b/ndtvraj/media_0_11253339.ts",
+      "elapsed_ms": 2347,
+      "checked_url": "https://ndtvregional.akamaized.net/hls/live/2102726-b/ndtvraj/media_0_11268225.ts",
       "error": ""
     },
     {
@@ -4203,7 +4210,7 @@
       "url": "https://trs1.aynaott.com/Network10/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 655,
+      "elapsed_ms": 663,
       "checked_url": "https://trs1.aynaott.com/Network10/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -4219,7 +4226,7 @@
       "url": "https://trs1.aynaott.com/News1India/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 665,
+      "elapsed_ms": 672,
       "checked_url": "https://trs1.aynaott.com/News1India/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -4236,7 +4243,7 @@
       "ok": true,
       "published": true,
       "elapsed_ms": 1061,
-      "checked_url": "https://d1msejlow1t3l4.cloudfront.net/fta/news11bharat/l_2218_54144684_234834.ts",
+      "checked_url": "https://d1msejlow1t3l4.cloudfront.net/fta/news11bharat/l_2218_10328120_256876.ts",
       "error": ""
     },
     {
@@ -4251,8 +4258,8 @@
       "url": "https://n18syndication.akamaized.net/bpk-tv/News18_Bihar_Jharkhand_NW18_MOB/output01/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2433,
-      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/News18_Bihar_Jharkhand_NW18_MOB/output01/News18_Bihar_Jharkhand_NW18_MOB-audio_33636_hin=33600-video=148000-297390983.ts",
+      "elapsed_ms": 3508,
+      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/News18_Bihar_Jharkhand_NW18_MOB/output01/News18_Bihar_Jharkhand_NW18_MOB-audio_33636_hin=33600-video=148000-297405679.ts",
       "error": ""
     },
     {
@@ -4267,8 +4274,8 @@
       "url": "https://n18syndication.akamaized.net/bpk-tv/News18_JKLH_NW18_MOB/output01/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3561,
-      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/News18_JKLH_NW18_MOB/output01/News18_JKLH_NW18_MOB-audio_33636_hin=33600-video=148000-297390983.ts",
+      "elapsed_ms": 4193,
+      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/News18_JKLH_NW18_MOB/output01/News18_JKLH_NW18_MOB-audio_33636_hin=33600-video=148000-297405679.ts",
       "error": ""
     },
     {
@@ -4281,11 +4288,11 @@
         "News"
       ],
       "url": "https://n18syndication.akamaized.net/bpk-tv/News18_India_NW18_MOB/output01/master.m3u8",
-      "ok": false,
-      "published": false,
-      "elapsed_ms": 874,
-      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/News18_India_NW18_MOB/output01/master.m3u8",
-      "error": "IncompleteRead(1049 bytes read)"
+      "ok": true,
+      "published": true,
+      "elapsed_ms": 4156,
+      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/News18_India_NW18_MOB/output01/News18_India_NW18_MOB-audio_33636_hin=33600-video=148000-297405678.ts",
+      "error": ""
     },
     {
       "index": 268,
@@ -4299,8 +4306,8 @@
       "url": "https://n18syndication.akamaized.net/bpk-tv/News18_MP_Chhattisgarh_NW18_MOB/output01/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3163,
-      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/News18_MP_Chhattisgarh_NW18_MOB/output01/News18_MP_Chhattisgarh_NW18_MOB-audio_33636_hin=33600-video=148000-297390983.ts",
+      "elapsed_ms": 2723,
+      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/News18_MP_Chhattisgarh_NW18_MOB/output01/News18_MP_Chhattisgarh_NW18_MOB-audio_33636_hin=33600-video=148000-297405679.ts",
       "error": ""
     },
     {
@@ -4315,8 +4322,8 @@
       "url": "https://n18syndication.akamaized.net/bpk-tv/News18_Punjab_Haryana_HP_NW18_MOB/output01/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3304,
-      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/News18_Punjab_Haryana_HP_NW18_MOB/output01/News18_Punjab_Haryana_HP_NW18_MOB-audio_33636_hin=33600-video=148000-297390983.ts",
+      "elapsed_ms": 4100,
+      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/News18_Punjab_Haryana_HP_NW18_MOB/output01/News18_Punjab_Haryana_HP_NW18_MOB-audio_33636_hin=33600-video=148000-297405679.ts",
       "error": ""
     },
     {
@@ -4331,8 +4338,8 @@
       "url": "https://n18syndication.akamaized.net/bpk-tv/News18_Rajasthan_NW18_MOB/output01/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3543,
-      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/News18_Rajasthan_NW18_MOB/output01/News18_Rajasthan_NW18_MOB-audio_33636_hin=33600-video=148000-297390984.ts",
+      "elapsed_ms": 3051,
+      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/News18_Rajasthan_NW18_MOB/output01/News18_Rajasthan_NW18_MOB-audio_33636_hin=33600-video=148000-297405678.ts",
       "error": ""
     },
     {
@@ -4347,8 +4354,8 @@
       "url": "https://n18syndication.akamaized.net/bpk-tv/News18_UP_Uttarakhand_NW18_MOB/output01/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2842,
-      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/News18_UP_Uttarakhand_NW18_MOB/output01/News18_UP_Uttarakhand_NW18_MOB-audio_33635_hin=33600-video=148000-297390983.ts",
+      "elapsed_ms": 3253,
+      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/News18_UP_Uttarakhand_NW18_MOB/output01/News18_UP_Uttarakhand_NW18_MOB-audio_33635_hin=33600-video=148000-297405678.ts",
       "error": ""
     },
     {
@@ -4363,8 +4370,8 @@
       "url": "https://vidcdn.vidgyor.com/news24-origin/liveabr/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3235,
-      "checked_url": "https://vidcdn.vidgyor.com/news24-origin/liveabr/news24-origin/live_240p/l_13733_13578080_2263.ts",
+      "elapsed_ms": 3177,
+      "checked_url": "https://vidcdn.vidgyor.com/news24-origin/liveabr/news24-origin/live_240p/l_13733_101743880_16949.ts",
       "error": ""
     },
     {
@@ -4379,8 +4386,8 @@
       "url": "https://cdn-6.pishow.tv/live/10009/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2677,
-      "checked_url": "https://cdn-6.pishow.tv/live/10009/10009_1_s006222.ts",
+      "elapsed_ms": 2639,
+      "checked_url": "https://cdn-6.pishow.tv/live/10009/10009_1_s004400.ts",
       "error": ""
     },
     {
@@ -4395,7 +4402,7 @@
       "url": "http://tvsen5.aynascope.net/NewsIndia24x7/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 10477,
+      "elapsed_ms": 10486,
       "checked_url": "http://tvsen5.aynascope.net/NewsIndia24x7/index.m3u8",
       "error": "HTTP Error 404: Not Found"
     },
@@ -4411,8 +4418,8 @@
       "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/6cd2f649739a45ca9de1daf81cc7d0f2/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1230,
-      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/6cd2f649739a45ca9de1daf81cc7d0f2/index_1_9465154.ts?m=1726737064",
+      "elapsed_ms": 1283,
+      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/6cd2f649739a45ca9de1daf81cc7d0f2/index_1_9479986.ts?m=1726737064",
       "error": ""
     },
     {
@@ -4427,7 +4434,7 @@
       "url": "https://server.thelegitpro.in/northeastlive/northeastlive/index.fmp4.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 1381,
+      "elapsed_ms": 1395,
       "checked_url": "https://server.thelegitpro.in/northeastlive/northeastlive/tracks-v1/index.fmp4.m3u8",
       "error": "fragmented MP4 HLS rejected for IPTV compatibility"
     },
@@ -4443,7 +4450,7 @@
       "url": "https://mumt02.tangotv.in/PRIMENEWS/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 236,
+      "elapsed_ms": 243,
       "checked_url": "https://mumt02.tangotv.in/PRIMENEWS/index.m3u8",
       "error": "<urlopen error [Errno 111] Connection refused>"
     },
@@ -4473,11 +4480,11 @@
         "Undefined"
       ],
       "url": "https://6n3yorwpy9ok-hls-live.5centscdn.com/raftaarmedia/243bd1ce0387f18005abfc43b001646a.sdp/playlist.m3u8",
-      "ok": false,
-      "published": false,
-      "elapsed_ms": 2851,
-      "checked_url": "https://6n3yorwpy9ok-hls-live.5centscdn.com/raftaarmedia/243bd1ce0387f18005abfc43b001646a.sdp/playlist.m3u8",
-      "error": "HTTP Error 404: Not Found"
+      "ok": true,
+      "published": true,
+      "elapsed_ms": 2513,
+      "checked_url": "https://6n3yorwpy9ok-hls-live.5centscdn.com/raftaarmedia/243bd1ce0387f18005abfc43b001646a.sdp/l_2561145_49705960_8284.ts",
+      "error": ""
     },
     {
       "index": 280,
@@ -4507,8 +4514,8 @@
       "url": "https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/RepublicBharat.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 340,
-      "checked_url": "https://d1rc86nwwc9fag.cloudfront.net/out/v1/vglive-sk-561573/534f6684a9824ef894260909ab46b4f1/main_4_10575532.ts?m=1774947181",
+      "elapsed_ms": 454,
+      "checked_url": "https://d1rc86nwwc9fag.cloudfront.net/out/v1/vglive-sk-561573/534f6684a9824ef894260909ab46b4f1/main_4_10590309.ts?m=1774947181",
       "error": ""
     },
     {
@@ -4521,11 +4528,11 @@
         "Undefined"
       ],
       "url": "https://server.thelegitpro.in/rongeentv/rongeentv/index.m3u8",
-      "ok": true,
-      "published": true,
-      "elapsed_ms": 2759,
-      "checked_url": "https://server.thelegitpro.in/rongeentv/rongeentv/tracks-v1a1/2026/07/18/03/48/08-06000.ts",
-      "error": ""
+      "ok": false,
+      "published": false,
+      "elapsed_ms": 2094,
+      "checked_url": "https://server.thelegitpro.in/rongeentv/rongeentv/tracks-v1a1/2026/07/19/04/17/31-06001.ts",
+      "error": "HTTP Error 404: Not Found"
     },
     {
       "index": 283,
@@ -4539,8 +4546,8 @@
       "url": "https://cdn-3.pishow.tv/live/437/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2740,
-      "checked_url": "https://cdn-3.pishow.tv/live/437/437_1_s020622.ts",
+      "elapsed_ms": 2638,
+      "checked_url": "https://cdn-3.pishow.tv/live/437/437_1_s018800.ts",
       "error": ""
     },
     {
@@ -4555,8 +4562,8 @@
       "url": "https://6n3yow8pl9ok-hls-live.5centscdn.com/sadhanalivetv/live.stream/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1768,
-      "checked_url": "https://6n3yow8pl9ok-hls-live.5centscdn.com/sadhanalivetv/live.stream/l_1216517_1111760_185.ts",
+      "elapsed_ms": 955,
+      "checked_url": "https://6n3yow8pl9ok-hls-live.5centscdn.com/sadhanalivetv/live.stream/l_1232412_2880560_480.ts",
       "error": ""
     },
     {
@@ -4571,8 +4578,8 @@
       "url": "https://6n3yow8pl9ok-hls-live.5centscdn.com/sadhananewstv/live.stream/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1671,
-      "checked_url": "https://6n3yow8pl9ok-hls-live.5centscdn.com/sadhananewstv/live.stream/l_1216537_1110400_185.ts",
+      "elapsed_ms": 980,
+      "checked_url": "https://6n3yow8pl9ok-hls-live.5centscdn.com/sadhananewstv/live.stream/l_1232428_2881400_480.ts",
       "error": ""
     },
     {
@@ -4587,8 +4594,8 @@
       "url": "https://cdn-2.pishow.tv/live/269/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3122,
-      "checked_url": "https://cdn-2.pishow.tv/live/269/269_1_s021687.ts",
+      "elapsed_ms": 3584,
+      "checked_url": "https://cdn-2.pishow.tv/live/269/269_1_s019865.ts",
       "error": ""
     },
     {
@@ -4619,8 +4626,8 @@
       "url": "https://playhls.media.nic.in/hls/live/lstv/lstv.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 5767,
-      "checked_url": "https://playhls.media.nic.in/live/lstv/1784347688000.ts",
+      "elapsed_ms": 5723,
+      "checked_url": "https://playhls.media.nic.in/live/lstv/1784435500000.ts",
       "error": ""
     },
     {
@@ -4635,8 +4642,8 @@
       "url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/fff8f20221d5456e8922e689d71dedc3/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1406,
-      "checked_url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/fff8f20221d5456e8922e689d71dedc3/index_1_8424133.ts?m=1733383132",
+      "elapsed_ms": 1173,
+      "checked_url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/fff8f20221d5456e8922e689d71dedc3/index_1_8438829.ts?m=1733383132",
       "error": ""
     },
     {
@@ -4651,8 +4658,8 @@
       "url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/e4182054dce340da9e0ff38b6b3658a4/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1857,
-      "checked_url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/e4182054dce340da9e0ff38b6b3658a4/index_1_8410575.ts?m=1733383321",
+      "elapsed_ms": 1516,
+      "checked_url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/e4182054dce340da9e0ff38b6b3658a4/index_1_8425271.ts?m=1733383321",
       "error": ""
     },
     {
@@ -4667,8 +4674,8 @@
       "url": "https://cdn-2.pishow.tv/live/39/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3717,
-      "checked_url": "https://cdn-2.pishow.tv/live/39/39_1_s016752.ts",
+      "elapsed_ms": 3951,
+      "checked_url": "https://cdn-2.pishow.tv/live/39/39_1_s000561.ts",
       "error": ""
     },
     {
@@ -4684,7 +4691,7 @@
       "url": "https://d26idhjf0y1p2g.cloudfront.net/out/v1/cd66dd25b9774cb29943bab54bbf3e2f/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 20,
+      "elapsed_ms": 19,
       "checked_url": "https://d26idhjf0y1p2g.cloudfront.net/out/v1/cd66dd25b9774cb29943bab54bbf3e2f/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -4700,7 +4707,7 @@
       "url": "https://d34z4embz0hjf6.cloudfront.net/out/v1/7ac2789ff9a544a49337d1ffc54ce61c/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 132,
+      "elapsed_ms": 23,
       "checked_url": "https://d34z4embz0hjf6.cloudfront.net/out/v1/7ac2789ff9a544a49337d1ffc54ce61c/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -4732,7 +4739,7 @@
       "url": "https://deatfcv3xdvi3.cloudfront.net/out/v1/7a43dd2f64e34ec28da1b4bd6923251a/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 20,
+      "elapsed_ms": 22,
       "checked_url": "https://deatfcv3xdvi3.cloudfront.net/out/v1/7a43dd2f64e34ec28da1b4bd6923251a/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -4748,8 +4755,8 @@
       "url": "https://cdn-2.pishow.tv/live/475/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3912,
-      "checked_url": "https://cdn-2.pishow.tv/live/475/475_1_s006342.ts",
+      "elapsed_ms": 3806,
+      "checked_url": "https://cdn-2.pishow.tv/live/475/475_1_s004522.ts",
       "error": ""
     },
     {
@@ -4780,7 +4787,7 @@
       "url": "https://d2vfwvjxwtwq1t.cloudfront.net/out/v1/6b24239d5517495b986e7705490c6e65/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 19,
+      "elapsed_ms": 21,
       "checked_url": "https://d2vfwvjxwtwq1t.cloudfront.net/out/v1/6b24239d5517495b986e7705490c6e65/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -4796,7 +4803,7 @@
       "url": "https://d1ji7e9jbzm5g8.cloudfront.net/out/v1/769f22f64d80442889306b9c4abea63c/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 21,
+      "elapsed_ms": 22,
       "checked_url": "https://d1ji7e9jbzm5g8.cloudfront.net/out/v1/769f22f64d80442889306b9c4abea63c/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -4845,8 +4852,8 @@
       "url": "https://airtelapp.shemaroo.com/shemarootv/smil:shemarootvadp.smil/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2757,
-      "checked_url": "https://airtelapp.shemaroo.com/shemarootv/smil:shemarootvadp.smil/media_b1628000_sleng_3216.ts",
+      "elapsed_ms": 3050,
+      "checked_url": "https://airtelapp.shemaroo.com/shemarootv/smil:shemarootvadp.smil/media_b1628000_sleng_3394.ts",
       "error": ""
     },
     {
@@ -4877,7 +4884,7 @@
       "url": "https://d393sxaxig6bax.cloudfront.net/out/v1/589cf2cf44bf42bb941e817a2240d62e/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 16,
+      "elapsed_ms": 21,
       "checked_url": "https://d393sxaxig6bax.cloudfront.net/out/v1/589cf2cf44bf42bb941e817a2240d62e/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -4893,7 +4900,7 @@
       "url": "https://d2g1vdc6ozl2o8.cloudfront.net/out/v1/0a0dc7d7911b4fddbb4dfc963fdd4b9e/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 21,
+      "elapsed_ms": 23,
       "checked_url": "https://d2g1vdc6ozl2o8.cloudfront.net/out/v1/0a0dc7d7911b4fddbb4dfc963fdd4b9e/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -4909,8 +4916,8 @@
       "url": "https://6284rn2xr7xv-hls-live.wmncdn.net/shubhsandeshtv1/live123.stream/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2055,
-      "checked_url": "https://6284rn2xr7xv-hls-live.wmncdn.net/shubhsandeshtv1/live123.stream/l_1216525_1111760_185.ts",
+      "elapsed_ms": 1005,
+      "checked_url": "https://6284rn2xr7xv-hls-live.wmncdn.net/shubhsandeshtv1/live123.stream/l_1232484_2616200_436.ts",
       "error": ""
     },
     {
@@ -4941,8 +4948,8 @@
       "url": "https://wurlsonypicturestv.global.transmit.live/hls/68deeb1c0238cda82df543dd/v1/spt_sonykal_1/lg_us/latest/main/hls/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1297,
-      "checked_url": "https://c6ea76a2.wurl.com/playlist_192k_368069.ts",
+      "elapsed_ms": 785,
+      "checked_url": "https://c6ea76a2.wurl.com/playlist_192k_382886.ts",
       "error": ""
     },
     {
@@ -4957,7 +4964,7 @@
       "url": "https://edge2.roarzone.info:8447/roarzone/edge3/sony-max/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 16,
+      "elapsed_ms": 71,
       "checked_url": "https://edge2.roarzone.info:8447/roarzone/edge3/sony-max/index.m3u8",
       "error": "<urlopen error [Errno -2] Name or service not known>"
     },
@@ -4989,7 +4996,7 @@
       "url": "https://sl.vodep39240327.workers.dev/channel/SONY+PIX+HD.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 1885,
+      "elapsed_ms": 1285,
       "checked_url": "https://sl.vodep39240327.workers.dev/channel/SONY+PIX+HD.m3u8",
       "error": "response is not an M3U/HLS playlist"
     },
@@ -5021,7 +5028,7 @@
       "url": "https://sl.vodep39240327.workers.dev/channel/SONY+WAH.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 1091,
+      "elapsed_ms": 1783,
       "checked_url": "https://sl.vodep39240327.workers.dev/channel/SONY+WAH.m3u8",
       "error": "response is not an M3U/HLS playlist"
     },
@@ -5037,8 +5044,8 @@
       "url": "https://cc-yw7ztecy8do3q.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-yw7ztecy8do3q/SS_IN.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3544,
-      "checked_url": "https://cc-yw7ztecy8do3q.akamaized.net/360p-vtt/seg_0852591.ts",
+      "elapsed_ms": 3554,
+      "checked_url": "https://cc-yw7ztecy8do3q.akamaized.net/360p-vtt/seg_0867526.ts",
       "error": ""
     },
     {
@@ -5165,7 +5172,7 @@
       "url": "https://trs1.aynaott.com/starplushd/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 1057,
+      "elapsed_ms": 1201,
       "checked_url": "https://trs1.aynaott.com/starplushd/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -5179,11 +5186,11 @@
         "Music"
       ],
       "url": "https://cdn2.in/SteelbirdMusicTVhls/live.m3u8",
-      "ok": true,
-      "published": true,
-      "elapsed_ms": 2797,
-      "checked_url": "https://cdn2.in/SteelbirdMusicTVhls/live-54248.ts",
-      "error": ""
+      "ok": false,
+      "published": false,
+      "elapsed_ms": 916,
+      "checked_url": "https://cdn2.in/SteelbirdMusicTVhls/live.m3u8",
+      "error": "HTTP Error 404: Not Found"
     },
     {
       "index": 325,
@@ -5197,7 +5204,7 @@
       "url": "https://ott.livelegitpro.in/sudarshannews/sudarshannews/tracks-v1/index.fmp4.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 909,
+      "elapsed_ms": 911,
       "checked_url": "https://ott.livelegitpro.in/sudarshannews/sudarshannews/tracks-v1/index.fmp4.m3u8",
       "error": "fragmented MP4 HLS rejected for IPTV compatibility"
     },
@@ -5213,8 +5220,8 @@
       "url": "https://player.mslivestream.net/mslive/13a2927187b9700ae7ea82d7841d5b68.sdp/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1445,
-      "checked_url": "https://player.mslivestream.net/mslive/13a2927187b9700ae7ea82d7841d5b68.sdp/l_1467473_776448760_85669.ts",
+      "elapsed_ms": 612,
+      "checked_url": "https://player.mslivestream.net/mslive/13a2927187b9700ae7ea82d7841d5b68.sdp/l_2541639_63211160_6980.ts",
       "error": ""
     },
     {
@@ -5229,8 +5236,8 @@
       "url": "https://cdn-2.pishow.tv/live/465/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3090,
-      "checked_url": "https://cdn-2.pishow.tv/live/465/465_1_s018208.ts",
+      "elapsed_ms": 3032,
+      "checked_url": "https://cdn-2.pishow.tv/live/465/465_1_s016387.ts",
       "error": ""
     },
     {
@@ -5245,8 +5252,8 @@
       "url": "https://cdn-2.pishow.tv/live/477/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2952,
-      "checked_url": "https://cdn-2.pishow.tv/live/477/477_1_s020623.ts",
+      "elapsed_ms": 2979,
+      "checked_url": "https://cdn-2.pishow.tv/live/477/477_1_s018802.ts",
       "error": ""
     },
     {
@@ -5597,8 +5604,8 @@
       "url": "https://live.we2live.in/taazatv/live/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 783,
-      "checked_url": "https://live.we2live.in/taazatv/live/tracks-v1a1/2026/07/18/03/48/24-06000.ts",
+      "elapsed_ms": 1255,
+      "checked_url": "https://live.we2live.in/taazatv/live/tracks-v1a1/2026/07/19/04/17/37-05980.ts",
       "error": ""
     },
     {
@@ -5613,8 +5620,8 @@
       "url": "http://cdn11.live247stream.com/tag/tv/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 619,
-      "checked_url": "http://cdn11.live247stream.com/tag/tv/backup/stream/l_28_1229178067_4134.ts?nimblesessionid=391848020",
+      "elapsed_ms": 680,
+      "checked_url": "http://cdn11.live247stream.com/tag/tv/backup/stream/l_28_1312230067_17976.ts?nimblesessionid=393071234",
       "error": ""
     },
     {
@@ -5629,8 +5636,8 @@
       "url": "https://live.suricloud.com/hls/tbntv/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1619,
-      "checked_url": "https://live.suricloud.com/hls/tbntv/1_2/185766528_185768530.ts?tkn=1840227158",
+      "elapsed_ms": 1575,
+      "checked_url": "https://live.suricloud.com/hls/tbntv/1_2/48144383_48146385.ts?tkn=138285449",
       "error": ""
     },
     {
@@ -5645,8 +5652,8 @@
       "url": "https://cdn-4.pishow.tv/live/239/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2795,
-      "checked_url": "https://cdn-4.pishow.tv/live/239/239_1_s006345.ts",
+      "elapsed_ms": 2596,
+      "checked_url": "https://cdn-4.pishow.tv/live/239/239_1_s004523.ts",
       "error": ""
     },
     {
@@ -5661,8 +5668,8 @@
       "url": "https://sis-global.prod.samsungtv.plus/v1/tvpprd/sc-mp2ar4ca425xo.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3113,
-      "checked_url": "https://pb-dkdpz5so0aqqr.akamaized.net/360p-vtt/seg_0852394.ts",
+      "elapsed_ms": 3391,
+      "checked_url": "https://pb-dkdpz5so0aqqr.akamaized.net/360p-vtt/seg_0867323.ts",
       "error": ""
     },
     {
@@ -5677,8 +5684,8 @@
       "url": "https://d3gnyty2vddhsg.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/pb-ytipwjqub3kf8/TMC2_IN.m3u8?ads.ads_cdn=cf&ads.cdn=cf",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2363,
-      "checked_url": "https://d3gnyty2vddhsg.cloudfront.net/360p-vtt/seg_0852406.ts",
+      "elapsed_ms": 2591,
+      "checked_url": "https://d3gnyty2vddhsg.cloudfront.net/360p-vtt/seg_0867337.ts",
       "error": ""
     },
     {
@@ -5693,8 +5700,8 @@
       "url": "https://mumt05.tangotv.in/87NeALx2THEQ/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3756,
-      "checked_url": "https://mumt05.tangotv.in/87NeALx2THEQ/tracks-v1a1/2026/07/18/03/48/05-06000.ts",
+      "elapsed_ms": 3727,
+      "checked_url": "https://mumt05.tangotv.in/87NeALx2THEQ/tracks-v1a1/2026/07/19/04/17/41-06000.ts",
       "error": ""
     },
     {
@@ -5709,7 +5716,7 @@
       "url": "https://dztlhgid9me95.cloudfront.net/live-tv/Vidgyor/timesnow/timesnow_master.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 31,
+      "elapsed_ms": 46,
       "checked_url": "https://dztlhgid9me95.cloudfront.net/live-tv/Vidgyor/timesnow/timesnow_master.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -5723,11 +5730,11 @@
         "News"
       ],
       "url": "https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/TimesNowNavbharat.m3u8",
-      "ok": true,
-      "published": true,
-      "elapsed_ms": 618,
-      "checked_url": "https://d1rc86nwwc9fag.cloudfront.net/v1/vglive-sk-717514/67AAD2CB0000875FE01F-p0_tmpl600k_600k-1784349552028.ts",
-      "error": ""
+      "ok": false,
+      "published": false,
+      "elapsed_ms": 1577,
+      "checked_url": "https://d1rc86nwwc9fag.cloudfront.net/v1/vglive-sk-717514/67AAD2CB0000875FE01F-p0_tmpl600k_600k-1784437902010.ts",
+      "error": "HTTP Error 416: Requested Range Not Satisfiable"
     },
     {
       "index": 359,
@@ -5741,8 +5748,8 @@
       "url": "https://server.thelegitpro.in/tnpnews/tnpnews/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2776,
-      "checked_url": "https://server.thelegitpro.in/tnpnews/tnpnews/tracks-v1a1/2026/07/18/03/48/06-06090.ts",
+      "elapsed_ms": 2761,
+      "checked_url": "https://server.thelegitpro.in/tnpnews/tnpnews/tracks-v1a1/2026/07/19/04/17/39-06073.ts",
       "error": ""
     },
     {
@@ -5773,8 +5780,8 @@
       "url": "https://cdn-2.pishow.tv/live/1522/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2892,
-      "checked_url": "https://cdn-2.pishow.tv/live/1522/1522_1_s002594.ts",
+      "elapsed_ms": 3135,
+      "checked_url": "https://cdn-2.pishow.tv/live/1522/1522_1_s000772.ts",
       "error": ""
     },
     {
@@ -5789,8 +5796,8 @@
       "url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9hinjzgtpe/liveabr/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1232,
-      "checked_url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9hinjzgtpe/liveabr/pub-iotv9hinjzgtpe/live_720p/l_1599864_127764080_21294.ts",
+      "elapsed_ms": 1221,
+      "checked_url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9hinjzgtpe/liveabr/pub-iotv9hinjzgtpe/live_720p/l_1599864_215934080_35989.ts",
       "error": ""
     },
     {
@@ -5806,8 +5813,8 @@
       "url": "https://mumt05.tangotv.in/87NeALx2UNIQUETV/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3811,
-      "checked_url": "https://mumt05.tangotv.in/87NeALx2UNIQUETV/tracks-v1a1/2026/07/18/03/48/06-06000.ts",
+      "elapsed_ms": 3727,
+      "checked_url": "https://mumt05.tangotv.in/87NeALx2UNIQUETV/tracks-v1a1/2026/07/19/04/17/40-06000.ts",
       "error": ""
     },
     {
@@ -6078,8 +6085,8 @@
       "url": "https://aasthaott.akamaized.net/110923/smil:vedic.smil/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1164,
-      "checked_url": "https://aasthaott.akamaized.net/110923/smil:vedic.smil/media-u8x129hjq_b264000_35391.ts",
+      "elapsed_ms": 1095,
+      "checked_url": "https://aasthaott.akamaized.net/110923/smil:vedic.smil/media-u8x129hjq_b264000_57391.ts",
       "error": ""
     },
     {
@@ -6094,8 +6101,8 @@
       "url": "https://live.vipnews24x7.co.in/vipnews24x7/d0dbe915091d400bd8ee7f27f0791303.sdp/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1146,
-      "checked_url": "https://live.vipnews24x7.co.in/vipnews24x7/d0dbe915091d400bd8ee7f27f0791303.sdp/l_1216472_5664000_188.ts",
+      "elapsed_ms": 1785,
+      "checked_url": "https://live.vipnews24x7.co.in/vipnews24x7/d0dbe915091d400bd8ee7f27f0791303.sdp/l_1232374_9954560_484.ts",
       "error": ""
     },
     {
@@ -6110,8 +6117,8 @@
       "url": "https://lbgo.bozztv.com/ssh101/ssh101/afghantheatretv/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 864,
-      "checked_url": "https://160.bozztv.com/ssh101/ssh101/afghantheatretv/l_6931584_15653618_3913.ts",
+      "elapsed_ms": 931,
+      "checked_url": "https://183.bozztv.com/ssh101/ssh101/afghantheatretv/l_6931584_103829763_25957.ts",
       "error": ""
     },
     {
@@ -6126,8 +6133,8 @@
       "url": "https://jukin-weatherspy-2-in.samsung.wurl.tv/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 848,
-      "checked_url": "https://jukin-weatherspy-2-in.samsung.wurl.tv/overlay-testing/26/420999/70625038/cb4a4c02abcef4dd5192f3a2073b25da/hls-v2/1200-00148-cMqXNneXCZYsZ-xNDqtRI35tA-g-.ts",
+      "elapsed_ms": 269,
+      "checked_url": "https://jukin-weatherspy-2-in.samsung.wurl.tv/40703514/hls-v2/1200-00002.ts",
       "error": ""
     },
     {
@@ -6142,8 +6149,8 @@
       "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01412-xiaomiasia-yrfmusic-xiaomi/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 950,
-      "checked_url": "https://amg01412-xiaomiasia-yrfmusic-xiaomi-1rmk2.amagi.tv/ts-eu-w1-n2/beacon/amg01412-xiaomiasia-yrfmusic-xiaomi/cb56391c6570678b84c33878d2f162e1a65928d80b6c852a6ab454876dbc4e0adce2b59cae13e47825c15b8b3d1a10000e77b47ace1411c6de15a9545b7b0e64ebd8f2278cfe475bc9814b352fb07d0052f81e0dab5d375ff5a55a048c36b0392216eb02611f72aeb51bf22b07da81088e61299bce8c37683f03409a5e5afba358b1ebe95442d96aa7b54f559d2d40b59f43c8821da688d509cd5ed727f4179896f38d80158b87f3c7986d9a5c88f3bf1fe3e24ca08b3083d4937d3c98311b521f41e3b0e186245ea86633917c62a9c508d11cdc9d2dc1413abe12914c854ae50361e70e833cc89ebad1026b36b7c119144f793a05e88957109c1c9181e8d17a7a96e41a7146830ab247726dc1a99a46c9ab9df1c7db38478ef8f2e2b13c995c04d760a8b3eadce2ac8d87b930475c6a0703c971ad8952fa27da7da4cb001b912c2ebcb75ade8fd552312d1ac8d01e9c3e1abad28597d01d3391203254fc65d51b286dcf74434fa515b9cb6c53d87335d27c7dda48258c47cbbd2edeaecfaa5368e2909414bf27c49d3effda4ee961355207f3d5295c4e433490cd6e1f3f74c60ab5819faf274933edf1ccecc91c6d546e59015af98d8d14b4bd80116f7190031931212f40ec43bc0ff80f460722cc6cb68d196489035b40c5af2d525769d685f1aeb496f206d25bd6dcf62d202b5302e5d364cae15804eb1a543a7ed835338b45112e5a083b88dd/1920x1080_5876488?bcn=1&ca=0&cid=bollywoodloveconnection&dur=4.000000&media_type=C&redirect_url=https%3A%2F%2Famg01412-xiaomiasia-yrfmusic-xiaomi-1rmk2.amagi.tv%2F1-446086763.ts&seen-ad=1&seg_id=446086763&user_id=8971664c-825b-11f1-81bc-aa535436c591",
+      "elapsed_ms": 890,
+      "checked_url": "https://amg01412-xiaomiasia-yrfmusic-xiaomi-1rmk2.amagi.tv/ts-eu-w1-n2/beacon/amg01412-xiaomiasia-yrfmusic-xiaomi/cb543d19796c64869ed43d62d7ef48a4f9471fde1d6988693eb5518975d10724d4efa89da914ac30578f6680255f314120369809a11f11afce7ba83e357978738388c33b99c5476ee78a74736eac7f1d56e00d13c03d285aedc43644c531bc720053cf0c6d5d3dc4fd2af5340d98d5158a7d2c95adcd02682b0b1dc64258e6a740a0f9f34911dd3aa6e4181b95324de4804ad4d51ded81c952cb43826bf0169ec3f988801184d39663cb368847619ed7a5f8f018e9ab7b8498fc4f2b9d7f2b436c248cc1b6cb3ef002da21269edadead6aef16b4e96fe13274d388ff3e4ae6887413048fc13719f0a2e78a945b848e374432b2eab08fb40532af6fe89824bc196db4f90e714bc56c97776568d0b5e61587ca1b82b9308def293436d49449dbb0b380af9fbe0aa4659b97cbc9687d192a4423964dae9f5ade2bf671bc8146720b0317fbda1defaeed731c2e0f8a8955d1533cbcd8808c964e18c2721457ed2f880950229c745f7de32ceb937339da7144d6634f943251af71bc805e92f68bda576e8a89bd059509c8ba05d5fa07db081d4912bff7563266446fdfe3634d7d39ec76a4eb8886530c13e7e3c2eeca316151d976c9f31a5081474217358fe2a5673cf34066f78e78c2/1920x1080_5876488?bcn=1&ca=0&cid=retrorewind&dur=4.000000&media_type=C&redirect_url=https%3A%2F%2Famg01412-xiaomiasia-yrfmusic-xiaomi-1rmk2.amagi.tv%2F1-446108783.ts&seen-ad=1&seg_id=446108783&user_id=d5f7e4c0-8328-11f1-9e04-123a93c16e70",
       "error": ""
     },
     {
@@ -6174,8 +6181,8 @@
       "url": "https://vg-zeefta.akamaized.net/ptnr-yupptv/title-zeehindustan/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/96bbab12-582e-4540-af70-510ab6824581/main.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3743,
-      "checked_url": "https://vg-zeefta.akamaized.net/vglive-sk-982361/675BE27B0000D0A6B19F-p0_tmpl400k_400k-1784346540031.ts?channel_name=zeehindustan&ads.partner=yupptv&ads.network_name=yupptv&vg_country_code=US",
+      "elapsed_ms": 4451,
+      "checked_url": "https://vg-zeefta.akamaized.net/vglive-sk-982361/675BE27B0000D0A6B19F-p0_tmpl400k_400k-1784434716031.ts?channel_name=zeehindustan&ads.partner=yupptv&ads.network_name=yupptv&vg_country_code=US",
       "error": ""
     },
     {
@@ -6206,8 +6213,8 @@
       "url": "https://dwby15d04agvq.cloudfront.net/index_5.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 5131,
-      "checked_url": "https://dwby15d04agvq.cloudfront.net/index_5_16036150.ts?m=1688380594",
+      "elapsed_ms": 64,
+      "checked_url": "https://dwby15d04agvq.cloudfront.net/index_5_16051032.ts?m=1688380594",
       "error": ""
     },
     {
@@ -6222,7 +6229,7 @@
       "url": "https://amg00862-amg00862c8-amgplt0173.playout.now3.amagi.tv/playlist/amg00862-amg00862c8-amgplt0173/playlist.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 56,
+      "elapsed_ms": 55,
       "checked_url": "https://amg00862-amg00862c8-amgplt0173.playout.now3.amagi.tv/playlist/amg00862-amg00862c8-amgplt0173/playlist.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -6238,7 +6245,7 @@
       "url": "https://trs1.aynaott.com/ZeeCinemaHD/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 651,
+      "elapsed_ms": 676,
       "checked_url": "https://trs1.aynaott.com/ZeeCinemaHD/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -6254,7 +6261,7 @@
       "url": "https://amg17931-zee-amg17931c5-samsung-au-8873.playouts.now.amagi.tv/playlist.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 41,
+      "elapsed_ms": 46,
       "checked_url": "https://amg17931-zee-amg17931c5-samsung-au-8873.playouts.now.amagi.tv/playlist.m3u8",
       "error": "HTTP Error 401: Unauthorized"
     },
@@ -6350,7 +6357,7 @@
       "url": "https://amg00862-amg00862c5-amgplt0173.playout.now3.amagi.tv/playlist/amg00862-amg00862c5-amgplt0173/playlist.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 37,
+      "elapsed_ms": 44,
       "checked_url": "https://amg00862-amg00862c5-amgplt0173.playout.now3.amagi.tv/playlist/amg00862-amg00862c5-amgplt0173/playlist.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -6366,8 +6373,8 @@
       "url": "https://vg-zeefta.akamaized.net/ptnr-yupptv/title-zeedelhincr/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/cc483a15-1b39-4642-872d-5d08d362ed01/main.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3687,
-      "checked_url": "https://vg-zeefta.akamaized.net/vglive-sk-395786/675BDDF10000A5421B63-p0_tmpl400k_400k-1784346564067.ts?channel_name=zeedelhincr&ads.partner=yupptv&ads.network_name=yupptv&vg_country_code=US",
+      "elapsed_ms": 3363,
+      "checked_url": "https://vg-zeefta.akamaized.net/vglive-sk-395786/675BDDF10000A5421B63-p0_tmpl400k_400k-1784434734029.ts?channel_name=zeedelhincr&ads.partner=yupptv&ads.network_name=yupptv&vg_country_code=US",
       "error": ""
     },
     {
@@ -6382,8 +6389,8 @@
       "url": "https://vg-zeefta.akamaized.net/ptnr-yupptv/title-zeemadhyachhattisgarh/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/2ab17056-6187-4f0e-a34d-f436ac479d6c/main.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3135,
-      "checked_url": "https://vg-zeefta.akamaized.net/vglive-sk-250092/675BE3790000780B5EA2-p0_tmpl400k_400k-1784346528030.ts?channel_name=zeemadhyachhattisgarh&ads.partner=yupptv&ads.network_name=yupptv&vg_country_code=US",
+      "elapsed_ms": 3564,
+      "checked_url": "https://vg-zeefta.akamaized.net/vglive-sk-250092/675BE3790000780B5EA2-p0_tmpl400k_400k-1784434704070.ts?channel_name=zeemadhyachhattisgarh&ads.partner=yupptv&ads.network_name=yupptv&vg_country_code=US",
       "error": ""
     },
     {
@@ -6398,8 +6405,8 @@
       "url": "https://dknttpxmr0dwf.cloudfront.net/index_57.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2110,
-      "checked_url": "https://dknttpxmr0dwf.cloudfront.net/index_57_16002917.ts?m=1688370162",
+      "elapsed_ms": 2612,
+      "checked_url": "https://dknttpxmr0dwf.cloudfront.net/index_57_16017723.ts?m=1688370162",
       "error": ""
     },
     {
@@ -6414,8 +6421,8 @@
       "url": "https://vg-zeefta.akamaized.net/ptnr-yupptv/title-zeerajashthannews/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/8e864b9a-1681-41a0-99a6-387490bc5b24/main.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3828,
-      "checked_url": "https://vg-zeefta1.akamaized.net/vglive-sk-925510/6763AB340000A60265DD-p0_tmpl400k_400k-1784346510039.ts?channel_name=zeerajashthannews&ads.partner=yupptv&ads.network_name=yupptv&vg_country_code=US",
+      "elapsed_ms": 3757,
+      "checked_url": "https://vg-zeefta1.akamaized.net/vglive-sk-925510/6763AB340000A60265DD-p0_tmpl400k_400k-1784434686039.ts?channel_name=zeerajashthannews&ads.partner=yupptv&ads.network_name=yupptv&vg_country_code=US",
       "error": ""
     },
     {
@@ -6430,7 +6437,7 @@
       "url": "https://amg00862-amg00862c9-amgplt0173.playout.now3.amagi.tv/playlist/amg00862-amg00862c9-amgplt0173/playlist.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 68,
+      "elapsed_ms": 57,
       "checked_url": "https://amg00862-amg00862c9-amgplt0173.playout.now3.amagi.tv/playlist/amg00862-amg00862c9-amgplt0173/playlist.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -6446,7 +6453,7 @@
       "url": "https://origin-cae-m462953.toober.com/4c3caf7294b3/c8bf99484885/playlist.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 379,
+      "elapsed_ms": 390,
       "checked_url": "https://origin-cae-m462953.toober.com/4c3caf7294b3/c8bf99484885/playlist.m3u8",
       "error": "HTTP Error 404: Not Found"
     },
@@ -6478,8 +6485,8 @@
       "url": "https://duw35ict5q7th.cloudfront.net/index_3.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3037,
-      "checked_url": "https://duw35ict5q7th.cloudfront.net/index_3_16045732.ts?m=1783949111",
+      "elapsed_ms": 3564,
+      "checked_url": "https://duw35ict5q7th.cloudfront.net/index_3_16060480.ts?m=1783949111",
       "error": ""
     },
     {
@@ -6526,8 +6533,8 @@
       "url": "https://dai.google.com/linear/hls/event/JCAm25qkRXiKcK1AJMlvKQ/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2665,
-      "checked_url": "https://d2esfk1pb9cdob.cloudfront.net/media_0_7426511.ts",
+      "elapsed_ms": 939,
+      "checked_url": "https://d2esfk1pb9cdob.cloudfront.net/media_0_7441263.ts",
       "error": ""
     },
     {
@@ -6542,7 +6549,7 @@
       "url": "https://d14c63magvk61v.cloudfront.net/strm/channels/zoom/master.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 167,
+      "elapsed_ms": 141,
       "checked_url": "https://d14c63magvk61v.cloudfront.net/strm/channels/zoom/master.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -6558,8 +6565,8 @@
       "url": "https://amg01281-9xmediapvtltd-9xjhakaas-samsungin-ci2cs.amagi.tv/playlist/amg01281-9xmediapvtltd-9xjhakaas-samsungin/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2334,
-      "checked_url": "https://amg01281-9xmediapvtltd-9xjhakaas-samsungin-ci2cs.amagi.tv/ts-eu-w1-n2/beacon/amg01281-9xmediapvtltd-9xjhakaas-samsungin/cb56391c6570678b84c33878d2f162e1a65928d80b6c852a6ab454876dbc4e0adce2b59cae13e47825c15b8b3d1a10000e77b47ace1411c6de15a9545b7b0e64ebd8f2278cfe475bc9814b352fb07d0052f81e0dab5d375ff5a55a048c36b0392216eb02611f72aeb51bf22b07da81088e61299bce8c37683f03409a5e5afba358b1ebe90c42df69a2b51a559d2d40b59f43c8821da688d509cd5ed727f4179896f38d80158b87f3c7986d9a5c88f3bf1fe3e24ca08b3083d4937d3c98311b521f41e3b0e186245ea86633917c62a9c508d11cdc9d2dc1413abe12914c854ae50361e70e833cc89ebad1026b36b7c119144f793a05e88957109c1c9181e8d17a7a96e41a7146830ab247726dc1a99a46c9ab9df1c7db38478ef8f2e2b13c995c04d760a8b3eadce2ac8d87b930475c6a0703c971ad8952fa27da7da4cb001b912c2ebcb75ade8fd552312d1ac8d01e9c3e1abad28597d01d3391203254fc65d51b286dcf74434fa515b9cb6c53d87335d27c7dda48258c47cbbd2edeaecfaa5368e2909414bf27c49d3effda4ee961355207f3d5295c4e433490cd6e1f3f74c60ab5819faf274933edf1ccecc91c6d546e59015af98d8d14b4bd80116f7190031931212f40ec43bc0ff80f460722cc6cb68d196489035b40c5af2d525769d685f1aeb496f206d25bd6dcf62d202b5300ec6455c60f3d3906eb9b3f7f422bc5e17152d642c8deb182329f/640x360_1056000?bcn=1&ca=0&cid=breaklessbreakfast&dur=6.000000&media_type=C&redirect_url=https%3A%2F%2Famg01281-9xmediapvtltd-9xjhakaas-samsungin-ci2cs.amagi.tv%2Fmaster_360p_48190.ts&seen-ad=1&seg_id=48190&user_id=8a775346-825b-11f1-81bc-aa535436c591",
+      "elapsed_ms": 2417,
+      "checked_url": "https://amg01281-9xmediapvtltd-9xjhakaas-samsungin-ci2cs.amagi.tv/ts-eu-w1-n2/beacon/amg01281-9xmediapvtltd-9xjhakaas-samsungin/cb543d19796c64869ed43d62d7ef48a4f9471fde1d6988693eb5518975d10724d4efa89da914ac30578f6680255f314120369809a11f11afce7ba83e357978738388c33b99c5476ee78a74736eac7f1d56e00d13c03d285aedc43644c531bc720053cf0c6d5d3dc4fd2af5340d98d5158a7d2c95adcd02682b0b1dc64258e6a740a0f9f34911de3df7b51e1996324de4804ad4d51ded81c90a9912d26bf741cc94f2dd864680d39061cb368847619ed7a5f8f018e9ab7b8498fc4f2b9d7f2b436c248cc1b6cb3ef002da21269edadead6aef16b4e96fe13274d388ff3e4ae6887413048fc13719f0a2e78a945b848e374432b2eab08fb40532af6fe89824bc196db4f90e714bc56c97776568d0b5e61587ca1b82b9308def293436d49449dbb0b380af9fbe0aa4659b97cbc9687d192a4423964dae9f5ade2bf671bc8146720b0317fbda1defaeed731c2e0f8a8955d1533cbcd8808c964e18c2721457ed2f880950229c745f7de32ceb937339da7144d6634f943251af71bc805e92f68bda576e8a89bd059509c8ba05d5fa07db081d4912bff7563266446fdfe3634d7d39ec76a4eb8886530c13e7e3c2eeca30695e6af7339074735516bd2a880a9ae2ac2515c17bf68868da99/640x360_1056000?bcn=1&ca=0&cid=breaklessbreakfast&dur=6.000000&media_type=C&redirect_url=https%3A%2F%2Famg01281-9xmediapvtltd-9xjhakaas-samsungin-ci2cs.amagi.tv%2Fmaster_360p_63013.ts&seen-ad=1&seg_id=63013&user_id=d6af42a3-8328-11f1-a7ad-6ea62fef2e12",
       "error": ""
     },
     {
@@ -6574,8 +6581,8 @@
       "url": "https://yupprestreamliveus.akamaized.net/vglive-sk-355289/majha/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 589,
-      "checked_url": "https://yupprestreamliveus.akamaized.net/vglive-sk-355289/majha/20260513T221709/master_720p/01900/master_720p_00442.ts",
+      "elapsed_ms": 1047,
+      "checked_url": "https://yupprestreamliveus.akamaized.net/vglive-sk-355289/majha/20260513T221709/master_720p/01930/master_720p_00228.ts",
       "error": ""
     },
     {
@@ -6622,8 +6629,8 @@
       "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/e5b9db1cc184406bb97159da2f120f91/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1103,
-      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/e5b9db1cc184406bb97159da2f120f91/index_1_9245458.ts?m=1728053298",
+      "elapsed_ms": 1299,
+      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/e5b9db1cc184406bb97159da2f120f91/index_1_9260154.ts?m=1728053298",
       "error": ""
     },
     {
@@ -6638,8 +6645,8 @@
       "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/66dcc3ebe182447ba42837e746cf0c7c/index.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1210,
-      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/66dcc3ebe182447ba42837e746cf0c7c/index_1_9258299.ts?m=1728055332",
+      "elapsed_ms": 1170,
+      "checked_url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/66dcc3ebe182447ba42837e746cf0c7c/index_1_9272884.ts?m=1728055332",
       "error": ""
     },
     {
@@ -6654,8 +6661,8 @@
       "url": "https://cdn-6.pishow.tv/live/10002/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3086,
-      "checked_url": "https://cdn-6.pishow.tv/live/10002/10002_1_s005671.ts",
+      "elapsed_ms": 2970,
+      "checked_url": "https://cdn-6.pishow.tv/live/10002/10002_1_s003850.ts",
       "error": ""
     },
     {
@@ -6670,7 +6677,7 @@
       "url": "https://cdn-3.pishow.tv/live/1465/master.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 665,
+      "elapsed_ms": 645,
       "checked_url": "https://cdn-3.pishow.tv/live/1465/master.m3u8",
       "error": "HTTP Error 404: Not Found"
     },
@@ -6686,7 +6693,7 @@
       "url": "https://see.lokshahi.live/live/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 60085,
+      "elapsed_ms": 60218,
       "checked_url": "https://see.lokshahi.live/live/index.m3u8",
       "error": "<urlopen error timed out>"
     },
@@ -6702,8 +6709,8 @@
       "url": "https://web-ndtv-marathi.akamaized.net/hls/live/2110470/ndtvmarathi/master_1.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 2334,
-      "checked_url": "https://web-ndtv-marathi.akamaized.net/hls/live/2110470/ndtvmarathi/media_0_13592540.ts",
+      "elapsed_ms": 4404,
+      "checked_url": "https://web-ndtv-marathi.akamaized.net/hls/live/2110470/ndtvmarathi/media_0_13607249.ts",
       "error": ""
     },
     {
@@ -6718,8 +6725,8 @@
       "url": "https://n18syndication.akamaized.net/bpk-tv/News18_Lokmat_NW18_MOB/output01/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 4750,
-      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/News18_Lokmat_NW18_MOB/output01/News18_Lokmat_NW18_MOB-audio_33636_mar=33600-video=148000-297390986.ts",
+      "elapsed_ms": 4048,
+      "checked_url": "https://n18syndication.akamaized.net/bpk-tv/News18_Lokmat_NW18_MOB/output01/News18_Lokmat_NW18_MOB-audio_33636_mar=33600-video=148000-297405682.ts",
       "error": ""
     },
     {
@@ -6750,8 +6757,8 @@
       "url": "https://cdn-3.pishow.tv/live/1229/master.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 3173,
-      "checked_url": "https://cdn-3.pishow.tv/live/1229/1229_1_s004349.ts",
+      "elapsed_ms": 3029,
+      "checked_url": "https://cdn-3.pishow.tv/live/1229/1229_1_s004521.ts",
       "error": ""
     },
     {
@@ -6766,7 +6773,7 @@
       "url": "https://airtelapp.shemaroo.com/marathibana/smil:marathibanaadp.smil/playlist.m3u8]",
       "ok": false,
       "published": false,
-      "elapsed_ms": 519,
+      "elapsed_ms": 503,
       "checked_url": "https://airtelapp.shemaroo.com/marathibana/smil:marathibanaadp.smil/playlist.m3u8]",
       "error": "HTTP Error 404: Not Found"
     },
@@ -6782,7 +6789,7 @@
       "url": "https://sl.vodep39240327.workers.dev/channel/SONY+MARATHI.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 1022,
+      "elapsed_ms": 1031,
       "checked_url": "https://sl.vodep39240327.workers.dev/channel/SONY+MARATHI.m3u8",
       "error": "response is not an M3U/HLS playlist"
     },
@@ -6798,7 +6805,7 @@
       "url": "https://anet.keralive.workers.dev/v1/master/a0d007312bfd99c47f76b77ae26b1ccdaae76cb1/starpravah_live_https/index.m3u8",
       "ok": false,
       "published": false,
-      "elapsed_ms": 43,
+      "elapsed_ms": 49,
       "checked_url": "https://anet.keralive.workers.dev/v1/master/a0d007312bfd99c47f76b77ae26b1ccdaae76cb1/starpravah_live_https/index.m3u8",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -6814,8 +6821,8 @@
       "url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9marlygv8h/liveabr/playlist.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 1270,
-      "checked_url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9marlygv8h/liveabr/pub-iotv9marlygv8h/live_720p/l_1600402_47238080_7873.ts",
+      "elapsed_ms": 1019,
+      "checked_url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9marlygv8h/liveabr/pub-iotv9marlygv8h/live_720p/l_1600402_135378080_22563.ts",
       "error": ""
     },
     {
@@ -6830,8 +6837,8 @@
       "url": "https://dgrvlduwztkd4.cloudfront.net/index_5.m3u8",
       "ok": true,
       "published": true,
-      "elapsed_ms": 738,
-      "checked_url": "https://dgrvlduwztkd4.cloudfront.net/index_5_15882510.ts?m=1749119390",
+      "elapsed_ms": 1000,
+      "checked_url": "https://dgrvlduwztkd4.cloudfront.net/index_5_15897272.ts?m=1749119390",
       "error": ""
     },
     {
