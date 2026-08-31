@@ -1,8 +1,8 @@
 # South Asia and Cricket Working Channels
 
-Generated: 2026-08-30T06:09:48.326984+00:00
+Generated: 2026-08-31T06:30:27.070019+00:00
 Playlist: `south_asia_cricket.m3u`
-Working channels: 201
+Working channels: 203
 
 1. Zee 24 Taas (720p) | News | https://dgrvlduwztkd4.cloudfront.net/index_5.m3u8
    - Screenshot: `screenshots/south-asia-cricket/0001-zee-24-taas-720p.jpg`
@@ -124,285 +124,289 @@ Working channels: 201
    - Screenshot: `screenshots/south-asia-cricket/0059-news-india-24x7.jpg`
 60. News18 Bangla (1080p) | News | https://n18syndication.akamaized.net/bpk-tv/News18_Bangla_NW18_MOB/output01/master.m3u8
    - Screenshot: `screenshots/south-asia-cricket/0060-news18-bangla-1080p.jpg`
-61. News18 Madhya Pradesh/Chhattisgarh (1080p) | News | https://n18syndication.akamaized.net/bpk-tv/News18_MP_Chhattisgarh_NW18_MOB/output01/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0061-news18-madhya-pradesh-chhattisgarh-1080p.jpg`
-62. News18 Punjab/Haryana/Himachal (1080p) | News | https://n18syndication.akamaized.net/bpk-tv/News18_Punjab_Haryana_HP_NW18_MOB/output01/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0062-news18-punjab-haryana-himachal-1080p.jpg`
-63. News18 Rajasthan (1080p) | News | https://n18syndication.akamaized.net/bpk-tv/News18_Rajasthan_NW18_MOB/output01/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0063-news18-rajasthan-1080p.jpg`
-64. News18 Uttar Pradesh Uttarakhand (1080p) | News | https://n18syndication.akamaized.net/bpk-tv/News18_UP_Uttarakhand_NW18_MOB/output01/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0064-news18-uttar-pradesh-uttarakhand-1080p.jpg`
-65. NK TV Bangla (1080p) | News | https://nktv.smartstream.video/smartstream-us/nkbangla/nkbangla/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0065-nk-tv-bangla-1080p.jpg`
-66. Pudhari News (576p) | News | https://streams.tangotv.in/PUDHARINEWS/ORIGIN/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0066-pudhari-news-576p.jpg`
-67. R Plus (768p) | News | https://thelegitpro.in/pntv/rplusnews24x7/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0067-r-plus-768p.jpg`
-68. R Plus Gold (720p) | News | https://cdn-4.pishow.tv/live/1231/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0068-r-plus-gold-720p.jpg`
-69. Saam TV | News | https://cdn-3.pishow.tv/live/437/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0069-saam-tv.jpg`
-70. Sadhna News Madhya Pradesh/Chhattisgarh (576p) | News | https://mumt04.tangotv.in/m18aqlK4SADHNEWSPMRAJ/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0070-sadhna-news-madhya-pradesh-chhattisgarh-576p.jpg`
-71. Sadhna Plus News (720p) | News | https://6n3yow8pl9ok-hls-live.5centscdn.com/sadhananewstv/live.stream/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0071-sadhna-plus-news-720p.jpg`
-72. Samachar Plus 24x7 (576p) | News | https://mumt05.tangotv.in/87NeALx2VERTENTSAMACHARPLUS/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0072-samachar-plus-24x7-576p.jpg`
-73. Samay Kolkata (1080p) | News | https://server.livelegitpro.in/samaykolkata/samaykolkata/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0073-samay-kolkata-1080p.jpg`
-74. Swadesh News (720p) | News | https://cdn-2.pishow.tv/live/465/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0074-swadesh-news-720p.jpg`
-75. Swaraj Express SMBC (720p) [Not 24/7] | News | https://cdn-2.pishow.tv/live/477/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0075-swaraj-express-smbc-720p-not-24-7.jpg`
-76. Times Now Navbharat (1080p) | News | https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/TimesNowNavbharat.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0076-times-now-navbharat-1080p.jpg`
-77. TNP News (1080p) | News | https://server.thelegitpro.in/tnpnews/tnpnews/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0077-tnp-news-1080p.jpg`
-78. Total TV Haryana (576p) | News | https://cdn-2.pishow.tv/live/1522/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0078-total-tv-haryana-576p.jpg`
-79. VIP News (360p) | News | https://live.vipnews24x7.co.in/vipnews24x7/d0dbe915091d400bd8ee7f27f0791303.sdp/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0079-vip-news-360p.jpg`
-80. ZillarBarta News | News | https://server.zillarbarta.com/zillarbarta/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0080-zillarbarta-news.jpg`
-81. Zee Cinema (576p) | Movies | https://d1g8wgjurz8via.cloudfront.net/bpk-tv/NGCHD/default/NGCHD.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0081-zee-cinema-576p.jpg`
-82. Goldmines 2 (576p) | Movies | https://cdn-2.pishow.tv/live/1460/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0082-goldmines-2-576p.jpg`
-83. Shemaroo Bollywood | Movies | https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00864-shemarooenterta-shemabollywood-ono/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0083-shemaroo-bollywood.jpg`
-84. Shemaroo TV (720p) | Movies | https://airtelapp.shemaroo.com/shemarootv/smil:shemarootvadp.smil/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0084-shemaroo-tv-720p.jpg`
-85. Shemaroo Umang (720p) | Movies | https://airtelapp.shemaroo.com/shemarooumang/smil:shemarooumangadp.smil/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0085-shemaroo-umang-720p.jpg`
-86. B4U Music (576p) | Movies | https://cdn-2.pishow.tv/live/415/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0086-b4u-music-576p.jpg`
-87. Maha Movie (576p) | Movies | https://cdn-6.pishow.tv/live/10007/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0087-maha-movie-576p.jpg`
-88. Manoranjan Grand (720p) | Movies | https://cdn-1.pishow.tv/live/1011/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0088-manoranjan-grand-720p.jpg`
-89. Movie Bangla | Movies | http://alvetv.com/moviebanglatv/8080/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0089-movie-bangla.jpg`
-90. Pocket Films | Movies | https://vglivessai.akamaized.net/sg/v1/manifest/611d79b11b77e2f571934fd80ca1413453772ac7/b8ada260-bb81-472b-b7c1-3a79213a84b8/e02a0ce5-6c42-4cca-bb53-e5cfecff74a9/0.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0090-pocket-films.jpg`
-91. Shubh Cinema TV (720p) | Movies | https://d393sxaxig6bax.cloudfront.net/out/v1/589cf2cf44bf42bb941e817a2240d62e/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0091-shubh-cinema-tv-720p.jpg`
-92. South Station (1080p) | Movies | https://cc-yw7ztecy8do3q.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-yw7ztecy8do3q/SS_IN.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0092-south-station-1080p.jpg`
-93. The Movie Club (1080p) | Movies | https://sis-global.prod.samsungtv.plus/v1/tvpprd/sc-mp2ar4ca425xo.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0093-the-movie-club-1080p.jpg`
-94. The Movie Club +2 (1080p) | Movies | https://d3gnyty2vddhsg.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/pb-ytipwjqub3kf8/TMC2_IN.m3u8?ads.ads_cdn=cf&ads.cdn=cf
-   - Screenshot: `screenshots/south-asia-cricket/0094-the-movie-club-2-1080p.jpg`
-95. Zee Bangla HD (720p) | Entertainment | https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/ZeeBanglaHD.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0095-zee-bangla-hd-720p.jpg`
-96. Zee Bangla Sonar (576p) | Entertainment | https://d1g8wgjurz8via.cloudfront.net/bpk-tv/ColorsHD/default/ColorsHD.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0096-zee-bangla-sonar-576p.jpg`
-97. Zee Marathi HD (720p) | Entertainment | https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/ZeeMarathiHD.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0097-zee-marathi-hd-720p.jpg`
-98. Colors Gujarati (396p) | Entertainment | https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/ColorsGujarati.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0098-colors-gujarati-396p.jpg`
-99. Colors Rishtey Americas (396p) | Entertainment | https://manatv.akamaized.net/090823/smil:ristheyamerica.smil/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0099-colors-rishtey-americas-396p.jpg`
-100. Colors Tamil HD (720p) | Entertainment | https://da86m1sqpm3o0.cloudfront.net/28072023/smil:colorstamilhd11.smil/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0100-colors-tamil-hd-720p.jpg`
-101. Star Jalsha HD (720p) | Entertainment | https://da86m1sqpm3o0.cloudfront.net/28072023/smil:starjalsha.smil/chunklist_b1928000.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0101-star-jalsha-hd-720p.jpg`
-102. Star Pravah HD (720p) | Entertainment | https://da86m1sqpm3o0.cloudfront.net/28072023/smil:starpravah.smil/chunklist_b1928000.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0102-star-pravah-hd-720p.jpg`
-103. দেশি টিভি | Entertainment | https://deshitv.deshitv24.net/live/myStream/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0103-channel.jpg`
-104. একুশে টিভি | Entertainment | https://ekusheyserver.com/hls-live/livepkgr/_definst_/liveevent/livestream3.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0104-channel.jpg`
-105. Aakaash Aath (576p) | Entertainment | http://tvsen5.aynascope.net/Wm9Lv2RjZGT6/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0105-aakaash-aath-576p.jpg`
-106. Aamar Bangla (720p) | Entertainment | https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/amarbanglatv.stream/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0106-aamar-bangla-720p.jpg`
-107. Anjan TV (720p) | Entertainment | https://anjan.vstream.online/anjanorg/ngrp:anjan_hdall/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0107-anjan-tv-720p.jpg`
-108. ATN Bangla (720p) | Entertainment | http://tvsen5.aynascope.net/atnbangla/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0108-atn-bangla-720p.jpg`
-109. Bangla Vision (720p) | Entertainment | https://tvsen5.aynaott.com/banglavision/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0109-bangla-vision-720p.jpg`
-110. Boishakhi TV | Entertainment | https://boishakhi.sonarbanglatv.com/boishakhi/boishakhitv/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0110-boishakhi-tv.jpg`
-111. DD Arun Prabha (360p) | Entertainment | https://d2lk5u59tns74c.cloudfront.net/out/v1/308556d9fd1246adb479ef012a39bbfe/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0111-dd-arun-prabha-360p.jpg`
-112. DD Bangla (504p) | Entertainment | https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/7ff57cc9046b4c188b51a0d506f36e7f/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0112-dd-bangla-504p.jpg`
-113. DD Bihar (720p) | Entertainment | https://cdn-4.pishow.tv/live/35/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0113-dd-bihar-720p.jpg`
-114. DD Chhattisgarh (720p) | Entertainment | https://cdn-1.pishow.tv/live/15/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0114-dd-chhattisgarh-720p.jpg`
-115. DD Goa (504p) | Entertainment | https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/e5b9db1cc184406bb97159da2f120f91/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0115-dd-goa-504p.jpg`
-116. DD Haryana (504p) | Entertainment | https://d2lk5u59tns74c.cloudfront.net/out/v1/950fc69666474351bde0a32b9600c804/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0116-dd-haryana-504p.jpg`
-117. DD Himachal Pradesh (504p) | Entertainment | https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/afd2e335b0ba40eb9bdf1096118c6ede/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0117-dd-himachal-pradesh-504p.jpg`
-118. DD Jharkhand (504p) | Entertainment | https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/e8c3741f8c154d3185831f4e31777fb2/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0118-dd-jharkhand-504p.jpg`
-119. DD Kashir (504p) | Entertainment | https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/8a59a828e80c49d0958925950cec0204/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0119-dd-kashir-504p.jpg`
-120. DD Madhya Pradesh (720p) | Entertainment | https://cdn-1.pishow.tv/live/31/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0120-dd-madhya-pradesh-720p.jpg`
-121. DD Rajasthan (720p) | Entertainment | https://cdn-1.pishow.tv/live/34/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0121-dd-rajasthan-720p.jpg`
-122. DD Sahyadri (504p) | Entertainment | https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/66dcc3ebe182447ba42837e746cf0c7c/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0122-dd-sahyadri-504p.jpg`
-123. DD Tripura (504p) | Entertainment | https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/52b998e9510d41c29ad2ceca8ea3d849/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0123-dd-tripura-504p.jpg`
-124. DD Uttar Pradesh (720p) | Entertainment | https://cdn-1.pishow.tv/live/36/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0124-dd-uttar-pradesh-720p.jpg`
-125. DD Uttarakhand (720p) | Entertainment | https://cdn-1.pishow.tv/live/17/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0125-dd-uttarakhand-720p.jpg`
-126. Duronto TV (720p) | Entertainment | https://tvsen6.aynaott.com/6xyZ3N4oHv2KBJdB6W4p/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0126-duronto-tv-720p.jpg`
-127. E 24 (576p) | Entertainment | https://mumt04.tangotv.in/m18aqlK4E24/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0127-e-24-576p.jpg`
-128. Enter10 Bangla HD | Entertainment | https://live-bangla.akamaized.net/liveabr/pub-iobanglakp3sff/live_720p/chunks.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0128-enter10-bangla-hd.jpg`
-129. Enterr 10 Bangla (720p) [Not 24/7] | Entertainment | https://live-bangla.akamaized.net/liveabr/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0129-enterr-10-bangla-720p-not-24-7.jpg`
-130. Epic Bharat Digital (1080p) | Entertainment | https://cc-p1izg43bk7sj5.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-p1izg43bk7sj5/DIYC/PMSL/IN10/Nazara_IN_B/Nazara_IN_B.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0130-epic-bharat-digital-1080p.jpg`
-131. Epic Kids Digital (1080p) | Entertainment | https://cc-t8lqe1o99pszu.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-t8lqe1o99pszu/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0131-epic-kids-digital-1080p.jpg`
-132. Fakt Marathi (720p) [Not 24/7] | Entertainment | https://cdn-6.pishow.tv/live/10002/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0132-fakt-marathi-720p-not-24-7.jpg`
-133. Gangaur TV (1080p) | Entertainment | https://pbgangaur.wiseplayout.com/Gangaur/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0133-gangaur-tv-1080p.jpg`
-134. Jan TV (576p) | Entertainment | https://d1msejlow1t3l4.cloudfront.net/fta/jantv/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0134-jan-tv-576p.jpg`
-135. Khushboo Bangla (720p) | Entertainment | https://cdn-4.pishow.tv/live/1473/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0135-khushboo-bangla-720p.jpg`
-136. KTV Bangla (720p) | Entertainment | https://server.livelegitpro.in:9899/tribetv/tribetv/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0136-ktv-bangla-720p.jpg`
-137. Maasranga TV (720p) | Entertainment | http://tvsen5.aynascope.net/maasrangatv/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0137-maasranga-tv-720p.jpg`
-138. MTV | Entertainment | https://da86m1sqpm3o0.cloudfront.net/28072023/smil:mtvindia.smil/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0138-mtv.jpg`
-139. MTV HD (396p) | Entertainment | https://maamusic.keralive.workers.dev/out/v1/a797c00cba954265ba781f92a57e2cf5/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0139-mtv-hd-396p.jpg`
-140. My TV | Entertainment | https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/mytv-up-off.stream/live-orgin/mytv-up-off.stream/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0140-my-tv.jpg`
-141. Network 10 (576p) | Entertainment | https://mumt01.tangotv.in/O5aw8Zn3NETWORK10/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0141-network-10-576p.jpg`
-142. Nexus TV (576p) | Entertainment | https://tvsen6.aynaott.com/Epm7WrFa/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0142-nexus-tv-576p.jpg`
-143. NTV (720p) | Entertainment | https://tvsen5.aynaott.com/xV4jEKf3D9zc/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0143-ntv-720p.jpg`
-144. Orange Bangla TV (720p) | Entertainment | https://cdn-4.pishow.tv/live/1499/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0144-orange-bangla-tv-720p.jpg`
-145. Rajdhani TV (1080p) | Entertainment | https://stream.shariarsuvo.com/hls5/rajdhanicable.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0145-rajdhani-tv-1080p.jpg`
-146. Rongeen TV (720p) | Entertainment | https://server.thelegitpro.in/rongeentv/rongeentv/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0146-rongeen-tv-720p.jpg`
-147. RTV (720p) | Entertainment | http://tvsen5.aynascope.net/RtvHD/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0147-rtv-720p.jpg`
-148. Rupashi Bangla TV (720p) | Entertainment | https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/ruposhibangla.stream/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0148-rupashi-bangla-tv-720p.jpg`
-149. Rupasi Bangla (720p) | Entertainment | https://cdn-4.pishow.tv/live/1039/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0149-rupasi-bangla-720p.jpg`
-150. Sangeet Bangla (720p) | Entertainment | https://cdn-4.pishow.tv/live/1143/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0150-sangeet-bangla-720p.jpg`
-151. WOW Kidz (720p) | Entertainment | https://yuppparoriglin.akamaized.net/181224/smil:wowkidzhindi.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b
-   - Screenshot: `screenshots/south-asia-cricket/0151-wow-kidz-720p.jpg`
-152. ZB Cartoon (1080p) | Entertainment | https://server.zillarbarta.com/zbcatun/video.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0152-zb-cartoon-1080p.jpg`
-153. Zodiak TV (1080p) | Entertainment | https://ranacable.duckdns.org/ZodiakTv/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0153-zodiak-tv-1080p.jpg`
-154. 9XM (1080p) | Music | https://9xjio.wiseplayout.com/9XM/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0154-9xm-1080p.jpg`
-155. Zoom (720p) | Music | https://dai.google.com/linear/hls/event/JCAm25qkRXiKcK1AJMlvKQ/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0155-zoom-720p.jpg`
-156. YRF Music (1080p) | Music | https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01412-xiaomiasia-yrfmusic-xiaomi/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0156-yrf-music-1080p.jpg`
-157. 9X Jhakaas (1080p) | Music | https://amg01281-9xmediapvtltd-9xjhakaas-samsungin-ci2cs.amagi.tv/playlist/amg01281-9xmediapvtltd-9xjhakaas-samsungin/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0157-9x-jhakaas-1080p.jpg`
-158. Andy Haryana (576p) | Music | https://mumt03.tangotv.in/Dsly5z3HANDYHARYANA/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0158-andy-haryana-576p.jpg`
-159. Dhoom Music (720p) | Music | https://cdn-1.pishow.tv/live/1456/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0159-dhoom-music-720p.jpg`
-160. Epic Music (576p) | Music | https://mumt04.tangotv.in/m18aqlK4EPICMUSIC/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0160-epic-music-576p.jpg`
-161. Epic Music Digital (1080p) | Music | https://cc-3cyxq80qusspd.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-3cyxq80qusspd/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0161-epic-music-digital-1080p.jpg`
-162. Music India (720p) [Not 24/7] | Music | https://cdn-2.pishow.tv/live/226/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0162-music-india-720p-not-24-7.jpg`
-163. Sangeet Marathi (720p) | Music | https://cdn-3.pishow.tv/live/1229/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0163-sangeet-marathi-720p.jpg`
-164. Steelbird Music (720p) [Not 24/7] | Music | https://cdn2.in/SteelbirdMusicTVhls/live.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0164-steelbird-music-720p-not-24-7.jpg`
-165. ZB Music (720p) | Music | https://server.zillarbarta.com/zbmusic/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0165-zb-music-720p.jpg`
-166. Star Sports 2 Hindi (720p) | Sports | https://tvsen5.aynaott.com/cXPB2LKkErN9/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0166-star-sports-2-hindi-720p.jpg`
-167. DD Sports SD (1080p) | Sports | https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/b17adfe543354fdd8d189b110617cddd/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0167-dd-sports-sd-1080p.jpg`
-168. T Sports (1080p) | Sports | https://tvsen5.aynaott.com/TnMn5kZz8aLm/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0168-t-sports-1080p.jpg`
-169. Channel S | Infotainment | https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/channels.stream/live-orgin/channels.stream/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0169-channel-s.jpg`
-170. Epic Crimes (1080p) | Infotainment | https://cc-wsuyg2uxeak04.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-wsuyg2uxeak04/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0170-epic-crimes-1080p.jpg`
-171. Food Food (576p) | Infotainment | https://mumt03.tangotv.in/Dsly5z3HFOODFOOD/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0171-food-food-576p.jpg`
-172. Gyandarshan (720p) | Infotainment | https://cdn-6.pishow.tv/live/14/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0172-gyandarshan-720p.jpg`
-173. Weatherspy | Infotainment | https://jukin-weatherspy-2-in.samsung.wurl.tv/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0173-weatherspy.jpg`
-174. Republic TV (1080p) | News | https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/RepublicTV.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0174-republic-tv-1080p.jpg`
-175. BT TV (720p) | News | https://feeds.intoday.in/bttv/itgd.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0175-bt-tv-720p.jpg`
-176. CNBC TV18 (1080p) | News | https://n18syndication.akamaized.net/bpk-tv/CNBC_TV18_NW18_MOB/output01/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0176-cnbc-tv18-1080p.jpg`
-177. CNBC TV18 Prime HD (1080p) | News | https://n18syndication.akamaized.net/bpk-tv/CNBC_Tv18_Prime_HD_NW18_MOB/output01/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0177-cnbc-tv18-prime-hd-1080p.jpg`
-178. CNN News 18 | News | https://n18syndication.akamaized.net/bpk-tv/CNN_News18_NW18_MOB/output01/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0178-cnn-news-18.jpg`
-179. CVR English (720p) | News | https://cdn-2.pishow.tv/live/425/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0179-cvr-english-720p.jpg`
-180. Hornbill TV (576p) | News | https://mumt01.tangotv.in/O5aw8Zn3HORNBILLTV/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0180-hornbill-tv-576p.jpg`
-181. India Ahead (576p) | News | https://mumt05.tangotv.in/87NeALx2INDIAAHEAD/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0181-india-ahead-576p.jpg`
-182. Indywood TV (720p) | News | https://43wrzjnpqoxe-hls-live.wmncdn.net/indywood/indywoodtv/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0182-indywood-tv-720p.jpg`
-183. MediBizTV (720p) | News | https://43wrzjnpqoxe-hls-live.wmncdn.net/marinebiztvlive/marinebiztvlive/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0183-medibiztv-720p.jpg`
-184. NDTV Good Times (1080p) | News | https://amg01448-samsungin-ndtvgoodtimes-samsungin-ad-gp.amagi.tv/playlist/amg01448-samsungin-ndtvgoodtimes-samsungin/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0184-ndtv-good-times-1080p.jpg`
-185. News9Live (1080p) | News | https://amg01106-amg01106c3-amgplt0844.playout.now3.amagi.tv/ts-ap-s1-n1/playlist/amg01106-amg01106c3-amgplt0844/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0185-news9live-1080p.jpg`
-186. NewsX (576p) | News | https://mumt01.tangotv.in/O5aw8Zn3NEWSX/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0186-newsx-576p.jpg`
-187. NewsX World (576p) | News | https://mumt03.tangotv.in/Dsly5z3HNEWSXWORLD/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0187-newsx-world-576p.jpg`
-188. RT India (1080p) | News | https://rt-india.rttv.com/dvr/rtindia/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0188-rt-india-1080p.jpg`
-189. Animax Asia India (1080p) [Geo-blocked] | Entertainment | https://amg02159-kcglobal-amg02159c1-samsung-in-521.playouts.now.amagi.tv/playlist/amg02159-kcglobal-animax-samsungin/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0189-animax-asia-india-1080p-geo-blocked.jpg`
-190. Epic TV Digital (1080p) | Entertainment | https://cc-czbq30x55knit.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-czbq30x55knit/DIYC/PMSL/IN10/Epic_TV_IN_B/Epic_TV_IN_B.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0190-epic-tv-digital-1080p.jpg`
-191. DD Nagaland (504p) | Entertainment | https://d2lk5u59tns74c.cloudfront.net/out/v1/29c92e0bef954a6d9b0908d1be29c1f0/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0191-dd-nagaland-504p.jpg`
-192. Hi Dost! (720p) | Entertainment | https://cdn-1.pishow.tv/live/224/master.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0192-hi-dost-720p.jpg`
-193. TV BRICS English (1080p) | Entertainment | https://engbrics.mediacdn.ru/cdn/brics/english/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0193-tv-brics-english-1080p.jpg`
-194. Star Sports 2 HD (720p) | Sports | http://tvsen5.aynascope.net/cXPB2LKkErN9/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0194-star-sports-2-hd-720p.jpg`
-195. Star Sports Select 2 HD (720p) | Sports | http://tvsen7.aynascope.net/ssport2hd/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0195-star-sports-select-2-hd-720p.jpg`
-196. Cricket Gold (1080p) | Sports | https://streams2.sofast.tv/ptnr-yupptv/title-cricketgold/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/b2048bb8-1686-4432-aa50-647245383e0c/manifest.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0196-cricket-gold-1080p.jpg`
-197. Willow (720p) | Sports | http://tvsen5.aynascope.net/willowhd/index.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0197-willow-720p.jpg`
-198. Willow Sports (1080p) | Sports | https://d36r8jifhgsk5j.cloudfront.net/Willow_TV.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0198-willow-sports-1080p.jpg`
-199. Willow Sports (1080p) | Sports | https://d36r8jifhgsk5j.cloudfront.net/Willow_TV1080p.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0199-willow-sports-1080p.jpg`
-200. DocuBay TV (1080p) | Infotainment | https://cc-mgr91yrk4pehy.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-mgr91yrk4pehy/playlist.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0200-docubay-tv-1080p.jpg`
-201. Vyas NIC (576p) | Infotainment | https://playhls.media.nic.in/hls/live/vyas/vyas.m3u8
-   - Screenshot: `screenshots/south-asia-cricket/0201-vyas-nic-576p.jpg`
+61. News18 Bihar Jharkhand (1080p) | News | https://n18syndication.akamaized.net/bpk-tv/News18_Bihar_Jharkhand_NW18_MOB/output01/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0061-news18-bihar-jharkhand-1080p.jpg`
+62. News18 Delhi NCR JK (1080p) | News | https://n18syndication.akamaized.net/bpk-tv/News18_JKLH_NW18_MOB/output01/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0062-news18-delhi-ncr-jk-1080p.jpg`
+63. News18 Madhya Pradesh/Chhattisgarh (1080p) | News | https://n18syndication.akamaized.net/bpk-tv/News18_MP_Chhattisgarh_NW18_MOB/output01/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0063-news18-madhya-pradesh-chhattisgarh-1080p.jpg`
+64. News18 Punjab/Haryana/Himachal (1080p) | News | https://n18syndication.akamaized.net/bpk-tv/News18_Punjab_Haryana_HP_NW18_MOB/output01/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0064-news18-punjab-haryana-himachal-1080p.jpg`
+65. News18 Rajasthan (1080p) | News | https://n18syndication.akamaized.net/bpk-tv/News18_Rajasthan_NW18_MOB/output01/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0065-news18-rajasthan-1080p.jpg`
+66. News18 Uttar Pradesh Uttarakhand (1080p) | News | https://n18syndication.akamaized.net/bpk-tv/News18_UP_Uttarakhand_NW18_MOB/output01/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0066-news18-uttar-pradesh-uttarakhand-1080p.jpg`
+67. NK TV Bangla (1080p) | News | https://nktv.smartstream.video/smartstream-us/nkbangla/nkbangla/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0067-nk-tv-bangla-1080p.jpg`
+68. Pudhari News (576p) | News | https://streams.tangotv.in/PUDHARINEWS/ORIGIN/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0068-pudhari-news-576p.jpg`
+69. R Plus (768p) | News | https://thelegitpro.in/pntv/rplusnews24x7/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0069-r-plus-768p.jpg`
+70. R Plus Gold (720p) | News | https://cdn-4.pishow.tv/live/1231/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0070-r-plus-gold-720p.jpg`
+71. Saam TV | News | https://cdn-3.pishow.tv/live/437/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0071-saam-tv.jpg`
+72. Sadhna News Madhya Pradesh/Chhattisgarh (576p) | News | https://mumt04.tangotv.in/m18aqlK4SADHNEWSPMRAJ/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0072-sadhna-news-madhya-pradesh-chhattisgarh-576p.jpg`
+73. Sadhna Plus News (720p) | News | https://6n3yow8pl9ok-hls-live.5centscdn.com/sadhananewstv/live.stream/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0073-sadhna-plus-news-720p.jpg`
+74. Samachar Plus 24x7 (576p) | News | https://mumt05.tangotv.in/87NeALx2VERTENTSAMACHARPLUS/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0074-samachar-plus-24x7-576p.jpg`
+75. Samay Kolkata (1080p) | News | https://server.livelegitpro.in/samaykolkata/samaykolkata/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0075-samay-kolkata-1080p.jpg`
+76. Swadesh News (720p) | News | https://cdn-2.pishow.tv/live/465/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0076-swadesh-news-720p.jpg`
+77. Swaraj Express SMBC (720p) [Not 24/7] | News | https://cdn-2.pishow.tv/live/477/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0077-swaraj-express-smbc-720p-not-24-7.jpg`
+78. Times Now Navbharat (1080p) | News | https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/TimesNowNavbharat.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0078-times-now-navbharat-1080p.jpg`
+79. TNP News (1080p) | News | https://server.thelegitpro.in/tnpnews/tnpnews/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0079-tnp-news-1080p.jpg`
+80. Total TV Haryana (576p) | News | https://cdn-2.pishow.tv/live/1522/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0080-total-tv-haryana-576p.jpg`
+81. VIP News (360p) | News | https://live.vipnews24x7.co.in/vipnews24x7/d0dbe915091d400bd8ee7f27f0791303.sdp/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0081-vip-news-360p.jpg`
+82. ZillarBarta News | News | https://server.zillarbarta.com/zillarbarta/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0082-zillarbarta-news.jpg`
+83. Zee Cinema (576p) | Movies | https://d1g8wgjurz8via.cloudfront.net/bpk-tv/NGCHD/default/NGCHD.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0083-zee-cinema-576p.jpg`
+84. Goldmines 2 (576p) | Movies | https://cdn-2.pishow.tv/live/1460/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0084-goldmines-2-576p.jpg`
+85. Goldmines Bollywood (576p) | Movies | https://mumt03.tangotv.in/Dsly5z3HGOLDMINESBOLLYWOOD/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0085-goldmines-bollywood-576p.jpg`
+86. Shemaroo Bollywood | Movies | https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00864-shemarooenterta-shemabollywood-ono/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0086-shemaroo-bollywood.jpg`
+87. Shemaroo TV (720p) | Movies | https://airtelapp.shemaroo.com/shemarootv/smil:shemarootvadp.smil/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0087-shemaroo-tv-720p.jpg`
+88. Shemaroo Umang (720p) | Movies | https://airtelapp.shemaroo.com/shemarooumang/smil:shemarooumangadp.smil/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0088-shemaroo-umang-720p.jpg`
+89. B4U Music (576p) | Movies | https://cdn-2.pishow.tv/live/415/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0089-b4u-music-576p.jpg`
+90. Maha Movie (576p) | Movies | https://cdn-6.pishow.tv/live/10007/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0090-maha-movie-576p.jpg`
+91. Manoranjan Grand (720p) | Movies | https://cdn-1.pishow.tv/live/1011/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0091-manoranjan-grand-720p.jpg`
+92. Movie Bangla | Movies | http://alvetv.com/moviebanglatv/8080/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0092-movie-bangla.jpg`
+93. Pocket Films | Movies | https://vglivessai.akamaized.net/sg/v1/manifest/611d79b11b77e2f571934fd80ca1413453772ac7/b8ada260-bb81-472b-b7c1-3a79213a84b8/e02a0ce5-6c42-4cca-bb53-e5cfecff74a9/0.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0093-pocket-films.jpg`
+94. Shubh Cinema TV (720p) | Movies | https://d393sxaxig6bax.cloudfront.net/out/v1/589cf2cf44bf42bb941e817a2240d62e/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0094-shubh-cinema-tv-720p.jpg`
+95. South Station (1080p) | Movies | https://cc-yw7ztecy8do3q.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-yw7ztecy8do3q/SS_IN.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0095-south-station-1080p.jpg`
+96. The Movie Club (1080p) | Movies | https://sis-global.prod.samsungtv.plus/v1/tvpprd/sc-mp2ar4ca425xo.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0096-the-movie-club-1080p.jpg`
+97. The Movie Club +2 (1080p) | Movies | https://d3gnyty2vddhsg.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/pb-ytipwjqub3kf8/TMC2_IN.m3u8?ads.ads_cdn=cf&ads.cdn=cf
+   - Screenshot: `screenshots/south-asia-cricket/0097-the-movie-club-2-1080p.jpg`
+98. Zee Bangla HD (720p) | Entertainment | https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/ZeeBanglaHD.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0098-zee-bangla-hd-720p.jpg`
+99. Zee Bangla Sonar (576p) | Entertainment | https://d1g8wgjurz8via.cloudfront.net/bpk-tv/ColorsHD/default/ColorsHD.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0099-zee-bangla-sonar-576p.jpg`
+100. Zee Marathi HD (720p) | Entertainment | https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/ZeeMarathiHD.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0100-zee-marathi-hd-720p.jpg`
+101. Colors Gujarati (396p) | Entertainment | https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/ColorsGujarati.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0101-colors-gujarati-396p.jpg`
+102. Colors Rishtey Americas (396p) | Entertainment | https://manatv.akamaized.net/090823/smil:ristheyamerica.smil/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0102-colors-rishtey-americas-396p.jpg`
+103. Colors Tamil HD (720p) | Entertainment | https://da86m1sqpm3o0.cloudfront.net/28072023/smil:colorstamilhd11.smil/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0103-colors-tamil-hd-720p.jpg`
+104. Star Jalsha HD (720p) | Entertainment | https://da86m1sqpm3o0.cloudfront.net/28072023/smil:starjalsha.smil/chunklist_b1928000.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0104-star-jalsha-hd-720p.jpg`
+105. Star Pravah HD (720p) | Entertainment | https://da86m1sqpm3o0.cloudfront.net/28072023/smil:starpravah.smil/chunklist_b1928000.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0105-star-pravah-hd-720p.jpg`
+106. দেশি টিভি | Entertainment | https://deshitv.deshitv24.net/live/myStream/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0106-channel.jpg`
+107. একুশে টিভি | Entertainment | https://ekusheyserver.com/hls-live/livepkgr/_definst_/liveevent/livestream3.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0107-channel.jpg`
+108. Aakaash Aath (576p) | Entertainment | http://tvsen5.aynascope.net/Wm9Lv2RjZGT6/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0108-aakaash-aath-576p.jpg`
+109. Aamar Bangla (720p) | Entertainment | https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/amarbanglatv.stream/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0109-aamar-bangla-720p.jpg`
+110. Anjan TV (720p) | Entertainment | https://anjan.vstream.online/anjanorg/ngrp:anjan_hdall/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0110-anjan-tv-720p.jpg`
+111. Bangla Vision (720p) | Entertainment | https://tvsen5.aynaott.com/banglavision/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0111-bangla-vision-720p.jpg`
+112. DD Arun Prabha (360p) | Entertainment | https://d2lk5u59tns74c.cloudfront.net/out/v1/308556d9fd1246adb479ef012a39bbfe/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0112-dd-arun-prabha-360p.jpg`
+113. DD Bangla (504p) | Entertainment | https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/7ff57cc9046b4c188b51a0d506f36e7f/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0113-dd-bangla-504p.jpg`
+114. DD Bihar (720p) | Entertainment | https://cdn-4.pishow.tv/live/35/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0114-dd-bihar-720p.jpg`
+115. DD Chhattisgarh (720p) | Entertainment | https://cdn-1.pishow.tv/live/15/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0115-dd-chhattisgarh-720p.jpg`
+116. DD Goa (504p) | Entertainment | https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/e5b9db1cc184406bb97159da2f120f91/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0116-dd-goa-504p.jpg`
+117. DD Haryana (504p) | Entertainment | https://d2lk5u59tns74c.cloudfront.net/out/v1/950fc69666474351bde0a32b9600c804/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0117-dd-haryana-504p.jpg`
+118. DD Himachal Pradesh (504p) | Entertainment | https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/afd2e335b0ba40eb9bdf1096118c6ede/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0118-dd-himachal-pradesh-504p.jpg`
+119. DD Jharkhand (504p) | Entertainment | https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/e8c3741f8c154d3185831f4e31777fb2/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0119-dd-jharkhand-504p.jpg`
+120. DD Kashir (504p) | Entertainment | https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/8a59a828e80c49d0958925950cec0204/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0120-dd-kashir-504p.jpg`
+121. DD Madhya Pradesh (720p) | Entertainment | https://cdn-1.pishow.tv/live/31/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0121-dd-madhya-pradesh-720p.jpg`
+122. DD Rajasthan (720p) | Entertainment | https://cdn-1.pishow.tv/live/34/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0122-dd-rajasthan-720p.jpg`
+123. DD Sahyadri (504p) | Entertainment | https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/66dcc3ebe182447ba42837e746cf0c7c/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0123-dd-sahyadri-504p.jpg`
+124. DD Tripura (504p) | Entertainment | https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/52b998e9510d41c29ad2ceca8ea3d849/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0124-dd-tripura-504p.jpg`
+125. DD Uttar Pradesh (720p) | Entertainment | https://cdn-1.pishow.tv/live/36/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0125-dd-uttar-pradesh-720p.jpg`
+126. DD Uttarakhand (720p) | Entertainment | https://cdn-1.pishow.tv/live/17/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0126-dd-uttarakhand-720p.jpg`
+127. Duronto TV (720p) | Entertainment | https://tvsen6.aynaott.com/6xyZ3N4oHv2KBJdB6W4p/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0127-duronto-tv-720p.jpg`
+128. E 24 (576p) | Entertainment | https://mumt04.tangotv.in/m18aqlK4E24/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0128-e-24-576p.jpg`
+129. Enter10 Bangla HD | Entertainment | https://live-bangla.akamaized.net/liveabr/pub-iobanglakp3sff/live_720p/chunks.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0129-enter10-bangla-hd.jpg`
+130. Enterr 10 Bangla (720p) [Not 24/7] | Entertainment | https://live-bangla.akamaized.net/liveabr/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0130-enterr-10-bangla-720p-not-24-7.jpg`
+131. Epic Bharat Digital (1080p) | Entertainment | https://cc-p1izg43bk7sj5.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-p1izg43bk7sj5/DIYC/PMSL/IN10/Nazara_IN_B/Nazara_IN_B.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0131-epic-bharat-digital-1080p.jpg`
+132. Epic Kids Digital (1080p) | Entertainment | https://cc-t8lqe1o99pszu.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-t8lqe1o99pszu/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0132-epic-kids-digital-1080p.jpg`
+133. Fakt Marathi (720p) [Not 24/7] | Entertainment | https://cdn-6.pishow.tv/live/10002/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0133-fakt-marathi-720p-not-24-7.jpg`
+134. Gangaur TV (1080p) | Entertainment | https://pbgangaur.wiseplayout.com/Gangaur/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0134-gangaur-tv-1080p.jpg`
+135. Green TV (1080p) | Entertainment | https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/greentv.stream/live-orgin/greentv.stream/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0135-green-tv-1080p.jpg`
+136. Jan TV (576p) | Entertainment | https://d1msejlow1t3l4.cloudfront.net/fta/jantv/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0136-jan-tv-576p.jpg`
+137. Khushboo Bangla (720p) | Entertainment | https://cdn-4.pishow.tv/live/1473/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0137-khushboo-bangla-720p.jpg`
+138. KTV Bangla (720p) | Entertainment | https://server.livelegitpro.in:9899/tribetv/tribetv/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0138-ktv-bangla-720p.jpg`
+139. Maasranga TV (720p) | Entertainment | http://tvsen5.aynascope.net/maasrangatv/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0139-maasranga-tv-720p.jpg`
+140. MTV | Entertainment | https://da86m1sqpm3o0.cloudfront.net/28072023/smil:mtvindia.smil/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0140-mtv.jpg`
+141. MTV HD (396p) | Entertainment | https://maamusic.keralive.workers.dev/out/v1/a797c00cba954265ba781f92a57e2cf5/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0141-mtv-hd-396p.jpg`
+142. My TV | Entertainment | https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/mytv-up-off.stream/live-orgin/mytv-up-off.stream/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0142-my-tv.jpg`
+143. Network 10 (576p) | Entertainment | https://mumt01.tangotv.in/O5aw8Zn3NETWORK10/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0143-network-10-576p.jpg`
+144. NTV (720p) | Entertainment | https://tvsen5.aynaott.com/xV4jEKf3D9zc/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0144-ntv-720p.jpg`
+145. Orange Bangla TV (720p) | Entertainment | https://cdn-4.pishow.tv/live/1499/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0145-orange-bangla-tv-720p.jpg`
+146. Rajdhani TV (1080p) | Entertainment | https://stream.shariarsuvo.com/hls5/rajdhanicable.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0146-rajdhani-tv-1080p.jpg`
+147. Rongeen TV (720p) | Entertainment | https://server.thelegitpro.in/rongeentv/rongeentv/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0147-rongeen-tv-720p.jpg`
+148. RTV (720p) | Entertainment | http://tvsen5.aynascope.net/RtvHD/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0148-rtv-720p.jpg`
+149. Rupashi Bangla TV (720p) | Entertainment | https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/ruposhibangla.stream/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0149-rupashi-bangla-tv-720p.jpg`
+150. Rupasi Bangla (720p) | Entertainment | https://cdn-4.pishow.tv/live/1039/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0150-rupasi-bangla-720p.jpg`
+151. Sangeet Bangla (720p) | Entertainment | https://cdn-4.pishow.tv/live/1143/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0151-sangeet-bangla-720p.jpg`
+152. WOW Kidz (720p) | Entertainment | https://yuppparoriglin.akamaized.net/181224/smil:wowkidzhindi.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b
+   - Screenshot: `screenshots/south-asia-cricket/0152-wow-kidz-720p.jpg`
+153. ZB Cartoon (1080p) | Entertainment | https://server.zillarbarta.com/zbcatun/video.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0153-zb-cartoon-1080p.jpg`
+154. Zodiak TV (1080p) | Entertainment | https://ranacable.duckdns.org/ZodiakTv/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0154-zodiak-tv-1080p.jpg`
+155. 9XM (1080p) | Music | https://9xjio.wiseplayout.com/9XM/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0155-9xm-1080p.jpg`
+156. Zoom (720p) | Music | https://dai.google.com/linear/hls/event/JCAm25qkRXiKcK1AJMlvKQ/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0156-zoom-720p.jpg`
+157. YRF Music (1080p) | Music | https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01412-xiaomiasia-yrfmusic-xiaomi/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0157-yrf-music-1080p.jpg`
+158. 9X Jhakaas (1080p) | Music | https://amg01281-9xmediapvtltd-9xjhakaas-samsungin-ci2cs.amagi.tv/playlist/amg01281-9xmediapvtltd-9xjhakaas-samsungin/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0158-9x-jhakaas-1080p.jpg`
+159. Andy Haryana (576p) | Music | https://mumt03.tangotv.in/Dsly5z3HANDYHARYANA/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0159-andy-haryana-576p.jpg`
+160. Deewana HD (540p) | Music | https://live20.bozztv.com/giatvplayout7/giatv-209592/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0160-deewana-hd-540p.jpg`
+161. Dhoom Music (720p) | Music | https://cdn-1.pishow.tv/live/1456/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0161-dhoom-music-720p.jpg`
+162. Epic Music (576p) | Music | https://mumt04.tangotv.in/m18aqlK4EPICMUSIC/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0162-epic-music-576p.jpg`
+163. Epic Music Digital (1080p) | Music | https://cc-3cyxq80qusspd.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-3cyxq80qusspd/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0163-epic-music-digital-1080p.jpg`
+164. Music India (720p) [Not 24/7] | Music | https://cdn-2.pishow.tv/live/226/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0164-music-india-720p-not-24-7.jpg`
+165. Sangeet Marathi (720p) | Music | https://cdn-3.pishow.tv/live/1229/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0165-sangeet-marathi-720p.jpg`
+166. Steelbird Music (720p) [Not 24/7] | Music | https://cdn2.in/SteelbirdMusicTVhls/live.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0166-steelbird-music-720p-not-24-7.jpg`
+167. ZB Music (720p) | Music | https://server.zillarbarta.com/zbmusic/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0167-zb-music-720p.jpg`
+168. Star Sports 2 Hindi (720p) | Sports | https://tvsen5.aynaott.com/cXPB2LKkErN9/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0168-star-sports-2-hindi-720p.jpg`
+169. DD Sports SD (1080p) | Sports | https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/b17adfe543354fdd8d189b110617cddd/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0169-dd-sports-sd-1080p.jpg`
+170. T Sports (1080p) | Sports | https://tvsen5.aynaott.com/TnMn5kZz8aLm/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0170-t-sports-1080p.jpg`
+171. Epic Crimes (1080p) | Infotainment | https://cc-wsuyg2uxeak04.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-wsuyg2uxeak04/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0171-epic-crimes-1080p.jpg`
+172. Food Food (576p) | Infotainment | https://mumt03.tangotv.in/Dsly5z3HFOODFOOD/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0172-food-food-576p.jpg`
+173. Gyandarshan (720p) | Infotainment | https://cdn-6.pishow.tv/live/14/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0173-gyandarshan-720p.jpg`
+174. Weatherspy | Infotainment | https://jukin-weatherspy-2-in.samsung.wurl.tv/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0174-weatherspy.jpg`
+175. Republic TV (1080p) | News | https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/RepublicTV.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0175-republic-tv-1080p.jpg`
+176. BT TV (720p) | News | https://feeds.intoday.in/bttv/itgd.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0176-bt-tv-720p.jpg`
+177. CNBC TV18 (1080p) | News | https://n18syndication.akamaized.net/bpk-tv/CNBC_TV18_NW18_MOB/output01/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0177-cnbc-tv18-1080p.jpg`
+178. CNBC TV18 Prime HD (1080p) | News | https://n18syndication.akamaized.net/bpk-tv/CNBC_Tv18_Prime_HD_NW18_MOB/output01/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0178-cnbc-tv18-prime-hd-1080p.jpg`
+179. CNN News 18 | News | https://n18syndication.akamaized.net/bpk-tv/CNN_News18_NW18_MOB/output01/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0179-cnn-news-18.jpg`
+180. CVR English (720p) | News | https://cdn-2.pishow.tv/live/425/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0180-cvr-english-720p.jpg`
+181. Hornbill TV (576p) | News | https://mumt01.tangotv.in/O5aw8Zn3HORNBILLTV/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0181-hornbill-tv-576p.jpg`
+182. India Ahead (576p) | News | https://mumt05.tangotv.in/87NeALx2INDIAAHEAD/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0182-india-ahead-576p.jpg`
+183. Indywood TV (720p) | News | https://43wrzjnpqoxe-hls-live.wmncdn.net/indywood/indywoodtv/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0183-indywood-tv-720p.jpg`
+184. MediBizTV (720p) | News | https://43wrzjnpqoxe-hls-live.wmncdn.net/marinebiztvlive/marinebiztvlive/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0184-medibiztv-720p.jpg`
+185. NDTV 24x7 (720p) | News | https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/NDTV24x7.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0185-ndtv-24x7-720p.jpg`
+186. NDTV Good Times (1080p) | News | https://amg01448-samsungin-ndtvgoodtimes-samsungin-ad-gp.amagi.tv/playlist/amg01448-samsungin-ndtvgoodtimes-samsungin/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0186-ndtv-good-times-1080p.jpg`
+187. News9Live (1080p) | News | https://amg01106-amg01106c3-amgplt0844.playout.now3.amagi.tv/ts-ap-s1-n1/playlist/amg01106-amg01106c3-amgplt0844/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0187-news9live-1080p.jpg`
+188. NewsX (576p) | News | https://mumt01.tangotv.in/O5aw8Zn3NEWSX/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0188-newsx-576p.jpg`
+189. NewsX World (576p) | News | https://mumt03.tangotv.in/Dsly5z3HNEWSXWORLD/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0189-newsx-world-576p.jpg`
+190. RT India (1080p) | News | https://rt-india.rttv.com/dvr/rtindia/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0191-rt-india-1080p.jpg`
+191. Animax Asia India (1080p) [Geo-blocked] | Entertainment | https://amg02159-kcglobal-amg02159c1-samsung-in-521.playouts.now.amagi.tv/playlist/amg02159-kcglobal-animax-samsungin/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0192-animax-asia-india-1080p-geo-blocked.jpg`
+192. Epic TV Digital (1080p) | Entertainment | https://cc-czbq30x55knit.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-czbq30x55knit/DIYC/PMSL/IN10/Epic_TV_IN_B/Epic_TV_IN_B.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0193-epic-tv-digital-1080p.jpg`
+193. DD Nagaland (504p) | Entertainment | https://d2lk5u59tns74c.cloudfront.net/out/v1/29c92e0bef954a6d9b0908d1be29c1f0/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0194-dd-nagaland-504p.jpg`
+194. Hi Dost! (720p) | Entertainment | https://cdn-1.pishow.tv/live/224/master.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0195-hi-dost-720p.jpg`
+195. TV BRICS English (1080p) | Entertainment | https://engbrics.mediacdn.ru/cdn/brics/english/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0196-tv-brics-english-1080p.jpg`
+196. Star Sports 2 HD (720p) | Sports | http://tvsen5.aynascope.net/cXPB2LKkErN9/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0197-star-sports-2-hd-720p.jpg`
+197. Star Sports Select 2 HD (720p) | Sports | http://tvsen7.aynascope.net/ssport2hd/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0198-star-sports-select-2-hd-720p.jpg`
+198. Cricket Gold (1080p) | Sports | https://streams2.sofast.tv/ptnr-yupptv/title-cricketgold/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/b2048bb8-1686-4432-aa50-647245383e0c/manifest.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0199-cricket-gold-1080p.jpg`
+199. Willow (720p) | Sports | http://tvsen5.aynascope.net/willowhd/index.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0200-willow-720p.jpg`
+200. Willow Sports (1080p) | Sports | https://d36r8jifhgsk5j.cloudfront.net/Willow_TV.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0201-willow-sports-1080p.jpg`
+201. Willow Sports (1080p) | Sports | https://d36r8jifhgsk5j.cloudfront.net/Willow_TV1080p.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0202-willow-sports-1080p.jpg`
+202. DocuBay TV (1080p) | Infotainment | https://cc-mgr91yrk4pehy.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-mgr91yrk4pehy/playlist.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0203-docubay-tv-1080p.jpg`
+203. Vyas NIC (576p) | Infotainment | https://playhls.media.nic.in/hls/live/vyas/vyas.m3u8
+   - Screenshot: `screenshots/south-asia-cricket/0204-vyas-nic-576p.jpg`
